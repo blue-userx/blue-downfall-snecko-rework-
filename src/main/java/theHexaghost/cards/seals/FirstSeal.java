@@ -19,7 +19,7 @@ public class FirstSeal extends AbstractSealCard {
     public FirstSeal() {
         super(ID, 2, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
-        tags.add(AbstractCard.CardTags.HEALING);
+        tags.add(CardTags.HEALING);
         HexaMod.loadJokeCardImage(this, "FirstSeal.png");
     }
 

@@ -17,7 +17,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public abstract class AbstractEnemyStance extends AbstractStance {
-    private static final Logger logger = LogManager.getLogger(com.megacrit.cardcrawl.stances.AbstractStance.class.getName());
+    private static final Logger logger = LogManager.getLogger(AbstractStance.class.getName());
     public String name;
     public String description;
     protected ArrayList<PowerTip> tips = new ArrayList();

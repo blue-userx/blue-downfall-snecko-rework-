@@ -24,7 +24,7 @@ public class BangPower extends AbstractGremlinPower implements ConditionalModify
         this.owner = owner;
 
         this.img = IMG;
-        this.type = AbstractPower.PowerType.BUFF;
+        this.type = PowerType.BUFF;
         this.amount = amount;
         this.updateDescription();
     }

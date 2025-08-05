@@ -12,9 +12,9 @@ import gremlin.cards.TagTeam;
 public class TagTeamwork extends AbstractGremlinRelic {
     public static final String ID = getID("TagTeamwork");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final AbstractRelic.RelicTier TIER = RelicTier.SHOP;
+    private static final RelicTier TIER = RelicTier.SHOP;
     private static final String IMG = "relics/tag_teamwork.png";
-    private static final AbstractRelic.LandingSound SOUND = LandingSound.MAGICAL;
+    private static final LandingSound SOUND = LandingSound.MAGICAL;
 
     public TagTeamwork() {
         super(ID, IMG, TIER, SOUND);

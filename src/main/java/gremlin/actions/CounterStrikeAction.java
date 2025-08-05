@@ -72,7 +72,7 @@ public class CounterStrikeAction extends AbstractGameAction
                 if(gremlin.equals("sneak")){
                     AbstractDungeon.actionManager.addToBottom(
                             new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, SneakyGremlin.DAMAGE, DamageInfo.DamageType.THORNS),
-                                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                                    AttackEffect.SLASH_DIAGONAL));
                 }
 
                 if(gremlin.equals("wizard")){

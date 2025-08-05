@@ -70,7 +70,7 @@ public class GremlinWheelGame_Evil extends AbstractImageEvent {
         ARROW_OFFSET_X = 300.0F * Settings.scale;
     }
 
-    private GremlinWheelGame_Evil.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
     private int result;
     private float resultAngle;
     private float tmpAngle;
@@ -101,7 +101,7 @@ public class GremlinWheelGame_Evil extends AbstractImageEvent {
 
     public GremlinWheelGame_Evil() {
         super(NAME, INTRO_DIALOG, "images/events/spinTheWheel.jpg");
-        this.screen = GremlinWheelGame_Evil.CUR_SCREEN.INTRO;
+        this.screen = CUR_SCREEN.INTRO;
         this.startSpin = false;
         this.finishSpin = false;
         this.doneSpinning = false;
@@ -311,7 +311,7 @@ public class GremlinWheelGame_Evil extends AbstractImageEvent {
                         break;
                     } else {
 
-                        this.screen = GremlinWheelGame_Evil.CUR_SCREEN.FIGHT;
+                        this.screen = CUR_SCREEN.FIGHT;
                         //SlimeboundMod.logger.info("fight");
                         logMetric(ID, "Fight");
                         MonsterGroup monsters = new MonsterGroup(new GremlinThief(-400F, 0F));

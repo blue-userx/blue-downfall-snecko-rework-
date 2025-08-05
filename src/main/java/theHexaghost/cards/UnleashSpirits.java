@@ -32,7 +32,7 @@ public class UnleashSpirits extends AbstractHexaCard {
 //                    }
 //                }
                 for (int q = 0; q < HexaMod.cards_exhausted_last_turn; q++) {
-                    addToTop(new DamageRandomEnemyAction(makeInfo(), AbstractGameAction.AttackEffect.FIRE));
+                    addToTop(new DamageRandomEnemyAction(makeInfo(), AttackEffect.FIRE));
                 }
             }
         });

@@ -23,7 +23,7 @@ import downfall.downfallMod;
 /*    */ public class DuplicatorEvil extends AbstractImageEvent {
     public static final String ID = downfallMod.makeID("Duplicator");
 
-    private static final EventStrings eventStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getEventString("Duplicator");
+    private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString("Duplicator");
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
@@ -47,7 +47,7 @@ import downfall.downfallMod;
     }
 
     public void onEnterRoom() {
-        com.megacrit.cardcrawl.core.CardCrawlGame.music.playTempBGM("SHRINE");
+        CardCrawlGame.music.playTempBGM("SHRINE");
     }
 
     public void update() {
@@ -59,7 +59,7 @@ import downfall.downfallMod;
             c.inBottleFlame = false;
             c.inBottleLightning = false;
             c.inBottleTornado = false;
-            AbstractDungeon.effectList.add(new com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect(c, com.megacrit.cardcrawl.core.Settings.WIDTH * 0.25F, com.megacrit.cardcrawl.core.Settings.HEIGHT / 2.0F));
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH * 0.25F, Settings.HEIGHT / 2.0F));
             cards.add(c.cardID);
 
             if (AbstractDungeon.gridSelectScreen.selectedCards.size() > 1){
@@ -67,7 +67,7 @@ import downfall.downfallMod;
                 c.inBottleFlame = false;
                 c.inBottleLightning = false;
                 c.inBottleTornado = false;
-                AbstractDungeon.effectList.add(new com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect(c, com.megacrit.cardcrawl.core.Settings.WIDTH * 0.75F, com.megacrit.cardcrawl.core.Settings.HEIGHT / 2.0F));
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH * 0.75F, Settings.HEIGHT / 2.0F));
                 cards.add(c.cardID);
 
                 AbstractCard curse = new Aged();

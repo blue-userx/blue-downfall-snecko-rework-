@@ -18,9 +18,9 @@ public class Bellow extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/bellow.png";
 
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
-    private static final AbstractCard.CardRarity RARITY = CardRarity.SPECIAL;
-    private static final AbstractCard.CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final int COST = 0;
     private static final int MAGIC = 2;

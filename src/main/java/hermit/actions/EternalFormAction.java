@@ -13,7 +13,7 @@ public class EternalFormAction extends AbstractGameAction {
     private AbstractPlayer p;
 
     public EternalFormAction(int amount) {
-        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+        this.actionType = ActionType.CARD_MANIPULATION;
         this.p = AbstractDungeon.player;
         this.duration = Settings.ACTION_DUR_FAST;
         this.amount = amount;

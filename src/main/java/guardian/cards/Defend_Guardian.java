@@ -20,9 +20,9 @@ public class Defend_Guardian extends AbstractGuardianCard {
     public static final String DESCRIPTION;
     public static final String IMG_PATH = "cards/defendGuardian.png";
     private static final CardStrings cardStrings;
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.BASIC;
-    private static final AbstractCard.CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final int COST = 1;
 
     //TUNING CONSTANTS

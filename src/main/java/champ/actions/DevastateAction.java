@@ -1,13 +1,9 @@
 package champ.actions;
 
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.Hitbox;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.stances.NeutralStance;
 
 import java.util.UUID;
 
@@ -20,7 +16,7 @@ public class DevastateAction extends com.megacrit.cardcrawl.actions.AbstractGame
         this.info = info;
         setValues(target, info);
         this.increaseAmount = incAmount;
-        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.DAMAGE;
+        this.actionType = ActionType.DAMAGE;
         this.duration = 0.1F;
         this.uuid = targetUUID;
     }

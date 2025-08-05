@@ -67,14 +67,14 @@ public class PurificationShrineEvil extends com.megacrit.cardcrawl.events.Abstra
             CardCrawlGame.sound.play("CARD_EXHAUST");
             AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect(
 
-                    (AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0), com.megacrit.cardcrawl.core.Settings.WIDTH * 0.25F, com.megacrit.cardcrawl.core.Settings.HEIGHT / 2));
+                    (AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0), Settings.WIDTH * 0.25F, Settings.HEIGHT / 2));
 
 
             AbstractDungeon.player.masterDeck.removeCard((AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0));
             if (AbstractDungeon.gridSelectScreen.selectedCards.size() > 1){
                 AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect(
 
-                        (AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(1), com.megacrit.cardcrawl.core.Settings.WIDTH * 0.5F, com.megacrit.cardcrawl.core.Settings.HEIGHT / 2));
+                        (AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(1), Settings.WIDTH * 0.5F, Settings.HEIGHT / 2));
 
 
                 AbstractDungeon.player.masterDeck.removeCard((AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(1));
@@ -87,7 +87,7 @@ public class PurificationShrineEvil extends com.megacrit.cardcrawl.events.Abstra
             if (AbstractDungeon.gridSelectScreen.selectedCards.size() > 1){
                 AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect(
 
-                        (AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(1), com.megacrit.cardcrawl.core.Settings.WIDTH * 0.75F, com.megacrit.cardcrawl.core.Settings.HEIGHT / 2));
+                        (AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(1), Settings.WIDTH * 0.75F, Settings.HEIGHT / 2));
 
                 AbstractDungeon.player.maxHealth -= this.hpAmt;
                 if (AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth) {
@@ -95,8 +95,7 @@ public class PurificationShrineEvil extends com.megacrit.cardcrawl.events.Abstra
                 }
                 AbstractDungeon.player.masterDeck.removeCard((AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(1));
                 cards.add(AbstractDungeon.gridSelectScreen.selectedCards.get(1).cardID);
-                //todo: write a better metric tracker
-                logMetric(ID, "Desecrated and lost" + hpAmt + "Max HP.");
+                logMetric(ID, "Desecrated and lost " + hpAmt + " Max HP.");
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
 

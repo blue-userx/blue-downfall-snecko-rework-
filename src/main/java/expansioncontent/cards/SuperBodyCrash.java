@@ -21,7 +21,7 @@ public class SuperBodyCrash extends AbstractExpansionCard {
     private static final int BLOCK = 7;
 
     public SuperBodyCrash() {
-        super(ID, 1, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         setBackgroundTexture("expansioncontentResources/images/512/bg_boss_guardian.png", "expansioncontentResources/images/1024/bg_boss_guardian.png");
         expansionContentMod.loadJokeCardImage((AbstractCard)this, "SuperBodyCrash.png");
         this.baseBlock = 6;

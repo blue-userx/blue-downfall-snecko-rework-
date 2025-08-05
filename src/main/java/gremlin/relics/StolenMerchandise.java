@@ -19,9 +19,9 @@ import expansioncontent.actions.EchoACardAction;
 public class StolenMerchandise extends AbstractGremlinRelic {
     private static final String ID = getID("StolenMerchandise");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final AbstractRelic.RelicTier TIER = RelicTier.SHOP;
+    private static final RelicTier TIER = RelicTier.SHOP;
     private static final String IMG = "relics/stolen_merchandise.png";
-    private static final AbstractRelic.LandingSound SOUND = LandingSound.HEAVY;
+    private static final LandingSound SOUND = LandingSound.HEAVY;
 
     public static int RAGE = 2;
 
@@ -44,7 +44,7 @@ public class StolenMerchandise extends AbstractGremlinRelic {
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
 
-        AbstractCard colorless = AbstractDungeon.returnTrulyRandomColorlessCardInCombat().makeCopy();
+        AbstractCard colorless = AbstractDungeon.returnTrulyRandomColorlessCardInCombat(AbstractDungeon.relicRng).makeCopy();
         addToBot(new EchoACardAction(colorless));
     }
 

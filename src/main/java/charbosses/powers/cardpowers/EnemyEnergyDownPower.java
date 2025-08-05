@@ -21,7 +21,7 @@
      this.owner = owner;
      this.amount = amount;
      updateDescription();
-     this.type = AbstractPower.PowerType.DEBUFF;
+     this.type = PowerType.DEBUFF;
 
 
      if (isFasting) {

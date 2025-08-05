@@ -55,7 +55,7 @@ public class HeartShopRoom extends ShopRoom {
 
     private static void startCombat() {
         AbstractDungeon.closeCurrentScreen();
-        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
+        AbstractDungeon.getCurrRoom().phase = RoomPhase.COMBAT;
         AbstractDungeon.lastCombatMetricKey = FleeingMerchant.ID;
         AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new FleeingMerchant());
         AbstractDungeon.getCurrRoom().monsters.init();

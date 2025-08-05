@@ -1,4 +1,4 @@
-//package guardian.powers;
+package guardian.powers;//package guardian.powers;
 //
 //
 //import com.megacrit.cardcrawl.cards.AbstractCard;

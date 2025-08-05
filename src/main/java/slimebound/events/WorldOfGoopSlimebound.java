@@ -35,14 +35,14 @@ public class WorldOfGoopSlimebound extends AbstractImageEvent {
         LEAVE_DIALOG = DESCRIPTIONS[2];
     }
 
-    private WorldOfGoopSlimebound.CurScreen screen;
+    private CurScreen screen;
     private int damage;
     private int gold;
     private int goldLoss;
 
     public WorldOfGoopSlimebound() {
         super(NAME, DIALOG_1, "images/events/goopPuddle.jpg");
-        this.screen = WorldOfGoopSlimebound.CurScreen.INTRO;
+        this.screen = CurScreen.INTRO;
         this.damage = 11;
         this.gold = 75;
 
@@ -75,7 +75,7 @@ public class WorldOfGoopSlimebound extends AbstractImageEvent {
                         AbstractDungeon.effectList.add(new RainingGoldEffect(this.gold));
                         AbstractDungeon.player.gainGold(this.gold);
                         imageEventText.updateBodyText(GOLD_DIALOG);
-                        this.screen = WorldOfGoopSlimebound.CurScreen.RESULT;
+                        this.screen = CurScreen.RESULT;
                         logMetricGainGold(ID, "Gather Souls", gold);
                         return;
                     case 1:
@@ -85,7 +85,7 @@ public class WorldOfGoopSlimebound extends AbstractImageEvent {
                         AbstractRelic relic = RelicLibrary.getRelic(GreedOozeRelic.ID).makeCopy();
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, relic);
                         AbstractDungeon.player.loseGold(this.gold);
-                        this.screen = WorldOfGoopSlimebound.CurScreen.RESULT;
+                        this.screen = CurScreen.RESULT;
                         logMetricObtainRelicAtCost(ID, "Recruit", relic, gold);
                         return;
                     default:

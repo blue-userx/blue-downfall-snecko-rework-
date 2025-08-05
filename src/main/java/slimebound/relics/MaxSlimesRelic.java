@@ -18,9 +18,9 @@ public class MaxSlimesRelic extends CustomRelic {
     private static final int HP_PER_CARD = 1;
 
     public MaxSlimesRelic() {
-        super(ID, new Texture(slimebound.SlimeboundMod.getResourcePath(IMG_PATH)), new Texture(slimebound.SlimeboundMod.getResourcePath(OUTLINE_IMG_PATH)),
+        super(ID, new Texture(SlimeboundMod.getResourcePath(IMG_PATH)), new Texture(SlimeboundMod.getResourcePath(OUTLINE_IMG_PATH)),
                 RelicTier.UNCOMMON, LandingSound.FLAT);
-        this.largeImg = TextureLoader.getTexture(slimebound.SlimeboundMod.getResourcePath(IMG_PATH_LARGE));
+        this.largeImg = TextureLoader.getTexture(SlimeboundMod.getResourcePath(IMG_PATH_LARGE));
     }
 
     @Override

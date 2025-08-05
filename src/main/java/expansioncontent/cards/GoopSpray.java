@@ -31,7 +31,7 @@ public class GoopSpray extends AbstractExpansionCard {
     private static final int UPGRADE_downfallMagic = 1;
 
     public GoopSpray() {
-        super(ID, 1, AbstractCard.CardType.SKILL, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         setBackgroundTexture("expansioncontentResources/images/512/bg_boss_slime.png", "expansioncontentResources/images/1024/bg_boss_slime.png");
         this.tags.add(expansionContentMod.STUDY_SLIMEBOSS);
         this.tags.add(expansionContentMod.STUDY);

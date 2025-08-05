@@ -37,11 +37,11 @@ public class TransmogrifierGuardian extends AbstractImageEvent {
         IGNORE = DESCRIPTIONS[2];
     }
 
-    private TransmogrifierGuardian.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
 
     public TransmogrifierGuardian() {
         super(NAME, DIALOG_1, "images/events/shrine1.jpg");
-        this.screen = TransmogrifierGuardian.CUR_SCREEN.INTRO;
+        this.screen = CUR_SCREEN.INTRO;
         this.imageEventText.setDialogOption(CardCrawlGame.languagePack.getEventString("Guardian:Purifier").OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1]);
@@ -70,7 +70,7 @@ public class TransmogrifierGuardian extends AbstractImageEvent {
             case INTRO:
                 switch (buttonPressed) {
                     case 0:
-                        this.screen = TransmogrifierGuardian.CUR_SCREEN.COMPLETE;
+                        this.screen = CUR_SCREEN.COMPLETE;
                         this.imageEventText.updateBodyText(CardCrawlGame.languagePack.getEventString("Guardian:Purifier").DESCRIPTIONS[0]);
                         ArrayList<AbstractCard> gems = GuardianMod.getRewardGemCards(false, 2);
                         ArrayList<String> gemIDs = new ArrayList<>();
@@ -87,14 +87,14 @@ public class TransmogrifierGuardian extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         return;
                     case 1:
-                        this.screen = TransmogrifierGuardian.CUR_SCREEN.COMPLETE;
+                        this.screen = CUR_SCREEN.COMPLETE;
                         this.imageEventText.updateBodyText(DIALOG_2);
                         AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, OPTIONS[2], false, true, false, false);
                         this.imageEventText.updateDialogOption(0, OPTIONS[1]);
                         this.imageEventText.clearRemainingOptions();
                         return;
                     case 2:
-                        this.screen = TransmogrifierGuardian.CUR_SCREEN.COMPLETE;
+                        this.screen = CUR_SCREEN.COMPLETE;
                         logMetricIgnored(ID);
                         this.imageEventText.updateBodyText(IGNORE);
                         this.imageEventText.updateDialogOption(0, OPTIONS[1]);

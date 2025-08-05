@@ -23,8 +23,7 @@ public class SerpentineSleuth extends AbstractSneckoCard implements OnObtainCard
     private static int SOFTLOCK = 0;
 
     public SerpentineSleuth() {
-        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 1;
+        super(ID, 4, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         isEthereal = true;
         SneckoMod.loadJokeCardImage(this, "SerpentineSleuth.png");
     }
@@ -44,14 +43,14 @@ public class SerpentineSleuth extends AbstractSneckoCard implements OnObtainCard
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new SerpentineSleuthPower(this.magicNumber));
+        applyToSelf(new SerpentineSleuthPower(1));
     }
 
     @Override
     public void onObtainCard() {
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
         while (cardsToReward.size() < 3) {
-            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.type == AbstractCard.CardType.POWER && c.rarity == AbstractCard.CardRarity.RARE);
+            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.type == CardType.POWER && c.rarity == CardRarity.RARE);
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onPreviewObtainCard(newCard);
@@ -69,10 +68,7 @@ public class SerpentineSleuth extends AbstractSneckoCard implements OnObtainCard
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            //isEthereal = false;
-            upgradeMagicNumber(1);
-            rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeBaseCost(3);
         }
     }
 }

@@ -63,7 +63,7 @@ public class FullyLoaded extends AbstractDynamicCard {
             public void update() {
                 CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 tmp.group = (ArrayList<AbstractCard>) Wiz.p().drawPile.group.stream()
-                        .filter(c -> c.hasTag(AbstractCard.CardTags.STARTER_STRIKE) || c.hasTag(AbstractCard.CardTags.STARTER_DEFEND))
+                        .filter(c -> c.hasTag(CardTags.STARTER_STRIKE) || c.hasTag(CardTags.STARTER_DEFEND))
                         .collect(Collectors.toList());
                 for (AbstractCard c : tmp.group) {
                     if (!tmp.isEmpty() && Wiz.hand().size() < BaseMod.MAX_HAND_SIZE) {

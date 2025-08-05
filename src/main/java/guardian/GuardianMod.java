@@ -98,7 +98,7 @@ public class GuardianMod implements PostDrawSubscriber,
     private static final String ENERGY_ORB_PORTRAIT = "1024/card_guardian_orb.png";
     public static GuardianCharacter guardianCharacter;
     public static Color mainGuardianColor = new Color(0.58F, 0.49F, 0.33F, 1.0F);
-    private static final com.badlogic.gdx.graphics.Color GUARDIAN_COLOR = mainGuardianColor;
+    private static final Color GUARDIAN_COLOR = mainGuardianColor;
     public static ArrayList<Texture> socketTextures = new ArrayList<>();
     public static ArrayList<Texture> socketTextures2 = new ArrayList<>();
     public static ArrayList<Texture> socketTextures3 = new ArrayList<>();
@@ -390,6 +390,72 @@ public class GuardianMod implements PostDrawSubscriber,
         return rewardGemCards;
     }
 
+    public static ArrayList<AbstractCard> getRewardGemCardsButRelicRng(boolean onlyCommon, int count) {
+        ArrayList<String> allGemCards = new ArrayList<>();
+        ArrayList<AbstractCard> rewardGemCards = new ArrayList<>();
+
+        allGemCards.add("RED");
+        allGemCards.add("LIGHTBLUE");
+        allGemCards.add("FRAGMENTED");
+        if (!onlyCommon) allGemCards.add("ORANGE");
+        if (!onlyCommon) allGemCards.add("CYAN");
+        if (!onlyCommon) allGemCards.add("WHITE");
+        allGemCards.add("BLUE");
+        if (!onlyCommon) allGemCards.add("CRIMSON");
+        if (!onlyCommon) allGemCards.add("GREEN");
+        if (!onlyCommon) allGemCards.add("PURPLE");
+        if (!onlyCommon) allGemCards.add("SYNTHETIC");
+        if (!onlyCommon) allGemCards.add("YELLOW");
+
+        int rando;
+        String ID;
+        for (int i = 0; i < count; i++) {
+            rando = AbstractDungeon.relicRng.random(0, allGemCards.size() - 1);
+            ID = allGemCards.get(rando);
+            switch (ID) {
+                case "RED":
+                    rewardGemCards.add(new Gem_Red());
+                    break;
+                case "GREEN":
+                    rewardGemCards.add(new Gem_Green());
+                    break;
+                case "LIGHTBLUE":
+                    rewardGemCards.add(new Gem_Lightblue());
+                    break;
+                case "ORANGE":
+                    rewardGemCards.add(new Gem_Orange());
+                    break;
+                case "CYAN":
+                    rewardGemCards.add(new Gem_Cyan());
+                    break;
+                case "WHITE":
+                    rewardGemCards.add(new Gem_White());
+                    break;
+                case "BLUE":
+                    rewardGemCards.add(new Gem_Blue());
+                    break;
+                case "CRIMSON":
+                    rewardGemCards.add(new Gem_Crimson());
+                    break;
+                case "FRAGMENTED":
+                    rewardGemCards.add(new Gem_Fragmented());
+                    break;
+                case "PURPLE":
+                    rewardGemCards.add(new Gem_Purple());
+                    break;
+                case "SYNTHETIC":
+                    rewardGemCards.add(new Gem_Synthetic());
+                    break;
+                case "YELLOW":
+                    rewardGemCards.add(new Gem_Yellow());
+                    break;
+            }
+            allGemCards.remove(rando);
+        }
+
+        return rewardGemCards;
+    }
+
     public static void updateStasisCount() {
 
     }
@@ -569,8 +635,8 @@ public static void saveData() {
         BaseMod.addRelicToCustomPool(new StasisSlotReductionRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new StasisUpgradeRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new guardian.relics.StasisEgg(), AbstractCardEnum.GUARDIAN);
-        BaseMod.addRelicToCustomPool(new guardian.relics.PickAxe(), AbstractCardEnum.GUARDIAN);
-        BaseMod.addRelicToCustomPool(new guardian.relics.ObsidianScales(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new PickAxe(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new ObsidianScales(), AbstractCardEnum.GUARDIAN);
         BaseMod.registerBottleRelic(BottledStasisPatch.inStasisEgg, new guardian.relics.StasisEgg());
         BaseMod.addRelic(new GemstoneGun(), RelicType.SHARED);
         BaseMod.addRelic(new PocketSentry(), RelicType.SHARED);
@@ -663,7 +729,7 @@ public static void saveData() {
         BaseMod.addCard(new Gem_Fragmented());
         BaseMod.addCard(new Gem_Yellow());
         BaseMod.addCard(new Gem_Synthetic());
-        BaseMod.addCard(new guardian.cards.BronzeOrb());
+        BaseMod.addCard(new BronzeOrb());
         BaseMod.addCard(new GatlingBeam());
         BaseMod.addCard(new RevengeProtocol());
         BaseMod.addCard(new ShieldCharger());
@@ -876,7 +942,6 @@ public static void saveData() {
                 .dungeonID(TheBeyond.ID)
                 //Only in Evil if content sharing is disabled
                 //This is a guardian exclusive event that doesn't overwrite anything, it should appear in standard even without content sharing
-                .spawnCondition(() -> (1==1))
            //     .spawnCondition(() -> (evilMode || downfallMod.contentSharing_events))
                 .create());
         BaseMod.addEvent(new AddEventParams.Builder(CrystalForge.ID, CrystalForge.class) //Event ID//

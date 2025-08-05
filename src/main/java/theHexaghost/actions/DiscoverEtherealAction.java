@@ -1,5 +1,6 @@
 package theHexaghost.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -38,7 +39,7 @@ public class DiscoverEtherealAction extends AbstractGameAction {
                         disCard.setCostForTurn(0);
 
                         disCard.current_x = -1000.0F * Settings.scale;
-                        if (AbstractDungeon.player.hand.size() < 10) {
+                        if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                             AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                         } else {
                             AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
@@ -61,7 +62,7 @@ public class DiscoverEtherealAction extends AbstractGameAction {
 
         while (derp.size() != 3) {
             boolean dupe = false;
-            int roll = AbstractDungeon.cardRandomRng.random(99);
+            int roll = AbstractDungeon.potionRng.random(99);
             AbstractCard.CardRarity cardRarity;
             if (roll < 60) {
                 cardRarity = AbstractCard.CardRarity.COMMON;
@@ -73,7 +74,7 @@ public class DiscoverEtherealAction extends AbstractGameAction {
 
 
             ArrayList<AbstractCard> possList = new ArrayList<>(CardLibrary.getAllCards());
-            possList.removeIf(c -> (!c.isEthereal || c.color == AbstractCard.CardColor.CURSE || c.type == CURSE || c.rarity == AbstractCard.CardRarity.SPECIAL || c.type == STATUS || c.hasTag(AbstractCard.CardTags.HEALING)));
+            possList.removeIf(c -> (c.color != AbstractDungeon.player.getCardColor() || !c.isEthereal || c.color == AbstractCard.CardColor.CURSE || c.type == CURSE || c.rarity == AbstractCard.CardRarity.SPECIAL || c.type == STATUS || c.hasTag(AbstractCard.CardTags.HEALING)));
 
             AbstractCard tmp = possList.get(AbstractDungeon.cardRandomRng.random(possList.size() - 1)).makeCopy();
 

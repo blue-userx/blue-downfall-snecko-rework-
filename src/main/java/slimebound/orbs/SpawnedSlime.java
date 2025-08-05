@@ -66,7 +66,7 @@ public abstract class SpawnedSlime
     public int upgradedInitialBoost;
     public String originalRelic = "";
     public String[] descriptions;
-    public com.badlogic.gdx.graphics.Texture intentImage;
+    public Texture intentImage;
     public boolean noEvokeBonus;
     public float scale = 1.15F;
     public float x;
@@ -465,7 +465,7 @@ public abstract class SpawnedSlime
 
 
     public void renderText(SpriteBatch sb) {
-        if (this.extraFontColor != null) {
+        if (this.extraFontColor != null){
 
 
             float fontOffset = 26 * Settings.scale;

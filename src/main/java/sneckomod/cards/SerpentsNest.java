@@ -50,7 +50,7 @@ public class SerpentsNest extends AbstractSneckoCard implements OnObtainCard {
     public void onObtainCard() {
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
         while (cardsToReward.size() < 3) {
-            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.type == AbstractCard.CardType.POWER && c.rarity == AbstractCard.CardRarity.UNCOMMON);
+            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.type == CardType.POWER && c.rarity == CardRarity.UNCOMMON);
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onPreviewObtainCard(newCard);

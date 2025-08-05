@@ -43,14 +43,14 @@ public class BackToBasicsGremlin extends AbstractImageEvent {
         OPTIONSGUARDIAN = eventStringsGuardian.OPTIONS;
     }
 
-    private BackToBasicsGremlin.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
     private List<String> cardsUpgraded;
     private ArrayList<AbstractCard> strikesToRemove;
     private ArrayList<AbstractCard> defendsToRemove;
 
     public BackToBasicsGremlin() {
         super(NAME, DIALOG_1, "images/events/backToBasics.jpg");
-        this.screen = BackToBasicsGremlin.CUR_SCREEN.INTRO;
+        this.screen = CUR_SCREEN.INTRO;
         this.cardsUpgraded = new ArrayList();
 
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
@@ -145,7 +145,7 @@ public class BackToBasicsGremlin extends AbstractImageEvent {
                     this.imageEventText.clearRemainingOptions();
                 }
 
-                this.screen = BackToBasicsGremlin.CUR_SCREEN.COMPLETE;
+                this.screen = CUR_SCREEN.COMPLETE;
                 break;
             case COMPLETE:
                 this.openMap();

@@ -47,7 +47,7 @@ public class DeadGuy_Evil extends AbstractEvent {
     private float x;
     private float y;
     private int enemy;
-    private DeadGuy_Evil.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
     private Texture adventurerImg;
     private int goldRewardMetric = 0;
     private AbstractRelic relicRewardMetric = null;
@@ -56,7 +56,7 @@ public class DeadGuy_Evil extends AbstractEvent {
         this.x = 800.0F * Settings.scale;
         this.y = AbstractDungeon.floorY;
         this.enemy = 0;
-        this.screen = DeadGuy_Evil.CUR_SCREEN.INTRO;
+        this.screen = CUR_SCREEN.INTRO;
         this.rewards.add("GOLD");
         this.rewards.add("NOTHING");
         this.rewards.add("RELIC");
@@ -112,7 +112,7 @@ public class DeadGuy_Evil extends AbstractEvent {
                 switch (buttonPressed) {
                     case 0:
                         if (AbstractDungeon.miscRng.random(0, 99) < this.encounterChance) {
-                            this.screen = DeadGuy_Evil.CUR_SCREEN.FAIL;
+                            this.screen = CUR_SCREEN.FAIL;
                             this.roomEventText.updateBodyText(FIGHT_MSG);
                             this.roomEventText.updateDialogOption(0, OPTIONS[2]);
                             this.roomEventText.removeDialogOption(1);
@@ -130,7 +130,7 @@ public class DeadGuy_Evil extends AbstractEvent {
 
                         return;
                     case 1:
-                        this.screen = DeadGuy_Evil.CUR_SCREEN.ESCAPE;
+                        this.screen = CUR_SCREEN.ESCAPE;
                         this.roomEventText.updateBodyText(ESCAPE_MSG);
                         this.roomEventText.updateDialogOption(0, OPTIONS[1]);
                         this.roomEventText.removeDialogOption(1);
@@ -207,12 +207,12 @@ public class DeadGuy_Evil extends AbstractEvent {
             this.roomEventText.updateBodyText(DESCRIPTIONS[10]);
             this.roomEventText.updateDialogOption(0, OPTIONS[1]);
             this.roomEventText.removeDialogOption(1);
-            this.screen = DeadGuy_Evil.CUR_SCREEN.SUCCESS;
+            this.screen = CUR_SCREEN.SUCCESS;
         } else {
 
             this.roomEventText.updateDialogOption(0, OPTIONS[3] + this.encounterChance + OPTIONS[4]);
             this.roomEventText.updateDialogOption(1, OPTIONS[1]);
-            this.screen = DeadGuy_Evil.CUR_SCREEN.INTRO;
+            this.screen = CUR_SCREEN.INTRO;
         }
 
     }

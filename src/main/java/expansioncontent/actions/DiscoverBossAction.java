@@ -1,6 +1,8 @@
 package expansioncontent.actions;
 
 import automaton.AutomatonChar;
+import awakenedOne.AwakenedOneChar;
+import basemod.BaseMod;
 import champ.ChampChar;
 import collector.CollectorChar;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -44,7 +46,7 @@ public class DiscoverBossAction extends AbstractGameAction {
                         disCard.setCostForTurn(0);
 
                         disCard.current_x = -1000.0F * Settings.scale;
-                        if (AbstractDungeon.player.hand.size() < 10) {
+                        if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                             AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                         } else {
                             AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
@@ -70,18 +72,29 @@ public class DiscoverBossAction extends AbstractGameAction {
 
                 if (AbstractDungeon.player instanceof SlimeboundCharacter) {
                     if (q.hasTag(expansionContentMod.STUDY_SLIMEBOSS)){continue;}
+
                 } else if (AbstractDungeon.player instanceof TheHexaghost) {
                     if(q.hasTag(expansionContentMod.STUDY_HEXAGHOST)){continue;}
+
                 } else if (AbstractDungeon.player instanceof GuardianCharacter) {
                     if(q.hasTag(expansionContentMod.STUDY_GUARDIAN)){continue;}
+
                 } else if (AbstractDungeon.player instanceof ChampChar) {
                     if(q.hasTag(expansionContentMod.STUDY_CHAMP)){continue;}
+
                 } else if (AbstractDungeon.player instanceof AutomatonChar) {
                     if(q.hasTag(expansionContentMod.STUDY_AUTOMATON)){continue;}
-                } else if (AbstractDungeon.player instanceof CollectorChar) {
-                    if(q.hasTag(expansionContentMod.STUDY_COLLECTOR)){continue;}
-                }
 
+                } else if (AbstractDungeon.player instanceof CollectorChar) {
+                    if (q.hasTag(expansionContentMod.STUDY_COLLECTOR)) {
+                        continue;
+
+                    }
+                } else if (AbstractDungeon.player instanceof AwakenedOneChar) {
+                        if (q.hasTag(expansionContentMod.STUDY_AWAKENEDONE)) {
+                            continue;
+                        }
+                    }
                 AbstractCard r = q.makeCopy();
                 cardsList.add(r);
             }

@@ -35,9 +35,9 @@ public class GremlinArms extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/gremlin_arms.png";
 
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
-    private static final AbstractCard.CardRarity RARITY = CardRarity.COMMON;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 0;
     private static final int MAGIC = 1;

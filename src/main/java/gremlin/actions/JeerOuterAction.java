@@ -32,7 +32,7 @@ public class JeerOuterAction extends AbstractGameAction
             }
         }
         AbstractDungeon.actionManager.addToTop(new JeerAction(target,amount));
-        AbstractDungeon.actionManager.addToTop(new DamageAction(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToTop(new DamageAction(target, info, AttackEffect.BLUNT_LIGHT));
         this.isDone = true;
     }
 }

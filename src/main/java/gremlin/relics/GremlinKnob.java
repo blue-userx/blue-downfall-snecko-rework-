@@ -13,9 +13,9 @@ import gremlin.actions.GremlinSwapAction;
 public class GremlinKnob extends AbstractGremlinRelic {
     public static final String ID = getID("GremlinKnob");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final AbstractRelic.RelicTier TIER = RelicTier.STARTER;
+    private static final RelicTier TIER = RelicTier.STARTER;
     private static final String IMG = "relics/gremlinKnob.png";
-    private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
+    private static final LandingSound SOUND = LandingSound.FLAT;
 
 
     public GremlinKnob() {

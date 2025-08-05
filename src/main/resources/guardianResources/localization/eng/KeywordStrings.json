@@ -30,7 +30,7 @@
       "defensive_mode",
       "defensive"
     ],
-    "DESCRIPTION": "#yStance. NL Gain #b16 #yBlock when you enter Defensive Mode. While in it, you have #b3 #yThorns and your #yBlock does not expire."
+    "DESCRIPTION": "#yStance. NL While in Defensive Mode you have #b3 #yThorns and your #yBlock does not expire."
   },
   {
     "NAMES": [
@@ -45,7 +45,7 @@
       "packages"
     ],
     "PROPER_NAME": "Package",
-    "DESCRIPTION": "0-cost #yExhausting #ySkill that generates three cards inspired by a chosen Construct of the Spire."
+    "DESCRIPTION": "#ySkill that generates three cards inspired by a chosen Construct of the Spire."
   },
   {
     "NAMES": [
@@ -53,6 +53,16 @@
     ],
     "PROPER_NAME": "Volatile",
     "DESCRIPTION": "When this card leaves #yStasis, it #yExhausts [REMOVE_SPACE]."
+  },
+  {
+    "NAMES": [
+      "Polishing Oil",
+      "Polishing_Oil",
+      "polishing_oil",
+      "polishingoil"
+    ],
+    "PROPER_NAME": "Polishing Oil",
+    "DESCRIPTION": "#yPotion [REMOVE_SPACE]: Gain #b16 #yBlock [REMOVE_SPACE]. Enter #yDefensive #yMode [REMOVE_SPACE]."
   },
   {
     "NAMES": [

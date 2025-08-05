@@ -92,17 +92,17 @@ public class GremlinMod implements EditCharactersSubscriber, EditStringsSubscrib
     public static final Logger logger = LogManager.getLogger(GremlinMod.class);
 
     @SpireEnum
-    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags FAT_GREMLIN;
+    public static AbstractCard.CardTags FAT_GREMLIN;
     @SpireEnum
-    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags MAD_GREMLIN;
+    public static AbstractCard.CardTags MAD_GREMLIN;
     @SpireEnum
-    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags SHIELD_GREMLIN;
+    public static AbstractCard.CardTags SHIELD_GREMLIN;
     @SpireEnum
-    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags SNEAKY_GREMLIN;
+    public static AbstractCard.CardTags SNEAKY_GREMLIN;
     @SpireEnum
-    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags WIZARD_GREMLIN;
+    public static AbstractCard.CardTags WIZARD_GREMLIN;
     @SpireEnum
-    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags NOB_GREMLIN;
+    public static AbstractCard.CardTags NOB_GREMLIN;
 
     public static boolean gremlinArtMode = false;
 

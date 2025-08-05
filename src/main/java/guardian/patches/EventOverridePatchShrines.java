@@ -1,4 +1,4 @@
-/*
+package guardian.patches;/*
 package guardian.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

@@ -21,7 +21,7 @@ public class ThinkAction
             this.duration = duration;
         }
         this.msg = text;
-        this.actionType = AbstractGameAction.ActionType.TEXT;
+        this.actionType = ActionType.TEXT;
         this.bubbleDuration = bubbleDuration;
     }
 

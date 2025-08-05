@@ -191,7 +191,7 @@ public abstract class AbstractHermitCard extends CustomCard {
                 if (c.relicId.equals(BlackPowder.ID))
                 {
                     this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, c));
-                    this.addToBot(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE,true));
+                    this.addToBot(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(BlackPowder.OOMPH, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE,true));
                 }
             }
         }
@@ -244,7 +244,7 @@ public abstract class AbstractHermitCard extends CustomCard {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractCard.CardTags DEADON;
+        public static CardTags DEADON;
     }
 
 

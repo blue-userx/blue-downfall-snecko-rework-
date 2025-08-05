@@ -324,7 +324,7 @@ public class TheHexaghost extends CustomPlayer {
     }
 
     @Override
-    public String getTitle(AbstractPlayer.PlayerClass playerClass) {
+    public String getTitle(PlayerClass playerClass) {
         return NAMES[1];
     }
 
@@ -363,7 +363,7 @@ public class TheHexaghost extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_SPIRIT;
+        public static PlayerClass THE_SPIRIT;
         @SpireEnum(name = "HEXA_GHOST_PURPLE")
         public static AbstractCard.CardColor GHOST_GREEN;
         @SpireEnum(name = "HEXA_GHOST_PURPLE")

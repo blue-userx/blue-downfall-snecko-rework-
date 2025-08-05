@@ -22,13 +22,13 @@ public class Pickpocket extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/pickpocket.png";
 
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
-    private static final AbstractCard.CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 2;
-    private static final int POWER = 9;
-    private static final int MAGIC = 2;
+    private static final int POWER = 10;
+    private static final int MAGIC = 10;
     private static final int UPGRADE_BONUS = 4;
 
     public Pickpocket()
@@ -37,9 +37,8 @@ public class Pickpocket extends AbstractGremlinCard {
         this.baseMagicNumber = MAGIC;
         this.magicNumber = baseMagicNumber;
         this.baseDamage = POWER;
-        this.baseBlamage = 5;
         this.exhaust = true;
-        this.tags.add(MAD_GREMLIN);
+        this.tags.add(CardTags.HEALING);
         setBackgrounds();
         GremlinMod.loadJokeCardImage(this, "Pickpocket.png");
     }
@@ -48,28 +47,10 @@ public class Pickpocket extends AbstractGremlinCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage,
                 this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-
-        AbstractDungeon.actionManager.addToBottom(new ShackleAction(m, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ShackleAction(m, magicNumber));
-
-        if (!this.upgraded) {
-            {
-                AbstractDungeon.player.gainGold(5);
-                for (int i = 0; i < 5; ++i) {
+                AbstractDungeon.player.gainGold(magicNumber);
+                for (int i = 0; i < magicNumber; ++i) {
                     AbstractDungeon.effectList.add(new GainPennyEffect(p, p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY, true));
                 }
-            }
-        }
-
-        if (this.upgraded) {
-            {
-                AbstractDungeon.player.gainGold(10);
-                for (int i = 0; i < 10; ++i) {
-                    AbstractDungeon.effectList.add(new GainPennyEffect(p, p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY, true));
-                }
-            }
-        }
-
         }
 
     @Override
@@ -77,9 +58,8 @@ public class Pickpocket extends AbstractGremlinCard {
         if (!this.upgraded)
         {
             upgradeName();
-            upgradeBlammage(5);
             upgradeDamage(UPGRADE_BONUS);
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(4);
         }
     }
 }

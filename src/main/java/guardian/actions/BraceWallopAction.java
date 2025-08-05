@@ -14,10 +14,10 @@ import static guardian.cards.AbstractGuardianCard.brace;
 public class BraceWallopAction extends AbstractGameAction {
     private int damage;
 
-    public BraceWallopAction(AbstractCreature target, AbstractCreature source, int amount, DamageInfo.DamageType type, AbstractGameAction.AttackEffect effect) {
+    public BraceWallopAction(AbstractCreature target, AbstractCreature source, int amount, DamageInfo.DamageType type, AttackEffect effect) {
         setValues(target, source, amount);
         this.damage = amount;
-        this.actionType = AbstractGameAction.ActionType.DAMAGE;
+        this.actionType = ActionType.DAMAGE;
         this.damageType = type;
         this.attackEffect = effect;
     }

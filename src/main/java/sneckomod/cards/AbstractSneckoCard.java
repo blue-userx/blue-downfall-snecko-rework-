@@ -30,8 +30,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static sneckomod.SneckoMod.getModID;
-import static sneckomod.SneckoMod.makeCardPath;
+import static sneckomod.SneckoMod.*;
 
 
 public abstract class AbstractSneckoCard extends CustomCard implements OnObtainCard {
@@ -296,32 +295,29 @@ public abstract class AbstractSneckoCard extends CustomCard implements OnObtainC
     }
 
 
-    public boolean isOverflowActive(AbstractCard source) { // Adjusted to take a card parameter
-        boolean OVERFLOW = false; // Reset overflow state
+    public boolean isOverflowActive(AbstractCard source) {
+        boolean OVERFLOW = false;
 
-        // Only check for overflow if the card has the OVERFLOW tag
         if (source.hasTag(SneckoMod.OVERFLOW)) {
-            // Check if there are more than 5 cards in hand
             if (AbstractDungeon.player.hand.size() > 5 || (AbstractDungeon.player.hasPower(CheatPower.POWER_ID))) {
                 OVERFLOW = true;
             }
 
-            // If the card purges on use, immediately return false
-            if ((source instanceof TyphoonFang && source.purgeOnUse)) {
-                return false; // If the card purges on use, it cannot cause overflow
+            if (source.hasTag(NO_TYPHOON)) {
+                return false;
             }
 
-            // Check for the D8 relic
             if (AbstractDungeon.player.hasRelic(D8.ID)) {
                 D8 d8Relic = (D8) AbstractDungeon.player.getRelic(D8.ID);
                 if (d8Relic != null && d8Relic.card != null) {
                     if (d8Relic.card.uuid.equals(source.uuid)) {
-                        OVERFLOW = true; // Set overflow if the D8 card is the same as the source card
+                        OVERFLOW = true;
                     }
                 }
             }
         }
-        return OVERFLOW; // Return true or false
+
+        return OVERFLOW;
     }
 
 
@@ -331,11 +327,11 @@ public abstract class AbstractSneckoCard extends CustomCard implements OnObtainC
 
 
     public int findSuitinHand() {
-        Set<AbstractCard.CardColor> uniqueColors = new HashSet<>(); // check without status, curse, collectible, colorless common
+        Set<CardColor> uniqueColors = new HashSet<>(); // check without status, curse, collectible, colorless common
 
         for (AbstractCard card : AbstractDungeon.player.hand.group) {
             if (
-                    (card.color == AbstractCard.CardColor.COLORLESS && card.rarity == AbstractCard.CardRarity.SPECIAL)) {
+                    (card.color == CardColor.COLORLESS && card.rarity == CardRarity.SPECIAL)) {
                 continue;
             }
 
@@ -350,7 +346,7 @@ public abstract class AbstractSneckoCard extends CustomCard implements OnObtainC
 
         for (AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if ((
-                    !(card.color == AbstractCard.CardColor.COLORLESS && card.rarity == AbstractCard.CardRarity.SPECIAL))) {
+                    !(card.color == CardColor.COLORLESS && card.rarity == CardRarity.SPECIAL))) {
 
                 uniqueColors.add(card.color);
             }

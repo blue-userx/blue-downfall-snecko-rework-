@@ -62,7 +62,7 @@ public class PrismaticBeam extends AbstractGuardianCard {
         updateDescription();
         loadGemMisc();
         
-        tags.add(AbstractCard.CardTags.HEALING);
+        tags.add(CardTags.HEALING);
         this.tags.add(SneckoMod.BANNEDFORSNECKO);
         GuardianMod.loadJokeCardImage(this, makeBetaCardPath("PrismaticBeam.png"));
     }

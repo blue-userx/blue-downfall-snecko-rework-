@@ -27,7 +27,7 @@ public class ToothAndClaw extends AbstractSneckoCard {
 
     public ToothAndClaw() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 6;
+        baseDamage = 4;
         SneckoMod.loadJokeCardImage(this, "ToothAndClaw.png");
         this.cardsToPreview = new Shiv();
     }
@@ -61,7 +61,7 @@ public class ToothAndClaw extends AbstractSneckoCard {
     public void onObtainCard() {
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
         while (cardsToReward.size() < 3) {
-            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.rarity == AbstractCard.CardRarity.UNCOMMON);
+            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.rarity == CardRarity.UNCOMMON);
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onPreviewObtainCard(newCard);
@@ -80,7 +80,7 @@ public class ToothAndClaw extends AbstractSneckoCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(2);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();

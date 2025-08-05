@@ -20,9 +20,9 @@ public class BrokenShin extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/broken_shin.png";
 
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
-    private static final AbstractCard.CardRarity RARITY = CardRarity.RARE;
-    private static final AbstractCard.CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 2;
     private static final int MAGIC = 4;

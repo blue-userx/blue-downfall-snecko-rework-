@@ -1,4 +1,4 @@
-/*
+package champ.cards;/*
 package champ.cards;
 
 

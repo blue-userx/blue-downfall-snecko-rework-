@@ -62,20 +62,20 @@ public class SlimeboundMod implements OnCardUseSubscriber,
         SetUnlocksSubscriber,
         PostDungeonInitializeSubscriber, PostBattleSubscriber,
         PostInitializeSubscriber, PreMonsterTurnSubscriber,
-        basemod.interfaces.EditCharactersSubscriber,
-        basemod.interfaces.EditRelicsSubscriber,
-        basemod.interfaces.EditCardsSubscriber,
+        EditCharactersSubscriber,
+        EditRelicsSubscriber,
+        EditCardsSubscriber,
         OnPowersModifiedSubscriber,
         //EditStringsSubscriber,
         //basemod.interfaces.PostDrawSubscriber,
-        basemod.interfaces.OnStartBattleSubscriber {
+        OnStartBattleSubscriber {
     public static final boolean hasHubris;
 //    public static final String PROP_RELIC_SHARING = "contentSharing_relics";
 //    public static final String PROP_POTION_SHARING = "contentSharing_potions";
 //    public static final String PROP_EVENT_SHARING = "contentSharing_events";
 //    public static final String PROP_UNLOCK_ALL = "unlockEverything";
     public static final Logger logger = LogManager.getLogger(SlimeboundMod.class.getName());
-    public static final com.badlogic.gdx.graphics.Color SLIME_COLOR = com.megacrit.cardcrawl.helpers.CardHelper.getColor(25.0F, 95.0F, 25.0F);
+    public static final Color SLIME_COLOR = com.megacrit.cardcrawl.helpers.CardHelper.getColor(25.0F, 95.0F, 25.0F);
     private static final String SLIMEBOUNDMOD_ASSETS_FOLDER = "slimeboundResources/SlimeboundImages";
     private static final String ATTACK_CARD = "512/bg_attack_slimebound.png";
     private static final String SKILL_CARD = "512/bg_skill_slimebound.png";
@@ -366,8 +366,8 @@ public class SlimeboundMod implements OnCardUseSubscriber,
      //   BaseMod.addCard(new ServeAndProtectServe());
         BaseMod.addCard(new ServeAndProtect());
 
-        BaseMod.addCard(new slimebound.cards.Defend_Slimebound());
-        BaseMod.addCard(new slimebound.cards.Strike_Slimebound());
+        BaseMod.addCard(new Defend_Slimebound());
+        BaseMod.addCard(new Strike_Slimebound());
         //   BaseMod.addCard(new BronzeBeam());
         BaseMod.addCard(new LevelUp());
         BaseMod.addCard(new SplitBruiser());
@@ -381,9 +381,9 @@ public class SlimeboundMod implements OnCardUseSubscriber,
         //BaseMod.addCard(new SuperSplit());
         BaseMod.addCard(new LeadByExample());
         BaseMod.addCard(new Nibble());
-        BaseMod.addCard(new slimebound.cards.SlimeTap());
+        BaseMod.addCard(new SlimeTap());
         BaseMod.addCard(new Teamwork());
-        BaseMod.addCard(new slimebound.cards.SlimeBarrage());
+        BaseMod.addCard(new SlimeBarrage());
         BaseMod.addCard(new SlimeBrawl());
         //BaseMod.addCard(new slimebound.cards.zzzMaxSlimes());
         BaseMod.addCard(new SlimeSpikes());
@@ -398,13 +398,13 @@ public class SlimeboundMod implements OnCardUseSubscriber,
         BaseMod.addCard(new LivingWall());
         BaseMod.addCard(new MinionMaster());
         BaseMod.addCard(new SelfFormingGoo());
-        BaseMod.addCard(new slimebound.cards.Dissolve());
-        BaseMod.addCard(new slimebound.cards.DuplicatedForm());
-        BaseMod.addCard(new slimebound.cards.LeechingTouch());
+        BaseMod.addCard(new Dissolve());
+        BaseMod.addCard(new DuplicatedForm());
+        BaseMod.addCard(new LeechingTouch());
         BaseMod.addCard(new SamplingLick());
         BaseMod.addCard(new FormOfPuddle());
-        BaseMod.addCard(new slimebound.cards.Lick());
-        BaseMod.addCard(new slimebound.cards.MegaLick());
+        BaseMod.addCard(new Lick());
+        BaseMod.addCard(new MegaLick());
 
         BaseMod.addCard(new PressTheAttack());
         //BaseMod.addCard(new SoulSicken());
@@ -412,45 +412,45 @@ public class SlimeboundMod implements OnCardUseSubscriber,
         BaseMod.addCard(new HauntingLick());
         //BaseMod.addCard(new AcidGelatin());
         BaseMod.addCard(new RejuvenatingLick());
-        BaseMod.addCard(new slimebound.cards.TongueLash());
+        BaseMod.addCard(new TongueLash());
         BaseMod.addCard(new ItLooksTasty());
-        BaseMod.addCard(new slimebound.cards.AcidTongue());
+        BaseMod.addCard(new AcidTongue());
         //BaseMod.addCard(new slimebound.cards.TendrilStrike());
         //BaseMod.addCard(new slimebound.cards.PoisonLick());
-        BaseMod.addCard(new slimebound.cards.WasteNot());
+        BaseMod.addCard(new WasteNot());
         BaseMod.addCard(new HungryTackle());
-        BaseMod.addCard(new slimebound.cards.FlameTackle());
+        BaseMod.addCard(new FlameTackle());
         BaseMod.addCard(new RollThrough());
         BaseMod.addCard(new ComboTackle());
         BaseMod.addCard(new GoopTackle());
         //BaseMod.addCard(new VenomTackle());
-        BaseMod.addCard(new slimebound.cards.Grow());
-        BaseMod.addCard(new slimebound.cards.Prepare());
-        BaseMod.addCard(new slimebound.cards.Gluttony());
+        BaseMod.addCard(new Grow());
+        BaseMod.addCard(new Prepare());
+        BaseMod.addCard(new Gluttony());
         //BaseMod.addCard(new automaton.cards.goodstatus.UsefulSlime());
         BaseMod.addCard(new RainOfGoop());
-        BaseMod.addCard(new slimebound.cards.GoopSpray());
-        BaseMod.addCard(new slimebound.cards.MassFeed());
+        BaseMod.addCard(new GoopSpray());
+        BaseMod.addCard(new MassFeed());
         BaseMod.addCard(new ViciousTackle());
-        BaseMod.addCard(new slimebound.cards.LeechEnergy());
+        BaseMod.addCard(new LeechEnergy());
         BaseMod.addCard(new LeechLife());
         BaseMod.addCard(new Equalize());
 
         BaseMod.addCard(new DisruptingSlam());
-        BaseMod.addCard(new slimebound.cards.CorrosiveSpit());
+        BaseMod.addCard(new CorrosiveSpit());
         BaseMod.addCard(new PrepareCrush());
-        BaseMod.addCard(new slimebound.cards.SlimeCrush());
+        BaseMod.addCard(new SlimeCrush());
 
-        BaseMod.addCard(new slimebound.cards.Tackle());
+        BaseMod.addCard(new Tackle());
         //BaseMod.addCard(new zzzSlimepotheosis());
-        BaseMod.addCard(new slimebound.cards.FinishingTackle());
+        BaseMod.addCard(new FinishingTackle());
         BaseMod.addCard(new FirmFortitude());
         BaseMod.addCard(new Replication());
         BaseMod.addCard(new CheckThePlaybook());
         BaseMod.addCard(new Repurpose());
         BaseMod.addCard(new GrowthPunch());
-        BaseMod.addCard(new slimebound.cards.Recycling());
-        BaseMod.addCard(new slimebound.cards.Recollect());
+        BaseMod.addCard(new Recycling());
+        BaseMod.addCard(new Recollect());
 
         BaseMod.addCard(new SplitSpecialist());
         BaseMod.addCard(new Darklings());

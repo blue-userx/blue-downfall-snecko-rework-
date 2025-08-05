@@ -16,8 +16,8 @@ public class DoublePoisonSlimedWeakAction extends com.megacrit.cardcrawl.actions
         this.source = source;
         this.upgraded = upgraded;
         this.startingDuration = com.megacrit.cardcrawl.core.Settings.ACTION_DUR_FAST;
-        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.DEBUFF;
-        this.attackEffect = com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.FIRE;
+        this.actionType = ActionType.DEBUFF;
+        this.attackEffect = AttackEffect.FIRE;
         this.duration = this.startingDuration;
     }
 

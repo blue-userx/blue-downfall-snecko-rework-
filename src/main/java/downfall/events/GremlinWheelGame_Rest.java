@@ -70,7 +70,7 @@ public class GremlinWheelGame_Rest extends AbstractImageEvent {
         ARROW_OFFSET_X = 300.0F * Settings.scale;
     }
 
-    private GremlinWheelGame_Rest.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
     private int result;
     private float resultAngle;
     private float tmpAngle;
@@ -100,7 +100,7 @@ public class GremlinWheelGame_Rest extends AbstractImageEvent {
 
     public GremlinWheelGame_Rest() {
         super(NAME, INTRO_DIALOG, (downfallMod.assetPath("images/events/spinTheWheelFire.png")));
-        this.screen = GremlinWheelGame_Rest.CUR_SCREEN.INTRO;
+        this.screen = CUR_SCREEN.INTRO;
         this.startSpin = false;
         this.finishSpin = false;
         this.doneSpinning = false;

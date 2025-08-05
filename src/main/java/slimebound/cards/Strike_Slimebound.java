@@ -17,9 +17,9 @@ public class Strike_Slimebound extends AbstractSlimeboundCard {
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String IMG_PATH = "cards/attackSlime.png";
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.BASIC;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardStrings cardStrings;
     private static final int COST = 1;
     private static final int POWER = 6;
@@ -34,11 +34,11 @@ public class Strike_Slimebound extends AbstractSlimeboundCard {
     }
 
     public Strike_Slimebound() {
-        super(ID, NAME, slimebound.SlimeboundMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.SLIMEBOUND, RARITY, TARGET);
+        super(ID, NAME, SlimeboundMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.SLIMEBOUND, RARITY, TARGET);
 
         this.baseDamage = 6;
         this.tags.add(CardTags.STARTER_STRIKE);
-        this.tags.add(AbstractCard.CardTags.STRIKE);
+        this.tags.add(CardTags.STRIKE);
         SlimeboundMod.loadJokeCardImage(this, "Strike_Slimebound.png");
     }
 

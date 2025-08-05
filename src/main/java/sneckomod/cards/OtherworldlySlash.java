@@ -45,7 +45,6 @@ public class OtherworldlySlash extends AbstractSneckoCard implements OnObtainCar
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Deal initial damage
         dmg(m, makeInfo(), AbstractGameAction.AttackEffect.SLASH_HEAVY);
         boolean playedOffClassCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.stream()
                 .anyMatch(card -> card.color != this.color);
@@ -70,7 +69,7 @@ public class OtherworldlySlash extends AbstractSneckoCard implements OnObtainCar
     public void onObtainCard() {
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
         while (cardsToReward.size() < 3) {
-            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.rarity == AbstractCard.CardRarity.COMMON);
+            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.rarity == CardRarity.COMMON);
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onPreviewObtainCard(newCard);

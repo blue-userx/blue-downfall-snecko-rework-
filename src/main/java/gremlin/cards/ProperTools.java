@@ -1,5 +1,6 @@
 package gremlin.cards;
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import gremlin.GremlinMod;
 import gremlin.actions.ProperToolsAction;
+import guardian.cards.*;
 
 import java.util.ArrayList;
 
@@ -25,9 +27,9 @@ public class ProperTools extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/proper_tools.png";
 
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
-    private static final AbstractCard.CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 2;
     private static final int POWER = 5;
@@ -45,10 +47,7 @@ public class ProperTools extends AbstractGremlinCard {
         this.baseDamage = POWER;
         this.baseMagicNumber = MAGIC;
         this.magicNumber = MAGIC;
-        cardsList.add(new Shiv());
-        cardsList.add(new Ward());
-
-        this.cardsToPreview = new Shiv();
+        MultiCardPreview.add(this, new Shiv(), new Ward());
         this.tags.add(SNEAKY_GREMLIN);
         setBackgrounds();
         GremlinMod.loadJokeCardImage(this, "ProperTools.png");
@@ -71,25 +70,4 @@ public class ProperTools extends AbstractGremlinCard {
         }
     }
 
-    @Override
-    public void update() {
-        super.update();
-        if (hb.hovered) {
-            if (rotationTimer <= 0F) {
-                rotationTimer = 2F;
-                if (cardsList.size() == 0) {
-                    cardsToPreview = CardLibrary.cards.get("Madness");
-                } else {
-                    cardsToPreview = cardsList.get(previewIndex);
-                }
-                if (previewIndex == cardsList.size() - 1) {
-                    previewIndex = 0;
-                } else {
-                    previewIndex++;
-                }
-            } else {
-                rotationTimer -= Gdx.graphics.getDeltaTime();
-            }
-        }
-    }
 }

@@ -79,7 +79,7 @@ public class ComboAttackPower extends TwoAmountPower {
                 if (SlimeboundMod.getLeadingSlime() != null)
                 {
                     flash();
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new CommandAction());
+                    AbstractDungeon.actionManager.addToBottom(new CommandAction());
                     checkMinionMaster(); // maybe this crashes idk lol
                     this.amount2--;
                     updateDescription();

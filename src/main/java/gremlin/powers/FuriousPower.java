@@ -24,7 +24,7 @@ public class FuriousPower extends AbstractGremlinPower implements OnGainedBlockM
         this.owner = owner;
 
         this.img = IMG;
-        this.type = AbstractPower.PowerType.BUFF;
+        this.type = PowerType.BUFF;
         this.amount = -1;
         this.updateDescription();
     }

@@ -2,9 +2,14 @@ package sneckomod.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.CurseOfTheBell;
+import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.NecronomicurseEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import expansioncontent.expansionContentMod;
 import sneckomod.SneckoMod;
 
@@ -47,10 +52,10 @@ public class GlitteringGambit extends AbstractSneckoCard {
     public void onObtainCard() {
         AbstractDungeon.player.gainGold(this.magicNumber);
         for (int i = 0; i < 1; i++)
-            displayCardRewards(AbstractCard.CardRarity.RARE, "Special Bonus Card!");
+            displayCardRewards(CardRarity.RARE, "Special Bonus Card!");
     }
 
-    private void displayCardRewards(AbstractCard.CardRarity rarity, String rewardText) {
+    private void displayCardRewards(CardRarity rarity, String rewardText) {
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
 
         while (cardsToReward.size() < 3) {
@@ -69,6 +74,10 @@ public class GlitteringGambit extends AbstractSneckoCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return false;
+    }
+
+    public void onRemoveFromMasterDeck() {
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new CurseOfTheBell(), (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     @Override

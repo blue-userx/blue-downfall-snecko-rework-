@@ -21,9 +21,9 @@ public class LeaderChoice extends AbstractGremlinCard implements Unmovable {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/choice.png";
 
-    private static final AbstractCard.CardType TYPE = CardType.STATUS;
-    private static final AbstractCard.CardRarity RARITY = CardRarity.SPECIAL;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
+    private static final CardType TYPE = CardType.STATUS;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 0;
 

@@ -14,7 +14,7 @@ public class ThirdSeal extends AbstractSealCard {
     public ThirdSeal() {
         super(ID, 2, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
         HexaMod.loadJokeCardImage(this, "ThirdSeal.png");
-        tags.add(AbstractCard.CardTags.HEALING);
+        tags.add(CardTags.HEALING);
     }
 
     public void realUse(AbstractPlayer p, AbstractMonster m) {

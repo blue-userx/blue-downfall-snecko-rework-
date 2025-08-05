@@ -62,7 +62,7 @@ public class GremlinMatchGame_Evil extends AbstractImageEvent {
     private CardGroup cards;
     private float waitTimer;
     private int cardsMatched;
-    private GremlinMatchGame_Evil.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
     private List<String> matchedCards;
 
     public GremlinMatchGame_Evil() {
@@ -70,7 +70,7 @@ public class GremlinMatchGame_Evil extends AbstractImageEvent {
         this.cards = new CardGroup(CardGroupType.UNSPECIFIED);
         this.waitTimer = 0.0F;
         this.cardsMatched = 0;
-        this.screen = GremlinMatchGame_Evil.CUR_SCREEN.INTRO;
+        this.screen = CUR_SCREEN.INTRO;
         this.cards.group = this.initializeCards();
         Collections.shuffle(this.cards.group, new Random(AbstractDungeon.miscRng.randomLong()));
         this.imageEventText.setDialogOption(OPTIONS[0]);
@@ -126,10 +126,10 @@ public class GremlinMatchGame_Evil extends AbstractImageEvent {
     public void update() {
         super.update();
         this.cards.update();
-        if (this.screen == GremlinMatchGame_Evil.CUR_SCREEN.PLAY) {
+        if (this.screen == CUR_SCREEN.PLAY) {
             this.updateControllerInput();
             this.updateMatchGameLogic();
-        } else if (this.screen == GremlinMatchGame_Evil.CUR_SCREEN.CLEAN_UP) {
+        } else if (this.screen == CUR_SCREEN.CLEAN_UP) {
             if (!this.cleanUpCalled) {
                 this.cleanUpCalled = true;
                 this.cleanUpCards();
@@ -297,7 +297,7 @@ public class GremlinMatchGame_Evil extends AbstractImageEvent {
                     this.waitTimer = 1.0F;
                 }
             } else if (this.gameDone) {
-                this.screen = GremlinMatchGame_Evil.CUR_SCREEN.CLEAN_UP;
+                this.screen = CUR_SCREEN.CLEAN_UP;
             }
         }
 
@@ -322,7 +322,7 @@ public class GremlinMatchGame_Evil extends AbstractImageEvent {
                         this.imageEventText.updateDialogOption(0, OPTIONS[2]);
                         this.imageEventText.setDialogOption(OPTIONS[4]);
                         //SlimeboundMod.logger.info("case intro opening rule explanation");
-                        this.screen = GremlinMatchGame_Evil.CUR_SCREEN.RULE_EXPLANATION;
+                        this.screen = CUR_SCREEN.RULE_EXPLANATION;
                         return;
                 }
             case RULE_EXPLANATION:
@@ -396,7 +396,7 @@ public class GremlinMatchGame_Evil extends AbstractImageEvent {
             this.hoveredCard.render(sb);
         }
 
-        if (this.screen == GremlinMatchGame_Evil.CUR_SCREEN.PLAY) {
+        if (this.screen == CUR_SCREEN.PLAY) {
             FontHelper.renderSmartText(sb, FontHelper.panelNameFont, OPTIONS[3] + this.attemptCount, 780.0F * Settings.scale, 80.0F * Settings.scale, 2000.0F * Settings.scale, 0.0F, Color.WHITE);
         }
 

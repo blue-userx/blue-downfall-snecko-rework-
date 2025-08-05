@@ -23,7 +23,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
      updateDescription();
      loadRegion("wraithForm");
      this.canGoNegative = true;
-     this.type = AbstractPower.PowerType.DEBUFF;
+     this.type = PowerType.DEBUFF;
    }
  
  

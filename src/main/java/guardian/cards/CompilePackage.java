@@ -5,6 +5,7 @@ import automaton.FunctionHelper;
 import automaton.cards.Batch;
 import automaton.cards.Debug;
 import automaton.cards.Decompile;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -43,12 +44,14 @@ public class CompilePackage extends AbstractGuardianCard {
     private float rotationTimer;
     private int previewIndex;
     private ArrayList<AbstractCard> cardsList = new ArrayList<>();
+    public static final String[] TEXT;
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
         UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+        TEXT = CardCrawlGame.languagePack.getUIString("Guardian:UIOptions").TEXT;
     }
 
     public CompilePackage() {
@@ -59,6 +62,8 @@ public class CompilePackage extends AbstractGuardianCard {
         updateDescription();
         loadGemMisc();
 
+        //cardsList.add(new PackageDefect());
+
         cardsList.add(new PackageDefect());
         cardsList.add(new PackageWalker());
         cardsList.add(new PackageSphere());
@@ -66,6 +71,7 @@ public class CompilePackage extends AbstractGuardianCard {
         cardsList.add(new PackageSentry());
         cardsList.add(new PackageDonuDeca());
         cardsList.add(new PackageAutomaton());
+        //MultiCardPreview.add(this, new PackageDefect(), new PackageWalker(), new PackageSphere(), new PackageShapes(), new PackageSentry(), new PackageDonuDeca(), new PackageAutomaton());
 
         GuardianMod.loadJokeCardImage(this, makeBetaCardPath("CompilePackage.png"));
     }
@@ -86,10 +92,14 @@ public class CompilePackage extends AbstractGuardianCard {
             upgradeName();
             this.rawDescription = UPGRADED_DESCRIPTION;
             this.initializeDescription();
-            for(AbstractCard c:cardsList){
-                c.upgrade();
-            }
+            MultiCardPreview.multiCardPreview.get(this).forEach(AbstractCard::upgrade);
         }
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        this.cantUseMessage = TEXT[5];
+        return AbstractDungeon.player.hasEmptyOrb();
     }
 
     public void updateDescription() {
@@ -103,6 +113,7 @@ public class CompilePackage extends AbstractGuardianCard {
         }
         this.initializeDescription();
     }
+
 
     @Override
     public void update() {

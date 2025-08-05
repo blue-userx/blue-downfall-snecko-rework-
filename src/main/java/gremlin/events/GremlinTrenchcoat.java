@@ -19,7 +19,7 @@ public class GremlinTrenchcoat extends AbstractImageEvent {
     private int goldAmount2;
     private int goldAmount3;
     private static final String DIALOG_1;
-    private GremlinTrenchcoat.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
 
     public GremlinTrenchcoat() {
         super(NAME, DIALOG_1, "images/events/ballAndCup.jpg");

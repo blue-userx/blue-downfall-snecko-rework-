@@ -21,9 +21,9 @@ public class Strike_Guardian extends AbstractGuardianCard {
     public static final String ID = GuardianMod.makeID("Strike_Guardian");
     public static final String NAME;
     public static final String IMG_PATH = "cards/strikeGuardian.png";
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.BASIC;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardStrings cardStrings;
     private static final int COST = 1;
     private static final int DAMAGE = 6;

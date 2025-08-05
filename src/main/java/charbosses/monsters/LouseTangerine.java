@@ -48,7 +48,7 @@ public class LouseTangerine extends AbstractMonster {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new CurlUpPower(this, curl_amount)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new TangerinePower(this,3)));
-        setMove((byte)1, AbstractMonster.Intent.SLEEP);
+        setMove((byte)1, Intent.SLEEP);
     }
 
     @Override
@@ -75,7 +75,7 @@ public class LouseTangerine extends AbstractMonster {
         {
             if (this.lastMove((byte)1))
             {
-                setMove((byte)2, AbstractMonster.Intent.SLEEP);
+                setMove((byte)2, Intent.SLEEP);
             }
             else {
                 sleepy = false;

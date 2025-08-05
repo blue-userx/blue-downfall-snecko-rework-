@@ -51,7 +51,7 @@ public class LoseThornsPower extends AbstractGuardianPower {
 
         flash();
 
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, LoseThornsPower.POWER_ID));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, LoseThornsPower.POWER_ID));
 
         if (this.owner.hasPower("Thorns")) {
             if (!this.owner.hasPower(ArtifactPower.POWER_ID)) {

@@ -34,10 +34,9 @@ public class MakeshiftBlade extends AbstractSneckoCard {
     public static final String ID = SneckoMod.makeID("MakeshiftBlade");
 
     // Card constants
-    private static final int DAMAGE = 12;
+    private static final int DAMAGE = 9;
     private static final int COST = 1;
-    private static final int MAGIC = 3; // Initial debuff requirement
-    private static final int UPGRADE_MAGIC = -1; // Reduces debuff requirement by 1
+    private static final int MAGIC = 3;
     private static int SOFTLOCK = 0;
 
 
@@ -79,7 +78,7 @@ public class MakeshiftBlade extends AbstractSneckoCard {
         System.out.println("DEBUG: Took Makeshift Blade.");
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
         while (cardsToReward.size() < 3) {
-            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicateDebuff(c -> (c.rarity != AbstractCard.CardRarity.RARE));
+            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicateDebuff(c -> (c.rarity != CardRarity.RARE));
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onPreviewObtainCard(newCard);
@@ -101,7 +100,6 @@ public class MakeshiftBlade extends AbstractSneckoCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
             upgradeDamage(4);
         }
     }

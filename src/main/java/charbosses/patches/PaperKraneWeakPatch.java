@@ -20,7 +20,7 @@ public class PaperKraneWeakPatch {
     public static class SuperWeakEffect {
         @SpirePrefixPatch
         public static SpireReturn<Float> Prefix(WeakPower instance, float damage, DamageType type) {
-            if (type == DamageInfo.DamageType.NORMAL && instance.owner.isPlayer &&
+            if (type == DamageType.NORMAL && instance.owner.isPlayer &&
                     AbstractCharBoss.boss != null && AbstractCharBoss.boss.hasRelic("Paper Crane")) {
                 return SpireReturn.Return(damage * 0.6F);
             }

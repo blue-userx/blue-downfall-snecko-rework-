@@ -6,13 +6,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import sneckomod.SneckoMod;
 import theHexaghost.HexaMod;
+import theHexaghost.actions.RandomFlameAction;
 
 public class SeventhEye extends AbstractHexaCard {
 
     public final static String ID = makeID("SeventhEye");
 
     public SeventhEye() {
-        super(ID, 1, AbstractCard.CardType.SKILL, CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
         tags.add(HexaMod.GHOSTWHEELCARD);
         this.tags.add(SneckoMod.BANNEDFORSNECKO);

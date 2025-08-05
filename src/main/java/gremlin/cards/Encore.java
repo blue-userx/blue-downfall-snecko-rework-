@@ -13,7 +13,6 @@ import gremlin.powers.EncorePower;
 import gremlin.powers.WizPower;
 
 import static gremlin.GremlinMod.WIZARD_GREMLIN;
-import static hermit.util.Wiz.removePower;
 
 public class Encore extends AbstractGremlinCard {
     public static final String ID = getID("Encore");
@@ -21,9 +20,9 @@ public class Encore extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/encore.png";
 
-    private static final AbstractCard.CardType TYPE = CardType.POWER;
-    private static final AbstractCard.CardRarity RARITY = CardRarity.RARE;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
+    private static final CardType TYPE = CardType.POWER;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 1;
 

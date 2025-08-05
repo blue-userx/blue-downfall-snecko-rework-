@@ -33,11 +33,11 @@ public class PurificationShrineGuardian extends AbstractImageEvent {
         IGNORE = DESCRIPTIONS[2];
     }
 
-    private PurificationShrineGuardian.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
 
     public PurificationShrineGuardian() {
         super(NAME, DIALOG_1, "images/events/shrine3.jpg");
-        this.screen = PurificationShrineGuardian.CUR_SCREEN.INTRO;
+        this.screen = CUR_SCREEN.INTRO;
         this.imageEventText.setDialogOption(CardCrawlGame.languagePack.getEventString("Guardian:Purifier").OPTIONS[0]);
 
         this.imageEventText.setDialogOption(OPTIONS[0]);
@@ -65,7 +65,7 @@ public class PurificationShrineGuardian extends AbstractImageEvent {
             case INTRO:
                 switch (buttonPressed) {
                     case 0:
-                        this.screen = PurificationShrineGuardian.CUR_SCREEN.COMPLETE;
+                        this.screen = CUR_SCREEN.COMPLETE;
                         this.imageEventText.updateBodyText(CardCrawlGame.languagePack.getEventString("Guardian:Purifier").DESCRIPTIONS[0]);
                         ArrayList<AbstractCard> gems = GuardianMod.getRewardGemCards(false, 2);
                         ArrayList<String> gemIDs = new ArrayList<>();
@@ -81,14 +81,14 @@ public class PurificationShrineGuardian extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         return;
                     case 1:
-                        this.screen = PurificationShrineGuardian.CUR_SCREEN.COMPLETE;
+                        this.screen = CUR_SCREEN.COMPLETE;
                         this.imageEventText.updateBodyText(DIALOG_2);
                         AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, OPTIONS[2], false, false, false, true);
                         this.imageEventText.updateDialogOption(0, OPTIONS[1]);
                         this.imageEventText.clearRemainingOptions();
                         return;
                     case 2:
-                        this.screen = PurificationShrineGuardian.CUR_SCREEN.COMPLETE;
+                        this.screen = CUR_SCREEN.COMPLETE;
                         logMetricIgnored(ID);
                         this.imageEventText.updateBodyText(IGNORE);
                         this.imageEventText.updateDialogOption(0, OPTIONS[1]);

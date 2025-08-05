@@ -36,11 +36,11 @@ public class Bandits_Evil extends AbstractEvent {
         OPTIONSALT = CardCrawlGame.languagePack.getEventString(ID).OPTIONS;
     }
 
-    private Bandits_Evil.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
     private AbstractRelic wantThisOne = null;
 
     public Bandits_Evil() {
-        this.screen = Bandits_Evil.CUR_SCREEN.INTRO;
+        this.screen = CUR_SCREEN.INTRO;
         this.body = DESCRIPTIONSALT[0];
         AbstractRelic.RelicTier t = AbstractRelic.RelicTier.RARE;
         wantThisOne = null;
@@ -100,7 +100,7 @@ public class Bandits_Evil extends AbstractEvent {
                         this.roomEventText.updateBodyText(DESCRIPTIONSALT[1]);
                         this.roomEventText.updateDialogOption(0, OPTIONS[3]);
                         this.roomEventText.clearRemainingOptions();
-                        this.screen = Bandits_Evil.CUR_SCREEN.COMPLETE;
+                        this.screen = CUR_SCREEN.COMPLETE;
                         logMetric(ID, "Hired Bandits",
                                 null, null, null, null,
                                 Collections.singletonList(RedIOU.ID), null, Collections.singletonList(wantThisOne.relicId), 0, 0, 0, 0, 0, 0);

@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import downfall.util.TextureLoader;
 import expansioncontent.cards.AwakenDeath;
+import slimebound.characters.SlimeboundCharacter;
+import sneckomod.TheSnecko;
 
 import java.util.stream.Collectors;
 
@@ -28,7 +30,7 @@ public class ForbiddenFruit extends CustomRelic {
     private boolean selected = true;
 
     public ForbiddenFruit() {
-        super(ID, TextureLoader.getTexture(CollectorMod.makeRelicPath(IMG_PATH)), TextureLoader.getTexture(CollectorMod.makeRelicOutlinePath(OUTLINE_IMG_PATH)), RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, TextureLoader.getTexture(CollectorMod.makeRelicPath(IMG_PATH)), TextureLoader.getTexture(CollectorMod.makeRelicOutlinePath(OUTLINE_IMG_PATH)), RelicTier.DEPRECATED, LandingSound.MAGICAL);
         tips.add(new CardPowerTip( new Sapped() ) );
     }
 
@@ -94,6 +96,10 @@ public class ForbiddenFruit extends CustomRelic {
     }
 
     public boolean canSpawn() {
+        if (AbstractDungeon.player instanceof TheSnecko) {
+            return false;
+        }
+
         return ((AbstractDungeon.floorNum > 1)); // you cannot boss swap into forbidden fruit
     }
 

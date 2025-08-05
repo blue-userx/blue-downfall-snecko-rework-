@@ -1,4 +1,4 @@
-/*
+package champ.powers;/*
 package champ.powers;
 
 import basemod.BaseMod;

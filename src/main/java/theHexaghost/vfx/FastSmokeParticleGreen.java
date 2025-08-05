@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
     /*    */   private float vX;
     /* 14 */   private float scale = 0.01F;
     /*    */   private float targetScale;
-    /*    */   private static TextureAtlas.AtlasRegion img;
+    /*    */   private static AtlasRegion img;
     /*    */
     /* 18 */   public FastSmokeParticleGreen(float x, float y) { if (img == null) {
         /* 19 */       img = com.megacrit.cardcrawl.helpers.ImageMaster.EXHAUST_L;

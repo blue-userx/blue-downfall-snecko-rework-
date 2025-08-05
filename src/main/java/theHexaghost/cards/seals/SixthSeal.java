@@ -9,7 +9,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHexaghost.HexaMod;
 import theHexaghost.powers.FutureUpgradePower;
 
-// this is actually fifth seal, FifthSeal.java is sixth seal, TODO: after the loc is finished, swap the id name for clearer info in metric
+// this is actually fifth seal, FifthSeal.java is sixth seal, TO-DO: after the loc is finished, swap the id name for clearer info in metric
+// removing this to-do because changing the ids of cards causes immense issues, and it's not worth bothering with
 @NoCompendium
 public class SixthSeal extends AbstractSealCard {
     public final static String ID = makeID("SixthSeal");
@@ -18,7 +19,7 @@ public class SixthSeal extends AbstractSealCard {
         super(ID, 2, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = magicNumber = 0;
         baseBurn = burn = 13;
-        tags.add(AbstractCard.CardTags.HEALING);
+        tags.add(CardTags.HEALING);
         HexaMod.loadJokeCardImage(this, "SixthSeal.png");
     }
 
@@ -54,7 +55,8 @@ public class SixthSeal extends AbstractSealCard {
     }
 
     public void realUse(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new FutureUpgradePower(magicNumber));
+        int upgrades = (count_cards / 13);
+        applyToSelf(new FutureUpgradePower(upgrades));
     }
 
     public void upgrade() {

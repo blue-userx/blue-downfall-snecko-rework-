@@ -1,7 +1,7 @@
 package collector.cards;
 
 import automaton.AutomatonChar;
-import basemod.cardmods.RetainMod;
+import awakenedOne.AwakenedOneChar;
 import basemod.helpers.CardModifierManager;
 import champ.ChampChar;
 import collector.CollectorChar;
@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import expansioncontent.cardmods.PropertiesMod;
 import expansioncontent.expansionContentMod;
 import guardian.characters.GuardianCharacter;
 import slimebound.characters.SlimeboundCharacter;
@@ -40,7 +41,7 @@ public class ReceiveTribute extends AbstractCollectorCard {
         if (possibilities == null) {
             possibilities = new ArrayList<>();
             for (AbstractCard q : CardLibrary.getAllCards()) {
-                if (q.rarity != AbstractCard.CardRarity.SPECIAL && q.hasTag(expansionContentMod.STUDY) && !q.hasTag(AbstractCard.CardTags.HEALING)) {
+                if (q.rarity != CardRarity.SPECIAL && q.hasTag(expansionContentMod.STUDY) && !q.hasTag(CardTags.HEALING)) {
 
                     if (AbstractDungeon.player instanceof SlimeboundCharacter) {
                         if (q.hasTag(expansionContentMod.STUDY_SLIMEBOSS)){continue;}
@@ -54,6 +55,8 @@ public class ReceiveTribute extends AbstractCollectorCard {
                         if(q.hasTag(expansionContentMod.STUDY_AUTOMATON)){continue;}
                     } else if (AbstractDungeon.player instanceof CollectorChar) {
                         if(q.hasTag(expansionContentMod.STUDY_COLLECTOR)){continue;}
+                    } else if (AbstractDungeon.player instanceof AwakenedOneChar) {
+                        if(q.hasTag(expansionContentMod.STUDY_AWAKENEDONE)){continue;}
                     }
 
                     AbstractCard r = q.makeCopy();
@@ -66,7 +69,9 @@ public class ReceiveTribute extends AbstractCollectorCard {
         ArrayList<AbstractCard> choices = new ArrayList<>();
         for (int i = 0; i < magicNumber; i++) {
             AbstractCard toAdd = remaining.remove(AbstractDungeon.cardRandomRng.random(remaining.size() - 1)).makeCopy();
-            CardModifierManager.addModifier(toAdd, new RetainMod());
+            if (!toAdd.selfRetain) {
+                CardModifierManager.addModifier(toAdd, new PropertiesMod(PropertiesMod.supportedProperties.RETAIN, false));
+            }
             choices.add(toAdd);
         }
         addToBot(new SelectCardsCenteredAction(choices, cardStrings.EXTENDED_DESCRIPTION[0], (cards) -> {

@@ -14,7 +14,7 @@ public class DrawUntilNonEtherealAction extends AbstractGameAction {
     public DrawUntilNonEtherealAction() {
         this.p = AbstractDungeon.player;
         this.setValues(this.p, this.p);
-        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+        this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_MED;
     }
 

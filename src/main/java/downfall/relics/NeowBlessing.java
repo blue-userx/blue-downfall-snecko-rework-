@@ -16,7 +16,7 @@ public class NeowBlessing extends CustomRelic {
     private static Texture outline = new Texture(downfallMod.assetPath("images/relics/Outline/blessing.png"));
 
     public NeowBlessing() {
-        super(ID, texture, outline, RelicTier.SPECIAL, CustomRelic.LandingSound.FLAT);
+        super(ID, texture, outline, RelicTier.SPECIAL, LandingSound.FLAT);
 
     }
 

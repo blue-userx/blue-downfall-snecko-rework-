@@ -7,7 +7,7 @@ public class GuardianUnlock extends com.megacrit.cardcrawl.unlock.AbstractUnlock
     public static final String KEY = "Guardian";
 
     public GuardianUnlock() {
-        this.type = com.megacrit.cardcrawl.unlock.AbstractUnlock.UnlockType.CHARACTER;
+        this.type = UnlockType.CHARACTER;
         this.key = "Guardian";
         this.title = "Guardian";
     }

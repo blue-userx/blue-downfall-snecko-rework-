@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 /*    */
 
 /*    */
-/*    */ public class SlimepotheosisAction extends com.megacrit.cardcrawl.actions.AbstractGameAction
+/*    */ public class SlimepotheosisAction extends AbstractGameAction
         /*    */ {
     public boolean upgraded;
 
@@ -28,7 +28,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         /* 14 */
         this.duration = Settings.ACTION_DUR_MED;
         /* 15 */
-        this.actionType = AbstractGameAction.ActionType.WAIT;
+        this.actionType = ActionType.WAIT;
         this.upgraded = upgraded;
         /*    */
     }
@@ -40,7 +40,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         /* 20 */
         if (this.duration == Settings.ACTION_DUR_MED) {
             /* 21 */
-            AbstractPlayer p = com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
+            AbstractPlayer p = AbstractDungeon.player;
             /*    */
             /* 23 */
             upgradeAllCardsInGroup(p.hand, upgraded);

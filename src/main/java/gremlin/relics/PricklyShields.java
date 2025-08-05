@@ -9,13 +9,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import gremlin.actions.DamageRandomEnemyActionButItsRelicRng;
 
 public class PricklyShields extends AbstractGremlinRelic {
     public static final String ID = getID("PricklyShields");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final AbstractRelic.RelicTier TIER = RelicTier.RARE;
+    private static final RelicTier TIER = RelicTier.RARE;
     private static final String IMG = "relics/prickly_shields.png";
-    private static final AbstractRelic.LandingSound SOUND = LandingSound.SOLID;
+    private static final LandingSound SOUND = LandingSound.SOLID;
 
     private static final int DMG_AMT = 2;
 
@@ -35,7 +36,7 @@ public class PricklyShields extends AbstractGremlinRelic {
 
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, DMG_AMT, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyActionButItsRelicRng(new DamageInfo(AbstractDungeon.player, DMG_AMT, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         return MathUtils.floor(blockAmount);
     }

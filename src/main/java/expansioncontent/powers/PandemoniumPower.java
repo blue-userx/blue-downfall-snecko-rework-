@@ -50,7 +50,7 @@ public class PandemoniumPower extends AbstractPower {
                     @Override
                     public void update() {
                         AbstractMonster randomMonster = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-                        cardToPlay.freeToPlayOnce = true;
+                        //cardToPlay.freeToPlayOnce = true;
                         cardToPlay.applyPowers();
                         cardToPlay.calculateCardDamage(randomMonster);
 
@@ -63,7 +63,7 @@ public class PandemoniumPower extends AbstractPower {
                         cardToPlay.calculateCardDamage(randomMonster);
 
                         // Add the card to the action manager's card queue, targeting the selected monster
-                        AbstractDungeon.actionManager.cardQueue.add(new com.megacrit.cardcrawl.cards.CardQueueItem(cardToPlay, randomMonster, cardToPlay.energyOnUse));
+                        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(cardToPlay, randomMonster, cardToPlay.energyOnUse));
                         this.addToTop(new UnlimboAction(cardToPlay));
                         this.isDone = true;
                     }

@@ -55,7 +55,7 @@ public class ItchyTrigger extends AbstractDynamicCard {
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = 1;
 
-        this.tags.add(AbstractHermitCard.Enums.DEADON);
+        this.tags.add(Enums.DEADON);
         loadJokeCardImage(this, "itchy_trigger.png");
     }
 

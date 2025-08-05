@@ -22,7 +22,7 @@ public class DuplicateAction extends AbstractGameAction {
 
     public DuplicateAction(AbstractCreature source, int amount) {
         setValues(AbstractDungeon.player, source, amount);
-        this.actionType = AbstractGameAction.ActionType.DRAW;
+        this.actionType = ActionType.DRAW;
         this.duration = Settings.ACTION_DUR_FAST;
         this.p = AbstractDungeon.player;
         this.dupeAmount = amount;

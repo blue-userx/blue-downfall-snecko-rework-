@@ -1,10 +1,16 @@
 package theHexaghost.cards;
 
+import champ.powers.GladiatorFormPower;
+import champ.relics.RageAmulet;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import downfall.downfallMod;
 import gremlin.relics.FragmentationGrenade;
 import theHexaghost.HexaMod;
@@ -14,15 +20,13 @@ public class GhostLash extends AbstractHexaCard implements HexaPurpleTextInterfa
 
     public final static String ID = makeID("GhostLash");
 
-    private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 2;
     private static int ethereal_inhand = 0;
     private boolean can_show = false;
     private boolean trigger_by_afterlife = false;
 
     public GhostLash() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = DAMAGE;
+        baseDamage = 8;
         baseMagicNumber = magicNumber = 3;
         isEthereal = true;
         tags.add(HexaMod.AFTERLIFE);
@@ -96,12 +100,29 @@ public class GhostLash extends AbstractHexaCard implements HexaPurpleTextInterfa
             AbstractDungeon.player.getRelic(FragmentationGrenade.ID).flash();
             this.damage = this.damage - FragmentationGrenade.OOMPH;
         }
+
+
+        if (AbstractDungeon.player.hasPower(GladiatorFormPower.POWER_ID)) {
+            GladiatorFormPower revengePower = (GladiatorFormPower) AbstractDungeon.player.getPower(GladiatorFormPower.POWER_ID);
+
+            if (revengePower != null) {
+                revengePower.onSpecificTriggerBranch();
+            }
+        }
+
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            if (r instanceof RageAmulet) {
+                ((RageAmulet) r).onSpecificTrigger();
+            }
+        }
+
+        atb(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VigorPower.POWER_ID));
     }
 
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);
+            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
     }

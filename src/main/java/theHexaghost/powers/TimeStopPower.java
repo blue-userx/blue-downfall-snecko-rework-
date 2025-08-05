@@ -30,7 +30,7 @@ public class TimeStopPower extends AbstractPower {
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        type = AbstractPower.PowerType.BUFF;
+        type = PowerType.BUFF;
         this.isTurnBased = true;
         updateDescription();
         loadRegion("time");

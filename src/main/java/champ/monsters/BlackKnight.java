@@ -3,12 +3,8 @@
  import champ.events.Colosseum_Evil_Champ;
  import com.badlogic.gdx.math.MathUtils;
  import com.esotericsoftware.spine.AnimationState;
- import com.esotericsoftware.spine.AnimationState.TrackEntry;
  import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
- import com.megacrit.cardcrawl.actions.GameActionManager;
  import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
- import com.megacrit.cardcrawl.actions.animations.ShoutAction;
  import com.megacrit.cardcrawl.actions.animations.TalkAction;
  import com.megacrit.cardcrawl.actions.animations.VFXAction;
  import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -16,27 +12,18 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
  import com.megacrit.cardcrawl.actions.common.DamageAction;
  import com.megacrit.cardcrawl.actions.utility.SFXAction;
  import com.megacrit.cardcrawl.actions.utility.WaitAction;
- import com.megacrit.cardcrawl.audio.SoundMaster;
  import com.megacrit.cardcrawl.cards.DamageInfo;
- import com.megacrit.cardcrawl.characters.AbstractPlayer;
  import com.megacrit.cardcrawl.core.CardCrawlGame;
  import com.megacrit.cardcrawl.core.Settings;
  import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
- import com.megacrit.cardcrawl.helpers.Hitbox;
- import com.megacrit.cardcrawl.helpers.ScreenShake;
  import com.megacrit.cardcrawl.localization.MonsterStrings;
  import com.megacrit.cardcrawl.monsters.AbstractMonster;
- import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
  import com.megacrit.cardcrawl.powers.MetallicizePower;
  import com.megacrit.cardcrawl.powers.StrengthPower;
  import com.megacrit.cardcrawl.powers.VulnerablePower;
  import com.megacrit.cardcrawl.powers.WeakPower;
- import com.megacrit.cardcrawl.rooms.AbstractRoom;
- import com.megacrit.cardcrawl.scenes.AbstractScene;
- import com.megacrit.cardcrawl.unlock.UnlockTracker;
  import com.megacrit.cardcrawl.vfx.combat.GoldenSlashEffect;
  import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
- import java.util.ArrayList;
 
  public class BlackKnight extends AbstractMonster
          {
@@ -252,7 +239,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
        public void damage(DamageInfo info)
        {
              super.damage(info);
-             if ((info.owner != null) && (info.type != com.megacrit.cardcrawl.cards.DamageInfo.DamageType.THORNS) && (info.output > 0)) {
+             if ((info.owner != null) && (info.type != DamageInfo.DamageType.THORNS) && (info.output > 0)) {
                    this.state.setAnimation(0, "Hit", false);
                    this.state.addAnimation(0, "Idle", true, 0.0F);
                  }
@@ -268,17 +255,17 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
         
              if ((this.currentHealth < this.maxHealth / 2) && (!this.thresholdReached)) {
                    this.thresholdReached = true;
-                   setMove((byte)7, AbstractMonster.Intent.BUFF);
+                   setMove((byte)7, Intent.BUFF);
                    return;
                  }
         
              if ((!lastMove((byte)3)) && (!lastMoveBefore((byte)3)) && (this.thresholdReached)) {
-                   setMove(EXECUTE_NAME, (byte)3, AbstractMonster.Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
+                   setMove(EXECUTE_NAME, (byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
                    return;
                  }
         
              if ((this.numTurns == 4) && (!this.thresholdReached)) {
-                   setMove((byte)6, AbstractMonster.Intent.DEBUFF);
+                   setMove((byte)6, Intent.DEBUFF);
                    this.numTurns = 0;
                    return;
                  }
@@ -287,34 +274,34 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
                  {
                    if ((!lastMove((byte)2)) && (this.forgeTimes < this.forgeThreshold) && (num <= 30)) {
                          this.forgeTimes += 1;
-                         setMove(STANCE_NAME, (byte)2, AbstractMonster.Intent.DEFEND_BUFF);
+                         setMove(STANCE_NAME, (byte)2, Intent.DEFEND_BUFF);
                        }
             
             
                  }
              else if ((!lastMove((byte)2)) && (this.forgeTimes < this.forgeThreshold) && (num <= 15)) {
                    this.forgeTimes += 1;
-                   setMove(STANCE_NAME, (byte)2, AbstractMonster.Intent.DEFEND_BUFF);
+                   setMove(STANCE_NAME, (byte)2, Intent.DEFEND_BUFF);
                    return;
                  }
         
         
         
              if ((!lastMove((byte)5)) && (!lastMove((byte)2)) && (num <= 30)) {
-                   setMove((byte)5, AbstractMonster.Intent.BUFF);
+                   setMove((byte)5, Intent.BUFF);
                    return;
                  }
         
         
              if ((!lastMove((byte)4)) && (num <= 55)) {
-                   setMove(SLAP_NAME, (byte)4, AbstractMonster.Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
+                   setMove(SLAP_NAME, (byte)4, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
                    return;
                  }
         
              if (!lastMove((byte)1)) {
-                   setMove((byte)1, AbstractMonster.Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
+                   setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
                  } else {
-                   setMove(SLAP_NAME, (byte)4, AbstractMonster.Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
+                   setMove(SLAP_NAME, (byte)4, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
                  }
            }
     

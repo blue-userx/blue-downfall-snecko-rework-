@@ -16,7 +16,7 @@ public abstract class GremlinPower extends AbstractGremlinPower {
         this.img = IMG;
         this.amount = -1;
 
-        this.type = AbstractPower.PowerType.BUFF;
+        this.type = PowerType.BUFF;
     }
 
     @Override

@@ -16,7 +16,7 @@ import slimebound.characters.SlimeboundCharacter;
 
 public class TinyHatParticle extends com.megacrit.cardcrawl.vfx.AbstractGameEffect {
     private static final float DURATION = 0.75F;
-    private static final float START_SCALE = 1.2F * com.megacrit.cardcrawl.core.Settings.scale;
+    private static final float START_SCALE = 1.2F * Settings.scale;
     private static int W;
     private static int H;
     private static int xOffset = 45;

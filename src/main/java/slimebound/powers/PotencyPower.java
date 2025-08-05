@@ -34,7 +34,7 @@ public class PotencyPower extends AbstractPower {
         this.source = source;
 
 
-        this.img = new com.badlogic.gdx.graphics.Texture(slimebound.SlimeboundMod.getResourcePath(IMG));
+        this.img = new com.badlogic.gdx.graphics.Texture(SlimeboundMod.getResourcePath(IMG));
 
         this.type = POWER_TYPE;
 

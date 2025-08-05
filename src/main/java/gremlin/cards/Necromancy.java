@@ -24,9 +24,9 @@ public class Necromancy extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/necromancy.png";
 
-    private static final AbstractCard.CardType TYPE = CardType.SKILL;
-    private static final AbstractCard.CardRarity RARITY = CardRarity.RARE;
-    private static final AbstractCard.CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 1;
     private static final int MAGIC = 10;
@@ -41,7 +41,7 @@ public class Necromancy extends AbstractGremlinCard {
         this.magicNumber = baseMagicNumber;
 
         this.exhaust = true;
-        this.tags.add(AbstractCard.CardTags.HEALING);
+        this.tags.add(CardTags.HEALING);
         this.tags.add(SneckoMod.BANNEDFORSNECKO);
         this.tags.add(WIZARD_GREMLIN);
         setBackgrounds();

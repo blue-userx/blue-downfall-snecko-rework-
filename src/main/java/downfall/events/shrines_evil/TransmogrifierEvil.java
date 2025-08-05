@@ -20,7 +20,7 @@ import java.util.List;
 
 public class TransmogrifierEvil extends AbstractImageEvent {
     public static final String ID = downfallMod.makeID("Transmorgrifier");
-    private static final EventStrings eventStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getEventString("Transmorgrifier");
+    private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString("Transmorgrifier");
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
@@ -53,7 +53,7 @@ public class TransmogrifierEvil extends AbstractImageEvent {
 
     public void onEnterRoom() {
 
-        com.megacrit.cardcrawl.core.CardCrawlGame.music.playTempBGM("SHRINE");
+        CardCrawlGame.music.playTempBGM("SHRINE");
 
     }
 
@@ -71,7 +71,7 @@ public class TransmogrifierEvil extends AbstractImageEvent {
             AbstractCard transCard = AbstractDungeon.getTransformedCard();
             obtainedCards.add(transCard.cardID);
 
-            AbstractDungeon.effectsQueue.add(new com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect(transCard, com.megacrit.cardcrawl.core.Settings.WIDTH * 0.25F, com.megacrit.cardcrawl.core.Settings.HEIGHT / 2.0F));
+            AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(transCard, Settings.WIDTH * 0.25F, Settings.HEIGHT / 2.0F));
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             if (bonusShrine3){

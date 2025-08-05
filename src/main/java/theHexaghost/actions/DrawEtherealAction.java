@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.Iterator;
 
+@Deprecated
 public class DrawEtherealAction extends AbstractGameAction{
 
     public AbstractPlayer p;
@@ -20,7 +21,7 @@ public class DrawEtherealAction extends AbstractGameAction{
         this.cards_to_draw = number;
         this.p = AbstractDungeon.player;
         this.setValues(this.p, this.p);
-        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+        this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_MED;
     }
 

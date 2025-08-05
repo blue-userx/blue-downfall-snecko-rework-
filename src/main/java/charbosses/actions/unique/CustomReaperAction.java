@@ -13,10 +13,10 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 public class CustomReaperAction extends com.megacrit.cardcrawl.actions.AbstractGameAction {
     public int[] damage;
 
-    public CustomReaperAction(AbstractCreature source, int[] amount, com.megacrit.cardcrawl.cards.DamageInfo.DamageType type, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect effect) {
+    public CustomReaperAction(AbstractCreature source, int[] amount, com.megacrit.cardcrawl.cards.DamageInfo.DamageType type, AttackEffect effect) {
         setValues(null, source, amount[0]);
         this.damage = amount;
-        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.DAMAGE;
+        this.actionType = ActionType.DAMAGE;
         this.damageType = type;
         this.attackEffect = effect;
         this.duration = Settings.ACTION_DUR_FAST;

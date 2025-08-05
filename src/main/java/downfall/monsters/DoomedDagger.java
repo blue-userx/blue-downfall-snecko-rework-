@@ -69,9 +69,9 @@ public class DoomedDagger extends AbstractMonster{
     protected void getMove(int num) {
         if (this.firstMove) {
             this.firstMove = false;
-            this.setMove((byte)1, AbstractMonster.Intent.ATTACK_DEBUFF, 9);
+            this.setMove((byte)1, Intent.ATTACK_DEBUFF, 9);
         } else {
-            this.setMove((byte)2, AbstractMonster.Intent.ATTACK, 25);
+            this.setMove((byte)2, Intent.ATTACK, 25);
         }
     }
 

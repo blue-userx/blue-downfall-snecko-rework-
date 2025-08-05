@@ -21,7 +21,7 @@ public class CongaLinePower extends AbstractGremlinPower {
         this.owner = owner;
 
         this.img = IMG;
-        this.type = AbstractPower.PowerType.BUFF;
+        this.type = PowerType.BUFF;
         this.amount = amount;
         this.updateDescription();
     }

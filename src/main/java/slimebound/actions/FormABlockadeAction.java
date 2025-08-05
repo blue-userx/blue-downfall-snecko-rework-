@@ -38,7 +38,7 @@ public class FormABlockadeAction extends AbstractGameAction {
         for (AbstractOrb o : p.orbs) {
 
             if (o instanceof SpawnedSlime) {
-                com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShieldParticleEffectInFront(o.cX, o.cY)));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShieldParticleEffectInFront(o.cX, o.cY)));
             }
 
         }

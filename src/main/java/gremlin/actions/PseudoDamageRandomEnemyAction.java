@@ -13,7 +13,7 @@ public class PseudoDamageRandomEnemyAction extends AbstractGameAction {
     public PseudoDamageRandomEnemyAction(AbstractCreature target, DamageInfo info, AttackEffect effect) {
         this.target = target;
         this.info = info;
-        this.actionType = AbstractGameAction.ActionType.DAMAGE;
+        this.actionType = ActionType.DAMAGE;
         this.attackEffect = effect;
     }
 

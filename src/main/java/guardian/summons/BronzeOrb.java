@@ -1,4 +1,4 @@
-/*
+package guardian.summons;/*
 
 package guardian.summons;
 import com.badlogic.gdx.graphics.Color;

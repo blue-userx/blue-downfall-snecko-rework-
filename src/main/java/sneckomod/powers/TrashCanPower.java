@@ -38,7 +38,7 @@ public class TrashCanPower extends AbstractPower implements CloneablePowerInterf
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ExhaustAction");
 
-    private static final Texture tex84 = downfall.util.TextureLoader.getTexture(SneckoMod.getModID() + "Resources/images/powers/MoreBlockWithTempHP84.png");
+    private static final Texture tex84 = TextureLoader.getTexture(SneckoMod.getModID() + "Resources/images/powers/MoreBlockWithTempHP84.png");
     private static final Texture tex32 = TextureLoader.getTexture(SneckoMod.getModID() + "Resources/images/powers/MoreBlockWithTempHP32.png");
 
     public TrashCanPower(final AbstractCreature _owner, final AbstractCreature _source, final int _amount) {
@@ -59,7 +59,7 @@ public class TrashCanPower extends AbstractPower implements CloneablePowerInterf
     }
 
     @Override
-    public void atStartOfTurnPostDraw() {
+    public void atEndOfRound() {
         this.flash();
         Wiz.atb(new HandSelectAction(this.amount, (c) -> true, list -> {
             for (AbstractCard c : list)
