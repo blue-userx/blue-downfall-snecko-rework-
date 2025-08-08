@@ -239,7 +239,7 @@
        public void damage(DamageInfo info)
        {
              super.damage(info);
-             if ((info.owner != null) && (info.type != DamageInfo.DamageType.THORNS) && (info.output > 0)) {
+             if ((info.owner != null) && (info.type != com.megacrit.cardcrawl.cards.DamageInfo.DamageType.THORNS) && (info.output > 0)) {
                    this.state.setAnimation(0, "Hit", false);
                    this.state.addAnimation(0, "Idle", true, 0.0F);
                  }
@@ -255,17 +255,17 @@
         
              if ((this.currentHealth < this.maxHealth / 2) && (!this.thresholdReached)) {
                    this.thresholdReached = true;
-                   setMove((byte)7, Intent.BUFF);
+                   setMove((byte)7, AbstractMonster.Intent.BUFF);
                    return;
                  }
         
              if ((!lastMove((byte)3)) && (!lastMoveBefore((byte)3)) && (this.thresholdReached)) {
-                   setMove(EXECUTE_NAME, (byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
+                   setMove(EXECUTE_NAME, (byte)3, AbstractMonster.Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
                    return;
                  }
         
              if ((this.numTurns == 4) && (!this.thresholdReached)) {
-                   setMove((byte)6, Intent.DEBUFF);
+                   setMove((byte)6, AbstractMonster.Intent.DEBUFF);
                    this.numTurns = 0;
                    return;
                  }
@@ -274,34 +274,34 @@
                  {
                    if ((!lastMove((byte)2)) && (this.forgeTimes < this.forgeThreshold) && (num <= 30)) {
                          this.forgeTimes += 1;
-                         setMove(STANCE_NAME, (byte)2, Intent.DEFEND_BUFF);
+                         setMove(STANCE_NAME, (byte)2, AbstractMonster.Intent.DEFEND_BUFF);
                        }
             
             
                  }
              else if ((!lastMove((byte)2)) && (this.forgeTimes < this.forgeThreshold) && (num <= 15)) {
                    this.forgeTimes += 1;
-                   setMove(STANCE_NAME, (byte)2, Intent.DEFEND_BUFF);
+                   setMove(STANCE_NAME, (byte)2, AbstractMonster.Intent.DEFEND_BUFF);
                    return;
                  }
         
         
         
              if ((!lastMove((byte)5)) && (!lastMove((byte)2)) && (num <= 30)) {
-                   setMove((byte)5, Intent.BUFF);
+                   setMove((byte)5, AbstractMonster.Intent.BUFF);
                    return;
                  }
         
         
              if ((!lastMove((byte)4)) && (num <= 55)) {
-                   setMove(SLAP_NAME, (byte)4, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
+                   setMove(SLAP_NAME, (byte)4, AbstractMonster.Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
                    return;
                  }
         
              if (!lastMove((byte)1)) {
-                   setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
+                   setMove((byte)1, AbstractMonster.Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
                  } else {
-                   setMove(SLAP_NAME, (byte)4, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
+                   setMove(SLAP_NAME, (byte)4, AbstractMonster.Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
                  }
            }
     

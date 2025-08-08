@@ -68,7 +68,7 @@ public class MultiLickAction extends AbstractGameAction {
                         AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect));
                         // this.info.genPreview(this.info.owner, this.target);
                         // this.target.damage(this.info);
-                        AbstractDungeon.actionManager.addToBottom(new DamageAction(target, this.info, AttackEffect.BLUNT_HEAVY));
+                        AbstractDungeon.actionManager.addToBottom(new DamageAction(target, this.info, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
                         if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                             --this.numTimes;

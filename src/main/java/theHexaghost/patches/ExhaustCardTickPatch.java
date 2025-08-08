@@ -1,4 +1,4 @@
-package theHexaghost.patches;//package theHexaghost.patches;
+//package theHexaghost.patches;
 //
 //import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 //import com.megacrit.cardcrawl.actions.GameActionManager;

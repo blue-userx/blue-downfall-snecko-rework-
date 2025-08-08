@@ -44,13 +44,13 @@ public class LivingWall_Evil extends AbstractImageEvent {
         RESULT_DIALOG = DESCRIPTIONS[1];
     }
 
-    private CurScreen screen;
+    private LivingWall_Evil.CurScreen screen;
     private boolean pickCard;
-    private Choice choice;
+    private LivingWall_Evil.Choice choice;
 
     public LivingWall_Evil() {
         super(NAME, DIALOG_1, "images/events/livingWall.jpg");
-        this.screen = CurScreen.INTRO;
+        this.screen = LivingWall_Evil.CurScreen.INTRO;
         this.pickCard = false;
         this.choice = null;
         this.imageEventText.setDialogOption(OPTIONS[0]);
@@ -107,19 +107,19 @@ public class LivingWall_Evil extends AbstractImageEvent {
             case INTRO:
                 switch (buttonPressed) {
                     case 0:
-                        this.choice = Choice.FORGET;
+                        this.choice = LivingWall_Evil.Choice.FORGET;
                         if (CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).size() > 0) {
                             AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, OPTIONS[3], false, false, false, true);
                         }
                         break;
                     case 1:
-                        this.choice = Choice.CHANGE;
+                        this.choice = LivingWall_Evil.Choice.CHANGE;
                         if (CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).size() > 0) {
                             AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, OPTIONS[4], false, true, false, false);
                         }
                         break;
                     case 2:
-                        this.choice = Choice.GROW;
+                        this.choice = LivingWall_Evil.Choice.GROW;
                         if (CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).size() > 0) {
                             AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getUpgradableCards(), 1, OPTIONS[5], true, false, false, false);
                         }
@@ -152,7 +152,7 @@ public class LivingWall_Evil extends AbstractImageEvent {
                     this.imageEventText.updateBodyText(RESULT_DIALOG);
                     this.imageEventText.clearAllDialogs();
                     this.imageEventText.setDialogOption(OPTIONS[6]);
-                    this.screen = CurScreen.RESULT;
+                    this.screen = LivingWall_Evil.CurScreen.RESULT;
                     break;
                 }
                 break;

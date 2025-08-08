@@ -30,7 +30,7 @@ public class TarBlob extends CustomRelic {
 
     public void atBattleStartPreDraw() {
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction(1));
+        com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction(1));
     }
 
 

@@ -14,9 +14,9 @@ import gremlin.actions.DamageRandomEnemyActionButItsRelicRng;
 public class PricklyShields extends AbstractGremlinRelic {
     public static final String ID = getID("PricklyShields");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final RelicTier TIER = RelicTier.RARE;
+    private static final AbstractRelic.RelicTier TIER = RelicTier.RARE;
     private static final String IMG = "relics/prickly_shields.png";
-    private static final LandingSound SOUND = LandingSound.SOLID;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.SOLID;
 
     private static final int DMG_AMT = 2;
 

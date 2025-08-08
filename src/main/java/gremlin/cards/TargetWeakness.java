@@ -18,9 +18,9 @@ public class TargetWeakness extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/target_weakness.png";
 
-    private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final AbstractCard.CardType TYPE = CardType.POWER;
+    private static final AbstractCard.CardRarity RARITY = CardRarity.RARE;
+    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
 
     private static final int COST = 1;
 

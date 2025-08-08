@@ -413,7 +413,7 @@ public class FlipMap {
 
         public static int isValidFirstNode(MapRoomNode n) {
             if (EvilModeCharacterSelect.evilMode && !invalidActs.contains(AbstractDungeon.id)) {
-                if (n.y == MapFlipper.startY) {
+                if (n.y == FlipMap.MapFlipper.startY) {
                     return 0;
                 } else if (n.y == 0) {
                     return 1;
@@ -667,7 +667,7 @@ public class FlipMap {
                     ArrayList<MapRoomNode> visibleMapNodes = (ArrayList<MapRoomNode>) visibleMapNodesField.get(__instance);
                     nodes.clear();
                     for (MapRoomNode n : visibleMapNodes) {
-                        if (n.y == MapFlipper.startY) {
+                        if (n.y == FlipMap.MapFlipper.startY) {
                             nodes.add(n);
                         }
                     }

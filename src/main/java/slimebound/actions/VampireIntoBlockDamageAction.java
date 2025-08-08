@@ -8,13 +8,13 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import slimebound.vfx.LeechEffect;
 
-public class VampireIntoBlockDamageAction extends AbstractGameAction {
+public class VampireIntoBlockDamageAction extends com.megacrit.cardcrawl.actions.AbstractGameAction {
     private DamageInfo info;
 
-    public VampireIntoBlockDamageAction(AbstractCreature target, DamageInfo info, AttackEffect effect) {
+    public VampireIntoBlockDamageAction(AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
         this.info = info;
         setValues(target, info);
-        this.actionType = ActionType.DAMAGE;
+        this.actionType = AbstractGameAction.ActionType.DAMAGE;
         this.attackEffect = effect;
     }
 

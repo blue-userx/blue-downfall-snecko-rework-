@@ -20,7 +20,7 @@ public class CloneAction extends com.megacrit.cardcrawl.actions.AbstractGameActi
 
     public CloneAction(AbstractCreature source) {
         setValues(AbstractDungeon.player, source);
-        this.actionType = ActionType.DRAW;
+        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.DRAW;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
     }

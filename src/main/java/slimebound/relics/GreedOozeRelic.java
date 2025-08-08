@@ -35,7 +35,7 @@ public class GreedOozeRelic extends CustomRelic {
 
     public void atBattleStartPreDraw() {
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new SlimeSpawnAction(new GreedOozeSlime(), false, false));
+        AbstractDungeon.actionManager.addToBottom(new SlimeSpawnAction(new slimebound.orbs.GreedOozeSlime(), false, false));
     }
 
     @Override

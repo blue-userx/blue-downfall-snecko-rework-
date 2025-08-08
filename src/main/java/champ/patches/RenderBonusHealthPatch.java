@@ -25,7 +25,7 @@ public class RenderBonusHealthPatch {
         }
 
         @SpireInsertPatch(
-                locator = Locator.class,
+                locator = RenderBonusHealthPatch.RenderPowerHealthBar.Locator.class,
                 localvars = {"x", "y", "targetHealthBarWidth", "HEALTH_BAR_HEIGHT", "HEALTH_BAR_OFFSET_Y"}
         )
         public static void Insert(AbstractCreature __instance, SpriteBatch sb, float x, float y, float targetHealthBarWidth, float HEALTH_BAR_HEIGHT, float HEALTH_BAR_OFFSET_Y) {

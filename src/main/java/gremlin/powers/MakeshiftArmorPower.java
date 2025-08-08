@@ -29,7 +29,7 @@ public class MakeshiftArmorPower extends AbstractGremlinPower {
         this.owner = owner;
 
         this.img = IMG;
-        this.type = PowerType.BUFF;
+        this.type = AbstractPower.PowerType.BUFF;
         this.amount = 7;
         this.artifact = artifact;
         this.updateDescription();

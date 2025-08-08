@@ -1,4 +1,4 @@
-package awakenedOne.cards;//package awakenedOne.cards;
+//package awakenedOne.cards;
 //
 //import awakenedOne.AwakenedOneMod;
 //import awakenedOne.util.OnConjureSubscriber;

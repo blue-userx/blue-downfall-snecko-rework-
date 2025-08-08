@@ -19,7 +19,7 @@ public class LoseIntesityPower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = newAmount;
-        this.type = PowerType.DEBUFF;
+        this.type = AbstractPower.PowerType.DEBUFF;
         updateDescription();
         loadRegion("flex");
     }

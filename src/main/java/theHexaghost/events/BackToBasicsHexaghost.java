@@ -43,13 +43,13 @@ public class BackToBasicsHexaghost extends AbstractImageEvent {
         OPTIONSGUARDIAN = eventStringsGuardian.OPTIONS;
     }
 
-    private CUR_SCREEN screen;
+    private BackToBasicsHexaghost.CUR_SCREEN screen;
     private List<String> cardsUpgraded;
     private ArrayList<AbstractCard> cardsToRemove;
 
     public BackToBasicsHexaghost() {
         super(NAME, DIALOG_1, "images/events/backToBasics.jpg");
-        this.screen = CUR_SCREEN.INTRO;
+        this.screen = BackToBasicsHexaghost.CUR_SCREEN.INTRO;
         this.cardsUpgraded = new ArrayList();
 
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
@@ -131,7 +131,7 @@ public class BackToBasicsHexaghost extends AbstractImageEvent {
                     this.imageEventText.clearRemainingOptions();
                 }
 
-                this.screen = CUR_SCREEN.COMPLETE;
+                this.screen = BackToBasicsHexaghost.CUR_SCREEN.COMPLETE;
                 break;
             case COMPLETE:
                 this.openMap();

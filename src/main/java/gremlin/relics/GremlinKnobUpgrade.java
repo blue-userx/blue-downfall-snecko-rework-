@@ -12,9 +12,9 @@ import gremlin.actions.GremlinSwapAction;
 public class GremlinKnobUpgrade extends AbstractGremlinRelic {
     public static final String ID = getID("GremlinKnobUpgrade");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final RelicTier TIER = RelicTier.BOSS;
+    private static final AbstractRelic.RelicTier TIER = RelicTier.BOSS;
     private static final String IMG = "relics/gremlinKnobUpgrade.png";
-    private static final LandingSound SOUND = LandingSound.FLAT;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
 
     public GremlinKnobUpgrade() {
         super(ID, IMG, TIER, SOUND);

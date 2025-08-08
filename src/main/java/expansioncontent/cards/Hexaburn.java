@@ -16,7 +16,7 @@ public class Hexaburn extends AbstractExpansionCard {
     public static final String ID = makeID("Hexaburn");
 
     public Hexaburn() {
-        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
+        super(ID, 2, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY);
         setBackgroundTexture("expansioncontentResources/images/512/bg_boss_hexaghost.png", "expansioncontentResources/images/1024/bg_boss_hexaghost.png");
         this.tags.add(expansionContentMod.STUDY_HEXAGHOST);
         this.tags.add(expansionContentMod.STUDY);

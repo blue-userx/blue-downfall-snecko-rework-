@@ -60,7 +60,7 @@ public class hermit extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static PlayerClass HERMIT;
+        public static AbstractPlayer.PlayerClass HERMIT;
         @SpireEnum(name = "HERMIT_YELLOW") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor COLOR_YELLOW;
         @SpireEnum(name = "HERMIT_YELLOW") @SuppressWarnings("unused")
@@ -265,7 +265,7 @@ public class hermit extends CustomPlayer {
 
     // The class name as it appears next to your player name in-game
     @Override
-    public String getTitle(PlayerClass playerClass) {
+    public String getTitle(AbstractPlayer.PlayerClass playerClass) {
         return NAMES[1];
     }
 

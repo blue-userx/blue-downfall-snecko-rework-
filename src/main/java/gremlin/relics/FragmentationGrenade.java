@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class FragmentationGrenade extends AbstractGremlinRelic {
     public static final String ID = getID("FragmentationGrenade");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final RelicTier TIER = RelicTier.UNCOMMON;
+    private static final AbstractRelic.RelicTier TIER = RelicTier.UNCOMMON;
     private static final String IMG = "relics/fragmentation_grenade.png";
-    private static final LandingSound SOUND = LandingSound.CLINK;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.CLINK;
 
     public static final int OOMPH = 3;
 

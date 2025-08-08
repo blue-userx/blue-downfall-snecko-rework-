@@ -1,1 +1,1 @@
-package reskinContent.skinCharacter;//there's nothing here!
+//there's nothing here!

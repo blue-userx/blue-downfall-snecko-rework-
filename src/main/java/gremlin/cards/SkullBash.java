@@ -21,9 +21,9 @@ public class SkullBash extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/skull_bash.png";
 
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
+    private static final AbstractCard.CardRarity RARITY = CardRarity.SPECIAL;
+    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
 
     private static final int COST = 1;
     private static final int POWER = 6;

@@ -37,14 +37,14 @@ public class HeartReward {
     public static final String[] TEXT;
     public static final String[] UNIQUE_REWARDS;
     public String optionLabel = "";
-    public NeowRewardType type;
-    public NeowRewardDrawback drawback;
+    public HeartReward.NeowRewardType type;
+    public HeartReward.NeowRewardDrawback drawback;
     private boolean activated;
     private int hp_bonus;
     private boolean cursed;
     private static final int GOLD_BONUS = 100;
     private static final int LARGE_GOLD_BONUS = 250;
-    private NeowRewardDrawbackDef drawbackDef;
+    private HeartReward.NeowRewardDrawbackDef drawbackDef;
 
     private String fleeText = CardCrawlGame.languagePack.getCharacterString(downfallMod.makeID("Heart Event")).OPTIONS[5];
     private String gremlinTextA = CardCrawlGame.languagePack.getCharacterString(downfallMod.makeID("Heart Event")).OPTIONS[7];
@@ -53,19 +53,19 @@ public class HeartReward {
     private String gremlinTextD = CardCrawlGame.languagePack.getCharacterString(downfallMod.makeID("Heart Event")).OPTIONS[10];
 
     public HeartReward(boolean firstMini) {
-        this.drawback = NeowRewardDrawback.NONE;
+        this.drawback = HeartReward.NeowRewardDrawback.NONE;
         this.activated = false;
         this.hp_bonus = 0;
         this.cursed = false;
         this.hp_bonus = (int)((float)AbstractDungeon.player.maxHealth * 0.1F);
-        NeowRewardDef reward;
+        HeartReward.NeowRewardDef reward;
         if (firstMini) {
-            reward = new NeowRewardDef(NeowRewardType.THREE_ENEMY_KILL, fleeText);
+            reward = new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.THREE_ENEMY_KILL, fleeText);
         } else {
             if (AbstractDungeon.player instanceof GremlinCharacter) {
-                reward = new NeowRewardDef(NeowRewardType.TEN_PERCENT_HP_BONUS, gremlinTextA + this.hp_bonus + " ]");
+                reward = new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TEN_PERCENT_HP_BONUS, gremlinTextA + this.hp_bonus + " ]");
             } else {
-                reward = new NeowRewardDef(NeowRewardType.TEN_PERCENT_HP_BONUS, TEXT[7] + this.hp_bonus + " ]");
+                reward = new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TEN_PERCENT_HP_BONUS, TEXT[7] + this.hp_bonus + " ]");
             }
         }
 
@@ -74,14 +74,14 @@ public class HeartReward {
     }
 
     public HeartReward(int category) {
-        this.drawback = NeowRewardDrawback.NONE;
+        this.drawback = HeartReward.NeowRewardDrawback.NONE;
         this.activated = false;
         this.hp_bonus = 0;
         this.cursed = false;
         this.hp_bonus = (int)((float)AbstractDungeon.player.maxHealth * 0.1F);
-        ArrayList<NeowRewardDef> possibleRewards = this.getRewardOptions(category);
-        NeowRewardDef reward = (NeowRewardDef)possibleRewards.get(HeartEvent.rng.random(0, possibleRewards.size() - 1));
-        if (this.drawback != NeowRewardDrawback.NONE && this.drawbackDef != null) {
+        ArrayList<HeartReward.NeowRewardDef> possibleRewards = this.getRewardOptions(category);
+        HeartReward.NeowRewardDef reward = (HeartReward.NeowRewardDef)possibleRewards.get(HeartEvent.rng.random(0, possibleRewards.size() - 1));
+        if (this.drawback != HeartReward.NeowRewardDrawback.NONE && this.drawbackDef != null) {
             this.optionLabel = this.optionLabel + this.drawbackDef.desc;
         }
 
@@ -89,69 +89,69 @@ public class HeartReward {
         this.type = reward.type;
     }
 
-    private ArrayList<NeowRewardDrawbackDef> getRewardDrawbackOptions() {
-        ArrayList<NeowRewardDrawbackDef> drawbackOptions = new ArrayList();
+    private ArrayList<HeartReward.NeowRewardDrawbackDef> getRewardDrawbackOptions() {
+        ArrayList<HeartReward.NeowRewardDrawbackDef> drawbackOptions = new ArrayList();
         if (AbstractDungeon.player instanceof GremlinCharacter) {
-            drawbackOptions.add(new NeowRewardDrawbackDef(NeowRewardDrawback.TEN_PERCENT_HP_LOSS, gremlinTextC + this.hp_bonus + TEXT[18]));
-            drawbackOptions.add(new NeowRewardDrawbackDef(NeowRewardDrawback.PERCENT_DAMAGE, gremlinTextD + AbstractDungeon.player.currentHealth / 10 * 3 + TEXT[29] + " "));
+            drawbackOptions.add(new HeartReward.NeowRewardDrawbackDef(HeartReward.NeowRewardDrawback.TEN_PERCENT_HP_LOSS, gremlinTextC + this.hp_bonus + TEXT[18]));
+            drawbackOptions.add(new HeartReward.NeowRewardDrawbackDef(HeartReward.NeowRewardDrawback.PERCENT_DAMAGE, gremlinTextD + AbstractDungeon.player.currentHealth / 10 * 3 + TEXT[29] + " "));
         } else {
-            drawbackOptions.add(new NeowRewardDrawbackDef(NeowRewardDrawback.TEN_PERCENT_HP_LOSS, TEXT[17] + this.hp_bonus + TEXT[18]));
-            drawbackOptions.add(new NeowRewardDrawbackDef(NeowRewardDrawback.PERCENT_DAMAGE, TEXT[21] + AbstractDungeon.player.currentHealth / 10 * 3 + TEXT[29] + " "));
+            drawbackOptions.add(new HeartReward.NeowRewardDrawbackDef(HeartReward.NeowRewardDrawback.TEN_PERCENT_HP_LOSS, TEXT[17] + this.hp_bonus + TEXT[18]));
+            drawbackOptions.add(new HeartReward.NeowRewardDrawbackDef(HeartReward.NeowRewardDrawback.PERCENT_DAMAGE, TEXT[21] + AbstractDungeon.player.currentHealth / 10 * 3 + TEXT[29] + " "));
         }
-        drawbackOptions.add(new NeowRewardDrawbackDef(NeowRewardDrawback.NO_GOLD, TEXT[19]));
-        drawbackOptions.add(new NeowRewardDrawbackDef(NeowRewardDrawback.CURSE, TEXT[20]));
+        drawbackOptions.add(new HeartReward.NeowRewardDrawbackDef(HeartReward.NeowRewardDrawback.NO_GOLD, TEXT[19]));
+        drawbackOptions.add(new HeartReward.NeowRewardDrawbackDef(HeartReward.NeowRewardDrawback.CURSE, TEXT[20]));
         return drawbackOptions;
     }
 
-    private ArrayList<NeowRewardDef> getRewardOptions(int category) {
-        ArrayList<NeowRewardDef> rewardOptions = new ArrayList();
+    private ArrayList<HeartReward.NeowRewardDef> getRewardOptions(int category) {
+        ArrayList<HeartReward.NeowRewardDef> rewardOptions = new ArrayList();
         switch(category) {
             case 0:
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.THREE_CARDS, TEXT[0]));
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.ONE_RANDOM_RARE_CARD, TEXT[1]));
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.REMOVE_CARD, TEXT[2]));
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.UPGRADE_CARD, TEXT[3]));
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.TRANSFORM_CARD, TEXT[4]));
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.RANDOM_COLORLESS, TEXT[30]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.THREE_CARDS, TEXT[0]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.ONE_RANDOM_RARE_CARD, TEXT[1]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.REMOVE_CARD, TEXT[2]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.UPGRADE_CARD, TEXT[3]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TRANSFORM_CARD, TEXT[4]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.RANDOM_COLORLESS, TEXT[30]));
                 break;
             case 1:
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.THREE_SMALL_POTIONS, TEXT[5]));
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.RANDOM_COMMON_RELIC, TEXT[6]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.THREE_SMALL_POTIONS, TEXT[5]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.RANDOM_COMMON_RELIC, TEXT[6]));
                 if (AbstractDungeon.player instanceof GremlinCharacter) {
-                    rewardOptions.add(new NeowRewardDef(NeowRewardType.TEN_PERCENT_HP_BONUS, gremlinTextA + this.hp_bonus + " ]"));
+                    rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TEN_PERCENT_HP_BONUS, gremlinTextA + this.hp_bonus + " ]"));
                 } else {
-                    rewardOptions.add(new NeowRewardDef(NeowRewardType.TEN_PERCENT_HP_BONUS, TEXT[7] + this.hp_bonus + " ]"));
+                    rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TEN_PERCENT_HP_BONUS, TEXT[7] + this.hp_bonus + " ]"));
                 }
 
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.THREE_ENEMY_KILL, fleeText));
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.HUNDRED_GOLD, TEXT[8] + 100 + TEXT[9]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.THREE_ENEMY_KILL, fleeText));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.HUNDRED_GOLD, TEXT[8] + 100 + TEXT[9]));
                 break;
             case 2:
-                ArrayList<NeowRewardDrawbackDef> drawbackOptions = this.getRewardDrawbackOptions();
-                this.drawbackDef = (NeowRewardDrawbackDef)drawbackOptions.get(HeartEvent.rng.random(0, drawbackOptions.size() - 1));
+                ArrayList<HeartReward.NeowRewardDrawbackDef> drawbackOptions = this.getRewardDrawbackOptions();
+                this.drawbackDef = (HeartReward.NeowRewardDrawbackDef)drawbackOptions.get(HeartEvent.rng.random(0, drawbackOptions.size() - 1));
                 this.drawback = this.drawbackDef.type;
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.RANDOM_COLORLESS_2, TEXT[31]));
-                if (this.drawback != NeowRewardDrawback.CURSE) {
-                    rewardOptions.add(new NeowRewardDef(NeowRewardType.REMOVE_TWO, TEXT[10]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.RANDOM_COLORLESS_2, TEXT[31]));
+                if (this.drawback != HeartReward.NeowRewardDrawback.CURSE) {
+                    rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.REMOVE_TWO, TEXT[10]));
                 }
 
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.ONE_RARE_RELIC, TEXT[11]));
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.THREE_RARE_CARDS, TEXT[12]));
-                if (this.drawback != NeowRewardDrawback.NO_GOLD) {
-                    rewardOptions.add(new NeowRewardDef(NeowRewardType.TWO_FIFTY_GOLD, TEXT[13] + 250 + TEXT[14]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.ONE_RARE_RELIC, TEXT[11]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.THREE_RARE_CARDS, TEXT[12]));
+                if (this.drawback != HeartReward.NeowRewardDrawback.NO_GOLD) {
+                    rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TWO_FIFTY_GOLD, TEXT[13] + 250 + TEXT[14]));
                 }
 
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.TRANSFORM_TWO_CARDS, TEXT[15]));
-                if (this.drawback != NeowRewardDrawback.TEN_PERCENT_HP_LOSS) {
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TRANSFORM_TWO_CARDS, TEXT[15]));
+                if (this.drawback != HeartReward.NeowRewardDrawback.TEN_PERCENT_HP_LOSS) {
                     if (AbstractDungeon.player instanceof GremlinCharacter) {
-                        rewardOptions.add(new NeowRewardDef(NeowRewardType.TWENTY_PERCENT_HP_BONUS, gremlinTextB + this.hp_bonus * 2 + " ]"));
+                        rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TWENTY_PERCENT_HP_BONUS, gremlinTextB + this.hp_bonus * 2 + " ]"));
                     } else {
-                        rewardOptions.add(new NeowRewardDef(NeowRewardType.TWENTY_PERCENT_HP_BONUS, TEXT[16] + this.hp_bonus * 2 + " ]"));
+                        rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.TWENTY_PERCENT_HP_BONUS, TEXT[16] + this.hp_bonus * 2 + " ]"));
                     }
                 }
                 break;
             case 3:
-                rewardOptions.add(new NeowRewardDef(NeowRewardType.BOSS_RELIC, UNIQUE_REWARDS[0]));
+                rewardOptions.add(new HeartReward.NeowRewardDef(HeartReward.NeowRewardType.BOSS_RELIC, UNIQUE_REWARDS[0]));
         }
 
         return rewardOptions;
@@ -469,20 +469,20 @@ public class HeartReward {
     }
 
     public static class NeowRewardDrawbackDef {
-        public NeowRewardDrawback type;
+        public HeartReward.NeowRewardDrawback type;
         public String desc;
 
-        public NeowRewardDrawbackDef(NeowRewardDrawback type, String desc) {
+        public NeowRewardDrawbackDef(HeartReward.NeowRewardDrawback type, String desc) {
             this.type = type;
             this.desc = desc;
         }
     }
 
     public static class NeowRewardDef {
-        public NeowRewardType type;
+        public HeartReward.NeowRewardType type;
         public String desc;
 
-        public NeowRewardDef(NeowRewardType type, String desc) {
+        public NeowRewardDef(HeartReward.NeowRewardType type, String desc) {
             this.type = type;
             this.desc = desc;
         }

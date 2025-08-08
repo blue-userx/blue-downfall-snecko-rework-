@@ -34,11 +34,11 @@ public class UpgradeShrineGuardian extends AbstractImageEvent {
         IGNORE = DESCRIPTIONS[2];
     }
 
-    private CUR_SCREEN screen;
+    private UpgradeShrineGuardian.CUR_SCREEN screen;
 
     public UpgradeShrineGuardian() {
         super(NAME, DIALOG_1, "images/events/shrine2.jpg");
-        this.screen = CUR_SCREEN.INTRO;
+        this.screen = UpgradeShrineGuardian.CUR_SCREEN.INTRO;
 
         this.imageEventText.setDialogOption(CardCrawlGame.languagePack.getEventString("Guardian:Purifier").OPTIONS[0]);
         if (AbstractDungeon.player.masterDeck.hasUpgradableCards()) {
@@ -73,7 +73,7 @@ public class UpgradeShrineGuardian extends AbstractImageEvent {
             case INTRO:
                 switch (buttonPressed) {
                     case 0:
-                        this.screen = CUR_SCREEN.COMPLETE;
+                        this.screen = UpgradeShrineGuardian.CUR_SCREEN.COMPLETE;
                         this.imageEventText.updateBodyText(CardCrawlGame.languagePack.getEventString("Guardian:Purifier").DESCRIPTIONS[0]);
                         ArrayList<AbstractCard> gems = GuardianMod.getRewardGemCards(false, 2);
                         ArrayList<String> gemIDs = new ArrayList<>();
@@ -90,7 +90,7 @@ public class UpgradeShrineGuardian extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         return;
                     case 1:
-                        this.screen = CUR_SCREEN.COMPLETE;
+                        this.screen = UpgradeShrineGuardian.CUR_SCREEN.COMPLETE;
                         AbstractDungeon.getCurrRoom().phase = RoomPhase.COMPLETE;
                         this.imageEventText.updateBodyText(DIALOG_2);
                         AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getUpgradableCards(), 1, OPTIONS[2], true, false, false, false);
@@ -98,7 +98,7 @@ public class UpgradeShrineGuardian extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         return;
                     case 2:
-                        this.screen = CUR_SCREEN.COMPLETE;
+                        this.screen = UpgradeShrineGuardian.CUR_SCREEN.COMPLETE;
                         AbstractDungeon.getCurrRoom().phase = RoomPhase.COMPLETE;
                         logMetricIgnored(ID);
                         this.imageEventText.updateBodyText(IGNORE);

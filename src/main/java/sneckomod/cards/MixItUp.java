@@ -1,1 +1,1 @@
-package sneckomod.cards;//deprecated
+//deprecated

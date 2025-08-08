@@ -16,9 +16,9 @@ public class Defend_Slimebound extends AbstractSlimeboundCard {
     public static final String DESCRIPTION;
     public static final String IMG_PATH = "cards/defendSlime.png";
     private static final CardStrings cardStrings;
-    private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
+    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.BASIC;
+    private static final AbstractCard.CardTarget TARGET = CardTarget.SELF;
     private static final int COST = 1;
     private static final int BLOCK = 5;
     private static final int UPGRADE_BONUS = 3;
@@ -32,7 +32,7 @@ public class Defend_Slimebound extends AbstractSlimeboundCard {
     }
 
     public Defend_Slimebound() {
-        super(ID, NAME, SlimeboundMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.SLIMEBOUND, RARITY, TARGET);
+        super(ID, NAME, slimebound.SlimeboundMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.SLIMEBOUND, RARITY, TARGET);
 
 
         this.baseBlock = 5;

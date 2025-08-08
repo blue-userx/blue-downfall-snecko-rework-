@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class SupplyScroll extends AbstractGremlinRelic {
     public static final String ID = getID("SupplyScroll");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final RelicTier TIER = RelicTier.RARE;
+    private static final AbstractRelic.RelicTier TIER = RelicTier.RARE;
     private static final String IMG = "relics/supply_scroll.png";
-    private static final LandingSound SOUND = LandingSound.FLAT;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
 
     public SupplyScroll() {
         super(ID, IMG, TIER, SOUND);

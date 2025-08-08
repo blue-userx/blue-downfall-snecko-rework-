@@ -1,4 +1,4 @@
-package awakenedOne.patches;//package awakenedOne.patches;
+//package awakenedOne.patches;
 //
 //import awakenedOne.AwakenedOneChar;
 //import awakenedOne.actions.ConjureAction;

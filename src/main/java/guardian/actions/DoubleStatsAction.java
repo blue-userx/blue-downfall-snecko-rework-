@@ -12,7 +12,7 @@ public class DoubleStatsAction extends com.megacrit.cardcrawl.actions.AbstractGa
     private int timesToApply = 1;
 
     public DoubleStatsAction(AbstractCreature target, int times) {
-        this.actionType = ActionType.SPECIAL;
+        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.SPECIAL;
         this.duration = Settings.ACTION_DUR_XFAST;
         this.target = target;
         this.timesToApply = times;

@@ -1,4 +1,4 @@
-package sneckomod.cards;//Toxic Personality - Whenever you apply a debuff to an enemy, apply !M! Venom.
+//Toxic Personality - Whenever you apply a debuff to an enemy, apply !M! Venom.
 
 //This was using an old version of Venom but honestly it was just too simple and too strong at the same time.
 

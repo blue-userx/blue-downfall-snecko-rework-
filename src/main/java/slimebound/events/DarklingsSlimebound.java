@@ -79,7 +79,7 @@ public class DarklingsSlimebound extends AbstractEvent {
                 AbstractCard bonus = new Darklings();
                 AbstractCard cardRemoved = validCards.get(0);
                 AbstractDungeon.effectList.add(new com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect(
-                        cardRemoved, Settings.WIDTH * 0.35F, Settings.HEIGHT / 2));
+                        cardRemoved, Settings.WIDTH * 0.35F, com.megacrit.cardcrawl.core.Settings.HEIGHT / 2));
 
 
                 AbstractDungeon.player.masterDeck.removeCard(cardRemoved);

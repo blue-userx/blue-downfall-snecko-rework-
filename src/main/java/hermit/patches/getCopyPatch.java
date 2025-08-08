@@ -1,4 +1,4 @@
-package hermit.patches;/*
+/*
 package hermit.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

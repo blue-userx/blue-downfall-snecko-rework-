@@ -19,7 +19,7 @@ public class DashGenerateEvil extends AbstractExpansionCard {
     private static final int downfallMagic = 5;
 
     public DashGenerateEvil() {
-        super(ID, 0, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 0, AbstractCard.CardType.POWER, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
         setBackgroundTexture("expansioncontentResources/images/512/bg_boss_power.png", "expansioncontentResources/images/1024/bg_boss_power.png");
         this.baseDownfallMagic = 5;
         this.baseMagicNumber = this.magicNumber = 10;

@@ -33,7 +33,7 @@ public class EnemyThunderStrikeAction extends AbstractGameAction {
         }
 
         if (this.target != null) {
-            this.addToTop(new DamageAction(this.target, new DamageInfo(card.owner, card.damage, card.damageTypeForTurn), AttackEffect.NONE));
+            this.addToTop(new DamageAction(this.target, new DamageInfo(card.owner, card.damage, card.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
             this.isDone = true;
             this.addToTop(new VFXAction(new LightningEffect(this.target.drawX, this.target.drawY)));
             this.addToTop(new VFXAction(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect)));

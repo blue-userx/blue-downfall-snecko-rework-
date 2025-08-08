@@ -28,7 +28,7 @@ public class DefectBiasCuriosityPower extends AbstractBossMechanicPower {
         this.amount = 1;
         updateDescription();
         loadRegion("bias");
-        this.type = PowerType.DEBUFF;
+        this.type = AbstractPower.PowerType.DEBUFF;
     }
 
     public void updateDescription() {

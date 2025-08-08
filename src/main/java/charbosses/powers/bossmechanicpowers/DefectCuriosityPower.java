@@ -37,7 +37,7 @@ public class DefectCuriosityPower extends AbstractBossMechanicPower implements O
         this.amount = 1;
         updateDescription();
         loadRegion("curiosity");
-        this.type = PowerType.BUFF;
+        this.type = AbstractPower.PowerType.BUFF;
     }
 
     public void updateDescription() {
@@ -45,9 +45,9 @@ public class DefectCuriosityPower extends AbstractBossMechanicPower implements O
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type == CardType.POWER && !(card instanceof AbstractBossCard)) {
+        if (card.type == AbstractCard.CardType.POWER && !(card instanceof AbstractBossCard)) {
             flash();
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new FocusPower(this.owner, this.amount), this.amount));
+            addToBot(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(this.owner, this.owner, new FocusPower(this.owner, this.amount), this.amount));
         }
     }
 

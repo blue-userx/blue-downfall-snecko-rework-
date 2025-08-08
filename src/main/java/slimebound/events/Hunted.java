@@ -39,7 +39,7 @@ public class Hunted extends MindBloom {
         DIALOG_3 = DESCRIPTIONS[2];
     }
 
-    private CurScreen screen;
+    private Hunted.CurScreen screen;
 
     public Hunted() {
 
@@ -47,7 +47,7 @@ public class Hunted extends MindBloom {
         this.title = NAME;
         this.body = DIALOG_1;
         this.imageEventText.loadImage("slimeboundResources/SlimeboundImages/events/hunted.jpg");
-        this.screen = CurScreen.INTRO;
+        this.screen = Hunted.CurScreen.INTRO;
         this.imageEventText.setDialogOption(OPTIONS[0]);
 
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Shame"));
@@ -63,7 +63,7 @@ public class Hunted extends MindBloom {
                 switch (buttonPressed) {
                     case 0:
                         //this.imageEventText.updateBodyText(DIALOG_2);
-                        this.screen = CurScreen.FIGHT;
+                        this.screen = Hunted.CurScreen.FIGHT;
                         //logMetric("MindBloom", "Fight");
                         CardCrawlGame.music.playTempBgmInstantly("BOSS_BOTTOM", true);
 
@@ -76,7 +76,7 @@ public class Hunted extends MindBloom {
                         //AbstractDungeon.lastCombatMetricKey = "Mind Bloom Boss Battle";
                         break;
                     case 1:
-                        this.screen = CurScreen.LEAVE;
+                        this.screen = Hunted.CurScreen.LEAVE;
                         AbstractCard card = new Shame();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         this.imageEventText.clearRemainingOptions();

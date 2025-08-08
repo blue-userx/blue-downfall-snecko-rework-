@@ -27,7 +27,7 @@ public class FifthSeal extends AbstractSealCard {
 //        cardsList.add(new ThirdSeal());
 //        cardsList.add(new FourthSeal());
 //        cardsList.add(new SixthSeal());
-        this.tags.add(CardTags.HEALING);
+        this.tags.add(AbstractCard.CardTags.HEALING);
         HexaMod.loadJokeCardImage(this, "FifthSeal.png");
     }
 

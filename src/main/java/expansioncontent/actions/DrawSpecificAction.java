@@ -18,7 +18,7 @@ public class DrawSpecificAction extends AbstractGameAction {
         this.predicate = condition;
         this.p = AbstractDungeon.player;
         this.setValues(this.p, this.p, number);
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_XFAST;
     }
 

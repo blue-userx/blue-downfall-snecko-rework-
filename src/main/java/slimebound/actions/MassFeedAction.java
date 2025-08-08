@@ -16,10 +16,10 @@ public class MassFeedAction
     private int increaseHpAmount;
 
     public MassFeedAction(AbstractCreature source, int[] amount, DamageInfo.DamageType type,
-                          AttackEffect effect, int increaseHpAmount) {
+                          AbstractGameAction.AttackEffect effect, int increaseHpAmount) {
         setValues(null, source, amount[0]);
         this.damage = amount;
-        this.actionType = ActionType.DAMAGE;
+        this.actionType = AbstractGameAction.ActionType.DAMAGE;
         this.damageType = type;
         this.attackEffect = effect;
         this.increaseHpAmount = increaseHpAmount;

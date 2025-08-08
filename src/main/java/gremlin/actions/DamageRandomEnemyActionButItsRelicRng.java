@@ -16,7 +16,7 @@ import gremlin.relics.FragmentationGrenade;
 public class DamageRandomEnemyActionButItsRelicRng extends AbstractGameAction {
     private DamageInfo info;
 
-    public DamageRandomEnemyActionButItsRelicRng(DamageInfo info, AttackEffect effect) {
+    public DamageRandomEnemyActionButItsRelicRng(DamageInfo info, AbstractGameAction.AttackEffect effect) {
         this.info = info;
         this.actionType = ActionType.DAMAGE;
         this.attackEffect = effect;

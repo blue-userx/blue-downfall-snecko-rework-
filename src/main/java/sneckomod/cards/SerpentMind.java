@@ -54,7 +54,7 @@ public class SerpentMind extends AbstractSneckoCard implements OnObtainCard {
     public void onObtainCard() {
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
         while (cardsToReward.size() < 3) {
-            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.rarity == CardRarity.RARE);
+            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.rarity == AbstractCard.CardRarity.RARE);
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onPreviewObtainCard(newCard);

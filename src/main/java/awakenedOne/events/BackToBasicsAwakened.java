@@ -43,13 +43,13 @@ public class BackToBasicsAwakened extends AbstractImageEvent {
         OPTIONSGUARDIAN = eventStringsGuardian.OPTIONS;
     }
 
-    private CUR_SCREEN screen;
+    private BackToBasicsAwakened.CUR_SCREEN screen;
     private final List<String> cardsUpgraded;
     private final ArrayList<AbstractCard> cardsToRemove;
 
     public BackToBasicsAwakened() {
         super(NAME, DIALOG_1, "images/events/backToBasics.jpg");
-        this.screen = CUR_SCREEN.INTRO;
+        this.screen = BackToBasicsAwakened.CUR_SCREEN.INTRO;
         this.cardsUpgraded = new ArrayList();
 
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
@@ -137,7 +137,7 @@ public class BackToBasicsAwakened extends AbstractImageEvent {
                     this.imageEventText.clearRemainingOptions();
                 }
 
-                this.screen = CUR_SCREEN.COMPLETE;
+                this.screen = BackToBasicsAwakened.CUR_SCREEN.COMPLETE;
                 break;
             case COMPLETE:
                 this.openMap();

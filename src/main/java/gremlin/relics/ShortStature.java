@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class ShortStature extends AbstractGremlinRelic {
     public static final String ID = getID("ShortStature");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final RelicTier TIER = RelicTier.BOSS;
+    private static final AbstractRelic.RelicTier TIER = RelicTier.BOSS;
     private static final String IMG = "relics/short_stature.png";
-    private static final LandingSound SOUND = LandingSound.FLAT;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
 
     public ShortStature() {
         super(ID, IMG, TIER, SOUND);

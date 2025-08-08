@@ -1,4 +1,4 @@
-package sneckomod.cards.unknowns;/*
+/*
 package sneckomod.cards.unknowns;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;

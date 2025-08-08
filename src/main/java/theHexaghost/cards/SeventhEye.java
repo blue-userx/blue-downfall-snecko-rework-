@@ -13,7 +13,7 @@ public class SeventhEye extends AbstractHexaCard {
     public final static String ID = makeID("SeventhEye");
 
     public SeventhEye() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, AbstractCard.CardType.SKILL, CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         this.exhaust = true;
         tags.add(HexaMod.GHOSTWHEELCARD);
         this.tags.add(SneckoMod.BANNEDFORSNECKO);

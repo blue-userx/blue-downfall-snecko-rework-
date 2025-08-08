@@ -1,4 +1,4 @@
-package collector.actions;//package collector.actions;
+//package collector.actions;
 //
 //import champ.stances.BerserkerStance;
 //import collector.effects.ColoredVerticalAttackEffect;

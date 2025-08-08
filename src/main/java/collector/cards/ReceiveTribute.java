@@ -41,7 +41,7 @@ public class ReceiveTribute extends AbstractCollectorCard {
         if (possibilities == null) {
             possibilities = new ArrayList<>();
             for (AbstractCard q : CardLibrary.getAllCards()) {
-                if (q.rarity != CardRarity.SPECIAL && q.hasTag(expansionContentMod.STUDY) && !q.hasTag(CardTags.HEALING)) {
+                if (q.rarity != AbstractCard.CardRarity.SPECIAL && q.hasTag(expansionContentMod.STUDY) && !q.hasTag(AbstractCard.CardTags.HEALING)) {
 
                     if (AbstractDungeon.player instanceof SlimeboundCharacter) {
                         if (q.hasTag(expansionContentMod.STUDY_SLIMEBOSS)){continue;}

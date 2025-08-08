@@ -23,7 +23,7 @@ public class ExhumeToDrawAction extends AbstractGameAction {
         this.upgrade = upgrade;
         this.p = AbstractDungeon.player;
         setValues(this.p, AbstractDungeon.player, this.amount);
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
     }
 

@@ -320,7 +320,7 @@ public class TipHelperChamp3 {
         POWER_ICON_OFFSET_X = 40.0F * Settings.scale;
     }
 
-    private static void renderHelper(SpriteBatch sb, AtlasRegion img, float drawX, float drawY) {
+    private static void renderHelper(SpriteBatch sb, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
         sb.draw(img, drawX + img.offsetX - (float) img.originalWidth / 2.0F, drawY + img.offsetY - (float) img.originalHeight / 2.0F, (float) img.originalWidth / 2.0F - img.offsetX, (float) img.originalHeight / 2.0F - img.offsetY, (float) img.packedWidth, (float) img.packedHeight, Settings.scale, Settings.scale, 0F);
     }
 }

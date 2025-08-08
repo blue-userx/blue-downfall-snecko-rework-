@@ -21,7 +21,7 @@ public class InfiniteBlocksPower extends AbstractGremlinPower {
         this.owner = owner;
 
         this.img = IMG;
-        this.type = PowerType.BUFF;
+        this.type = AbstractPower.PowerType.BUFF;
         this.amount = amount;
         this.updateDescription();
     }

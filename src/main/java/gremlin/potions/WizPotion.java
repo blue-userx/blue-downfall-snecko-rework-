@@ -34,7 +34,7 @@ public class WizPotion extends CustomPotion {
         this.tips.add(new PowerTip(this.name, this.description));
         this.tips.add(new PowerTip(
 
-                TipHelper.capitalize(GameDictionary.VIGOR.NAMES[0]),
+                com.megacrit.cardcrawl.helpers.TipHelper.capitalize(GameDictionary.VIGOR.NAMES[0]),
                 GameDictionary.keywords.get(GameDictionary.VIGOR.NAMES[0])));
     }
 

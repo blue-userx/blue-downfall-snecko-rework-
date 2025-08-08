@@ -62,8 +62,8 @@ public class NeowDivinityPower extends AbstractPower {
     }
 
     @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        if (type == DamageInfo.DamageType.NORMAL) {
+    public float atDamageGive(float damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType type) {
+        if (type == com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL) {
             return damage * 3.0F;
         }
         return damage;

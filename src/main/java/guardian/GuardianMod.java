@@ -98,7 +98,7 @@ public class GuardianMod implements PostDrawSubscriber,
     private static final String ENERGY_ORB_PORTRAIT = "1024/card_guardian_orb.png";
     public static GuardianCharacter guardianCharacter;
     public static Color mainGuardianColor = new Color(0.58F, 0.49F, 0.33F, 1.0F);
-    private static final Color GUARDIAN_COLOR = mainGuardianColor;
+    private static final com.badlogic.gdx.graphics.Color GUARDIAN_COLOR = mainGuardianColor;
     public static ArrayList<Texture> socketTextures = new ArrayList<>();
     public static ArrayList<Texture> socketTextures2 = new ArrayList<>();
     public static ArrayList<Texture> socketTextures3 = new ArrayList<>();
@@ -635,8 +635,8 @@ public static void saveData() {
         BaseMod.addRelicToCustomPool(new StasisSlotReductionRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new StasisUpgradeRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new guardian.relics.StasisEgg(), AbstractCardEnum.GUARDIAN);
-        BaseMod.addRelicToCustomPool(new PickAxe(), AbstractCardEnum.GUARDIAN);
-        BaseMod.addRelicToCustomPool(new ObsidianScales(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new guardian.relics.PickAxe(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new guardian.relics.ObsidianScales(), AbstractCardEnum.GUARDIAN);
         BaseMod.registerBottleRelic(BottledStasisPatch.inStasisEgg, new guardian.relics.StasisEgg());
         BaseMod.addRelic(new GemstoneGun(), RelicType.SHARED);
         BaseMod.addRelic(new PocketSentry(), RelicType.SHARED);
@@ -729,7 +729,7 @@ public static void saveData() {
         BaseMod.addCard(new Gem_Fragmented());
         BaseMod.addCard(new Gem_Yellow());
         BaseMod.addCard(new Gem_Synthetic());
-        BaseMod.addCard(new BronzeOrb());
+        BaseMod.addCard(new guardian.cards.BronzeOrb());
         BaseMod.addCard(new GatlingBeam());
         BaseMod.addCard(new RevengeProtocol());
         BaseMod.addCard(new ShieldCharger());

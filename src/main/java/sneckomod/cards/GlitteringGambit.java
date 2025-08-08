@@ -52,10 +52,10 @@ public class GlitteringGambit extends AbstractSneckoCard {
     public void onObtainCard() {
         AbstractDungeon.player.gainGold(this.magicNumber);
         for (int i = 0; i < 1; i++)
-            displayCardRewards(CardRarity.RARE, "Special Bonus Card!");
+            displayCardRewards(AbstractCard.CardRarity.RARE, "Special Bonus Card!");
     }
 
-    private void displayCardRewards(CardRarity rarity, String rewardText) {
+    private void displayCardRewards(AbstractCard.CardRarity rarity, String rewardText) {
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
 
         while (cardsToReward.size() < 3) {

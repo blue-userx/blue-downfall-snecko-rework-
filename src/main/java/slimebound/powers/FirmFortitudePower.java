@@ -28,7 +28,7 @@ public class FirmFortitudePower extends TwoAmountPower {
         this.owner = owner;
 
 
-        this.img = new com.badlogic.gdx.graphics.Texture(SlimeboundMod.getResourcePath(IMG));
+        this.img = new com.badlogic.gdx.graphics.Texture(slimebound.SlimeboundMod.getResourcePath(IMG));
 
         this.type = POWER_TYPE;
 

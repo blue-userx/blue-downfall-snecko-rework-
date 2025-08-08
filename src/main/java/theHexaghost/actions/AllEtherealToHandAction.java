@@ -15,7 +15,7 @@ public class AllEtherealToHandAction extends AbstractGameAction {
     public AllEtherealToHandAction() {
         this.p = AbstractDungeon.player;
         this.setValues(this.p, AbstractDungeon.player, this.amount);
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
     }
 
     public void update() {

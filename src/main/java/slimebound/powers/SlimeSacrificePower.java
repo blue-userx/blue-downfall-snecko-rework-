@@ -31,7 +31,7 @@ public class SlimeSacrificePower extends AbstractPower {
         this.owner = owner;
 
 
-        this.img = new com.badlogic.gdx.graphics.Texture(SlimeboundMod.getResourcePath(IMG));
+        this.img = new com.badlogic.gdx.graphics.Texture(slimebound.SlimeboundMod.getResourcePath(IMG));
 
         this.type = POWER_TYPE;
 
@@ -54,8 +54,8 @@ public class SlimeSacrificePower extends AbstractPower {
                         SpawnedSlime s = (SpawnedSlime) o;
                         //s.noEvokeBonus = true;
                         this.flash();
-                        AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShieldParticleEffect(o.cX, o.cY)));
-                        AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, this.ID, 1));
+                        com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShieldParticleEffect(o.cX, o.cY)));
+                        com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, this.ID, 1));
                         AbstractDungeon.actionManager.addToTop(new EvokeSpecificOrbAction(o));
                         return AbstractDungeon.player.currentBlock;
 

@@ -1,4 +1,4 @@
-package sneckomod.powers;//package sneckomod.powers;
+//package sneckomod.powers;
 //
 //import basemod.interfaces.CloneablePowerInterface;
 //import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

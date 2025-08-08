@@ -50,7 +50,7 @@ public class TendrilStrike extends AbstractSlimeboundCard {
 
         this.baseDamage = 5;
         this.returnThis = false;
-        this.tags.add(CardTags.STRIKE);
+        this.tags.add(AbstractCard.CardTags.STRIKE);
         this.exhaust = true;
 
 

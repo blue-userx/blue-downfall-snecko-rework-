@@ -10,7 +10,7 @@ import guardian.orbs.StasisOrb;
 public class AccelerateAllCardsInStasisAction extends AbstractGameAction {
 
     public AccelerateAllCardsInStasisAction() {
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = this.startDuration = 0.05F;
     }
 

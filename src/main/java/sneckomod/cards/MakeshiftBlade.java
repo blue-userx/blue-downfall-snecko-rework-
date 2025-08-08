@@ -78,7 +78,7 @@ public class MakeshiftBlade extends AbstractSneckoCard {
         System.out.println("DEBUG: Took Makeshift Blade.");
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
         while (cardsToReward.size() < 3) {
-            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicateDebuff(c -> (c.rarity != CardRarity.RARE));
+            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicateDebuff(c -> (c.rarity != AbstractCard.CardRarity.RARE));
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onPreviewObtainCard(newCard);

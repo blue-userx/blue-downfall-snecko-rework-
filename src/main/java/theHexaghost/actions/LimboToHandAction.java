@@ -10,7 +10,7 @@ public class LimboToHandAction extends AbstractGameAction {
     private AbstractCard card;
 
     public LimboToHandAction(AbstractCard card) {
-        actionType = ActionType.CARD_MANIPULATION;
+        actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.card = card;
         duration = Settings.ACTION_DUR_FAST;
     }

@@ -38,7 +38,7 @@ import java.util.ArrayList;
         /*  26 */
         setValues(AbstractDungeon.player, source);
         /*  27 */
-        this.actionType = ActionType.DRAW;
+        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.DRAW;
         /*  28 */
         this.duration = 0.25F;
         /*  29 */

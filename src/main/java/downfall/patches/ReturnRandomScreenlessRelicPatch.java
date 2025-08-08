@@ -1,4 +1,4 @@
-package downfall.patches;//package downfall.patches;
+//package downfall.patches;
 //
 //import awakenedOne.relics.MoonTalisman;
 //import champ.relics.*;

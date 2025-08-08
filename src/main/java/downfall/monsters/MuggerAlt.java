@@ -66,7 +66,7 @@ public class MuggerAlt extends AbstractMonster
 
 
 
-        TrackEntry e = this.state.setAnimation(0, "idle", true);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
     }
 
@@ -87,13 +87,13 @@ public class MuggerAlt extends AbstractMonster
                 this.slashCount += 1;
                 if (this.slashCount == 2) {
                     if (AbstractDungeon.aiRng.randomBoolean(0.5F)) {
-                        setMove((byte)2, Intent.DEFEND);
+                        setMove((byte)2, AbstractMonster.Intent.DEFEND);
                     } else {
-                        AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, MOVES[0], (byte)4, Intent.ATTACK,
+                        AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, MOVES[0], (byte)4, AbstractMonster.Intent.ATTACK,
                                 ((DamageInfo)this.damage.get(1)).base));
                     }
                 } else {
-                    AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, MOVES[1], (byte)1, Intent.ATTACK,
+                    AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, MOVES[1], (byte)1, AbstractMonster.Intent.ATTACK,
                             ((DamageInfo)this.damage.get(0)).base));
                 }
                 break;
@@ -103,7 +103,7 @@ public class MuggerAlt extends AbstractMonster
                 AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player,
                         (DamageInfo)this.damage.get(1)));
-                setMove((byte)2, Intent.DEFEND);
+                setMove((byte)2, AbstractMonster.Intent.DEFEND);
                 break;
             case 2:
                 if (this.speechCount == 1) {
@@ -148,7 +148,7 @@ public class MuggerAlt extends AbstractMonster
 
     protected void getMove(int num)
     {
-        setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
+        setMove((byte)1, AbstractMonster.Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
     }
 }
 

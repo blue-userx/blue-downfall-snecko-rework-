@@ -59,7 +59,7 @@ public class BodySlam extends AbstractGuardianCard {
         this.baseDamage = p.currentBlock + this.block;
         calculateCardDamage(m);
         addToBot(new GainBlockAction(p, block));
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         this.rawDescription = DESCRIPTION;
         initializeDescription();
     }

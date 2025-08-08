@@ -45,25 +45,20 @@ public class PandemoniumPower extends AbstractPower {
         for (int i = 0; i < this.amount; ++i) {
             if (!AbstractDungeon.player.discardPile.isEmpty()) {
                 AbstractCard cardToPlay = AbstractDungeon.player.discardPile.getRandomCard(AbstractDungeon.cardRandomRng);
+                cardToPlay.freeToPlayOnce = true;
                 AbstractDungeon.player.discardPile.removeCard(cardToPlay);
                 this.addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {
                         AbstractMonster randomMonster = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-                        //cardToPlay.freeToPlayOnce = true;
                         cardToPlay.applyPowers();
                         cardToPlay.calculateCardDamage(randomMonster);
-
-                        // Add the card to the player's limbo (temporary play area)
                         AbstractDungeon.player.limbo.addToBottom(cardToPlay);
                         cardToPlay.current_y = -200.0F * Settings.scale;
                         cardToPlay.target_x = (Settings.WIDTH / 2.0F - 300.0F * Settings.scale);
                         cardToPlay.target_y = (Settings.HEIGHT / 2.0F);
-                        // Calculate the damage for the target
                         cardToPlay.calculateCardDamage(randomMonster);
-
-                        // Add the card to the action manager's card queue, targeting the selected monster
-                        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(cardToPlay, randomMonster, cardToPlay.energyOnUse));
+                        AbstractDungeon.actionManager.cardQueue.add(new com.megacrit.cardcrawl.cards.CardQueueItem(cardToPlay, randomMonster, cardToPlay.energyOnUse));
                         this.addToTop(new UnlimboAction(cardToPlay));
                         this.isDone = true;
                     }

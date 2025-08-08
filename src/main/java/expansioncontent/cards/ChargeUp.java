@@ -22,7 +22,7 @@ public class ChargeUp extends AbstractExpansionCard {
     private static final int MAGIC = 2;
 
     public ChargeUp() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, AbstractCard.CardType.SKILL, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         setBackgroundTexture("expansioncontentResources/images/512/bg_boss_guardian.png", "expansioncontentResources/images/1024/bg_boss_guardian.png");
         this.tags.add(expansionContentMod.STUDY_GUARDIAN);
         this.tags.add(expansionContentMod.STUDY);

@@ -17,6 +17,7 @@ import awakenedOne.relics.*;
 import awakenedOne.ui.AwakenedIcon;
 import awakenedOne.ui.OrbitingSpells;
 import awakenedOne.util.CardFilter;
+import awakenedOne.util.TexLoader;
 import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import basemod.eventUtil.AddEventParams;
@@ -87,16 +88,16 @@ public class AwakenedOneMod implements
     public static Color potionLabColor = new Color(18F / 255F, 250F / 255F, 240F / 255F, 1);
 
     @SpireEnum
-    public static AbstractCard.CardTags DELVE;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags DELVE;
 
     @SpireEnum
-    public static AbstractCard.CardTags CHANT;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags CHANT;
 
     @SpireEnum
-    public static AbstractCard.CardTags ACTIVECHANT;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags ACTIVECHANT;
 
     @SpireEnum
-    public static AbstractCard.CardTags UP_NEXT;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags UP_NEXT;
     public static boolean awakenedthiscombat = false;
     private static String modID = "awakened";
 
@@ -126,7 +127,7 @@ public class AwakenedOneMod implements
             ((AbstractAwakenedCard) card).betaArtPath = img;
         }
         Texture cardTexture;
-        cardTexture = ImageMaster.loadImage(img);
+        cardTexture = TexLoader.getTexture(img);
         cardTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         int tw = cardTexture.getWidth();
         int th = cardTexture.getHeight();
@@ -272,6 +273,7 @@ public class AwakenedOneMod implements
 
         BaseMod.addRelicToCustomPool(new CurvedSword(), AwakenedOneChar.Enums.AWAKENED_BLUE);
 
+        BaseMod.addRelicToCustomPool(new AwakenedUrn(), AwakenedOneChar.Enums.AWAKENED_BLUE); //Urn replacement
         //only obtainable through console (the "conjure blade" relic)
         BaseMod.addRelicToCustomPool(new CurvedSwordMeme(), AwakenedOneChar.Enums.AWAKENED_BLUE);
 

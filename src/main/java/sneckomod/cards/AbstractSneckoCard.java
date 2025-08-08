@@ -327,11 +327,11 @@ public abstract class AbstractSneckoCard extends CustomCard implements OnObtainC
 
 
     public int findSuitinHand() {
-        Set<CardColor> uniqueColors = new HashSet<>(); // check without status, curse, collectible, colorless common
+        Set<AbstractCard.CardColor> uniqueColors = new HashSet<>(); // check without status, curse, collectible, colorless common
 
         for (AbstractCard card : AbstractDungeon.player.hand.group) {
             if (
-                    (card.color == CardColor.COLORLESS && card.rarity == CardRarity.SPECIAL)) {
+                    (card.color == AbstractCard.CardColor.COLORLESS && card.rarity == AbstractCard.CardRarity.SPECIAL)) {
                 continue;
             }
 
@@ -346,7 +346,7 @@ public abstract class AbstractSneckoCard extends CustomCard implements OnObtainC
 
         for (AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if ((
-                    !(card.color == CardColor.COLORLESS && card.rarity == CardRarity.SPECIAL))) {
+                    !(card.color == AbstractCard.CardColor.COLORLESS && card.rarity == AbstractCard.CardRarity.SPECIAL))) {
 
                 uniqueColors.add(card.color);
             }

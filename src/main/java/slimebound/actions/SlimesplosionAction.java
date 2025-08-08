@@ -53,8 +53,8 @@ public class SlimesplosionAction extends AbstractGameAction {
                 for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                     if ((!monster.isDead) && (!monster.isDying)) {
 
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new SlimedPower(monster, p, this.slimed), this.slimed, true, AttackEffect.NONE));
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, this.poison), this.poison, true, AttackEffect.NONE));
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new SlimedPower(monster, p, this.slimed), this.slimed, true, AbstractGameAction.AttackEffect.NONE));
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, this.poison), this.poison, true, AbstractGameAction.AttackEffect.NONE));
 
 
                     }

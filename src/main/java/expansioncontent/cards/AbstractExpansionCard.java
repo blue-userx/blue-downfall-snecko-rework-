@@ -128,8 +128,8 @@ public abstract class AbstractExpansionCard extends AbstractDownfallCard {
 
                     atb(new WaitAction(0.15F)); // from UseCardAction
 
-                    if (type == CardType.POWER) { // special case for powers in UseCardAction
-                        if (Settings.FAST_MODE) {
+                    if (type == AbstractCard.CardType.POWER) { // special case for powers in UseCardAction
+                        if (com.megacrit.cardcrawl.core.Settings.FAST_MODE) {
                             atb(new WaitAction(0.1F));
                         } else {
                             atb(new WaitAction(0.7F));

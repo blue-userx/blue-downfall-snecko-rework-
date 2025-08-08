@@ -76,7 +76,7 @@ public class UpgradeShrineEvil extends AbstractImageEvent {
 
             AbstractDungeon.player.bottledCardUpgradeCheck(c);
             AbstractDungeon.effectsQueue.add(new com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
-            AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.UpgradeShineEffect(Settings.WIDTH * .25F, Settings.HEIGHT / 2.0F));
+            AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.UpgradeShineEffect(com.megacrit.cardcrawl.core.Settings.WIDTH * .25F, com.megacrit.cardcrawl.core.Settings.HEIGHT / 2.0F));
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             if (bonusShrine2){

@@ -26,7 +26,7 @@ public class DiceRollPotion extends CustomPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
     public DiceRollPotion() {
-        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.SPHERE, PotionColor.FAIRY);
+        super(NAME, POTION_ID, AbstractPotion.PotionRarity.RARE, AbstractPotion.PotionSize.SPHERE, AbstractPotion.PotionColor.FAIRY);
         this.labOutlineColor = SneckoMod.placeholderColor;
     }
 

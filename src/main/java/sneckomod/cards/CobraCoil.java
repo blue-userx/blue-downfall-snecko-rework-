@@ -29,7 +29,7 @@ public class CobraCoil extends AbstractSneckoCard {
     private static int SOFTLOCK = 0;
 
     public CobraCoil() {
-        super(ID, COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, COST, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
         SneckoMod.loadJokeCardImage(this, "CobraCoil.png");
@@ -58,7 +58,7 @@ public class CobraCoil extends AbstractSneckoCard {
     public void onObtainCard() {
         ArrayList<AbstractCard> cardsToReward = new ArrayList<>();
         while (cardsToReward.size() < 3) {
-            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.type == CardType.ATTACK && c.rarity == CardRarity.RARE);
+            AbstractCard newCard = SneckoMod.getOffClassCardMatchingPredicate(c -> c.type == AbstractCard.CardType.ATTACK && c.rarity == AbstractCard.CardRarity.RARE);
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onPreviewObtainCard(newCard);

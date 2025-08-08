@@ -23,10 +23,10 @@ import static awakenedOne.util.Wiz.atb;
 public class NihilAction extends AbstractGameAction {
     private final int damage;
 
-    public NihilAction(AbstractCreature target, AbstractCreature source, int amount, DamageInfo.DamageType type, AttackEffect effect) {
+    public NihilAction(AbstractCreature target, AbstractCreature source, int amount, DamageInfo.DamageType type, AbstractGameAction.AttackEffect effect) {
         setValues(target, source, amount);
         this.damage = amount;
-        this.actionType = ActionType.DAMAGE;
+        this.actionType = AbstractGameAction.ActionType.DAMAGE;
         this.damageType = type;
         this.attackEffect = effect;
     }

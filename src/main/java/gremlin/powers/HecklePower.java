@@ -20,7 +20,7 @@ public class HecklePower extends AbstractGremlinPower {
         this.owner = owner;
 
         this.img = IMG;
-        this.type = PowerType.BUFF;
+        this.type = AbstractPower.PowerType.BUFF;
         this.amount = amount;
         this.updateDescription();
     }
@@ -33,7 +33,7 @@ public class HecklePower extends AbstractGremlinPower {
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
     {
-        if ((power.type == PowerType.DEBUFF) && (!power.ID.equals("Shackled")) && (source == this.owner) && (target != this.owner) &&
+        if ((power.type == AbstractPower.PowerType.DEBUFF) && (!power.ID.equals("Shackled")) && (source == this.owner) && (target != this.owner) &&
                 (!target.hasPower("Artifact")))
         {
             flash();

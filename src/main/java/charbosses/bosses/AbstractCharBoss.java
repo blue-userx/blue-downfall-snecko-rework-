@@ -106,7 +106,7 @@ public abstract class AbstractCharBoss extends AbstractMonster {
     public int cardsPlayedThisTurn;
     public int attacksPlayedThisTurn;
 
-    public PlayerClass chosenClass;
+    public AbstractPlayer.PlayerClass chosenClass;
     public AbstractBossDeckArchetype chosenArchetype = null;
 
     public boolean onSetupTurn = true;

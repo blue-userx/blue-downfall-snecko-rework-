@@ -68,7 +68,7 @@ public class HexaFalling extends AbstractImageEvent {
     protected void buttonEffect(int buttonPressed) {
         switch (this.screen) {
             case INTRO:
-                this.screen = CurScreen.CHOICE;
+                this.screen = HexaFalling.CurScreen.CHOICE;
                 this.imageEventText.clearAllDialogs();
 
                 if (!this.skill && !this.power && !this.attack) {
@@ -101,7 +101,7 @@ public class HexaFalling extends AbstractImageEvent {
                 break;
 
             case CHOICE:
-                this.screen = CurScreen.END;
+                this.screen = HexaFalling.CurScreen.END;
                 this.imageEventText.clearAllDialogs();
                 this.imageEventText.updateBodyText(vanilla_eventStrings.DESCRIPTIONS[1]);
 

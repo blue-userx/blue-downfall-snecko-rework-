@@ -9,9 +9,9 @@ import gremlin.actions.RemoveRandomDebuffAction;
 public class WizardHat extends AbstractGremlinRelic {
     public static final String ID = getID("WizardHat");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final RelicTier TIER = RelicTier.UNCOMMON;
+    private static final AbstractRelic.RelicTier TIER = RelicTier.UNCOMMON;
     private static final String IMG = "relics/wizard_hat.png";
-    private static final LandingSound SOUND = LandingSound.MAGICAL;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.MAGICAL;
 
     public WizardHat() {
         super(ID, IMG, TIER, SOUND);

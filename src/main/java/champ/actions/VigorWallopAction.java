@@ -17,10 +17,10 @@ import hermit.util.Wiz;
 public class VigorWallopAction extends AbstractGameAction {
     private int damage;
 
-    public VigorWallopAction(AbstractCreature target, AbstractCreature source, int amount, DamageInfo.DamageType type, AttackEffect effect) {
+    public VigorWallopAction(AbstractCreature target, AbstractCreature source, int amount, DamageInfo.DamageType type, AbstractGameAction.AttackEffect effect) {
         setValues(target, source, amount);
         this.damage = amount;
-        this.actionType = ActionType.DAMAGE;
+        this.actionType = AbstractGameAction.ActionType.DAMAGE;
         this.damageType = type;
         this.attackEffect = effect;
     }

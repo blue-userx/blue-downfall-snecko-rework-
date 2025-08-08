@@ -11,9 +11,9 @@ import gremlin.powers.WizPower;
 public class MagicalMallet extends AbstractGremlinRelic {
     public static final String ID = getID("MagicalMallet");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final RelicTier TIER = RelicTier.UNCOMMON;
+    private static final AbstractRelic.RelicTier TIER = RelicTier.UNCOMMON;
     private static final String IMG = "relics/magical_mallet.png";
-    private static final LandingSound SOUND = LandingSound.HEAVY;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.HEAVY;
 
     public MagicalMallet() {
         super(ID, IMG, TIER, SOUND);

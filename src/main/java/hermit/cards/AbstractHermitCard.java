@@ -244,7 +244,7 @@ public abstract class AbstractHermitCard extends CustomCard {
 
     public static class Enums {
         @SpireEnum
-        public static CardTags DEADON;
+        public static AbstractCard.CardTags DEADON;
     }
 
 

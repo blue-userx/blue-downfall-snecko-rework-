@@ -55,7 +55,7 @@ public class Covet extends AbstractDynamicCard {
         Wiz.atb(new HandSelectAction(1, (c) -> true, list -> {
             for (AbstractCard c : list)
             {
-                if (c.color == CardColor.CURSE)
+                if (c.color == AbstractCard.CardColor.CURSE)
                     Wiz.p().hand.moveToExhaustPile(c);
                 else
                 {

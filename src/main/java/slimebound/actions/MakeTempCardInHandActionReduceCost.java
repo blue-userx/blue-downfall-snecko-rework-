@@ -17,7 +17,7 @@ public class MakeTempCardInHandActionReduceCost extends com.megacrit.cardcrawl.a
     public MakeTempCardInHandActionReduceCost(AbstractCard card, boolean isOtherCardInCenter) {
         com.megacrit.cardcrawl.unlock.UnlockTracker.markCardAsSeen(card.cardID);
         this.amount = 1;
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = 0.35F;
         this.c = card;
 
@@ -34,7 +34,7 @@ public class MakeTempCardInHandActionReduceCost extends com.megacrit.cardcrawl.a
     public MakeTempCardInHandActionReduceCost(AbstractCard card, int amount) {
         com.megacrit.cardcrawl.unlock.UnlockTracker.markCardAsSeen(card.cardID);
         this.amount = amount;
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = 0.35F;
         this.c = card.makeStatEquivalentCopy();
         this.c.modifyCostForCombat(-1);
@@ -44,7 +44,7 @@ public class MakeTempCardInHandActionReduceCost extends com.megacrit.cardcrawl.a
     public MakeTempCardInHandActionReduceCost(AbstractCard card, int amount, int amountToReduce) {
         com.megacrit.cardcrawl.unlock.UnlockTracker.markCardAsSeen(card.cardID);
         this.amount = amount;
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = 0.35F;
         this.c = card.makeStatEquivalentCopy();
         this.c.modifyCostForCombat(amountToReduce);

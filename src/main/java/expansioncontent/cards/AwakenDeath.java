@@ -14,7 +14,7 @@ public class AwakenDeath extends AbstractExpansionCard {
     public static final String ID = makeID("AwakenDeath");
 
     public AwakenDeath() {
-        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 2, AbstractCard.CardType.POWER, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         this.tags.add(expansionContentMod.STUDY);
         this.tags.add(expansionContentMod.STUDY_AWAKENEDONE);
         setBackgroundTexture("expansioncontentResources/images/512/bg_boss_awakenedone.png", "expansioncontentResources/images/1024/bg_boss_awakenedone.png");

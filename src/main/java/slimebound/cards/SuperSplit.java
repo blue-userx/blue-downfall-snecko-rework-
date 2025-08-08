@@ -70,7 +70,7 @@ public class SuperSplit extends AbstractSlimeboundCard {
             p.getRelic(ChemicalX.ID).flash();
         }
 
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction(this.energyOnUse));
+        com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction(this.energyOnUse));
 
 
         for (int i = 0; i < this.energyOnUse; i++) {

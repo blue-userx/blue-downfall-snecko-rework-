@@ -1,4 +1,4 @@
-package slimebound.patches;/*
+/*
 package slimebound.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

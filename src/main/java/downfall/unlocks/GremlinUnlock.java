@@ -4,11 +4,11 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.unlock.AbstractUnlock;
 import gremlin.patches.GremlinEnum;
 
-public class GremlinUnlock extends AbstractUnlock {
+public class GremlinUnlock extends com.megacrit.cardcrawl.unlock.AbstractUnlock {
     public static final String KEY = "Gremlin";
 
     public GremlinUnlock() {
-        this.type = UnlockType.CHARACTER;
+        this.type = AbstractUnlock.UnlockType.CHARACTER;
         this.key = KEY;
         this.title = KEY;
     }

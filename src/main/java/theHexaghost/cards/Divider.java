@@ -32,10 +32,10 @@ public class Divider extends AbstractHexaCard {
             @Override
             public void update() {
                 isDone = true;
-                dmg(m, makeInfo(), AttackEffect.FIRE);
+                dmg(m, makeInfo(), AbstractGameAction.AttackEffect.FIRE);
                 for (AbstractGhostflame gf : GhostflameHelper.hexaGhostFlames) {
                     if (gf.charged) {
-                        dmg(m, makeInfo(), AttackEffect.FIRE);
+                        dmg(m, makeInfo(), AbstractGameAction.AttackEffect.FIRE);
                     }
                 }
             }

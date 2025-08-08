@@ -66,7 +66,7 @@ public abstract class SpawnedSlime
     public int upgradedInitialBoost;
     public String originalRelic = "";
     public String[] descriptions;
-    public Texture intentImage;
+    public com.badlogic.gdx.graphics.Texture intentImage;
     public boolean noEvokeBonus;
     public float scale = 1.15F;
     public float x;

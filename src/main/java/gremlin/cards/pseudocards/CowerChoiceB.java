@@ -25,9 +25,9 @@ public class CowerChoiceB extends AbstractGremlinCard {
     private static final String NAME = strings.NAME;
     private static final String IMG_PATH = "cards/cower.png";
 
-    private static final CardType TYPE = CardType.STATUS;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final AbstractCard.CardType TYPE = CardType.STATUS;
+    private static final AbstractCard.CardRarity RARITY = CardRarity.SPECIAL;
+    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.NONE;
 
     private static final int COST = -2;
 

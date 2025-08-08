@@ -121,19 +121,19 @@ public class SneckoMod implements
     private static final String CHARSELECT_PORTRAIT = "sneckomodResources/images/charSelect/portrait.png";
     public static Color placeholderColor = new Color(64F / 255F, 123F / 255F, 147F / 255F, 1);
     @SpireEnum
-    public static AbstractCard.CardTags UNKNOWN;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags UNKNOWN;
     @SpireEnum
-    public static AbstractCard.CardTags SNEKPROOF;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags SNEKPROOF;
     @SpireEnum
-    public static AbstractCard.CardTags RNG;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags RNG;
     @SpireEnum
-    public static AbstractCard.CardTags BANNEDFORSNECKO;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags BANNEDFORSNECKO;
     @SpireEnum
-    public static AbstractCard.CardTags OVERFLOW;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags OVERFLOW;
     @SpireEnum
-    public static AbstractCard.CardTags MUDDLED;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags MUDDLED;
     @SpireEnum
-    public static AbstractCard.CardTags NO_TYPHOON;
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags NO_TYPHOON;
 
     public static Random identifyRng;
 
@@ -215,7 +215,7 @@ public class SneckoMod implements
             ((AbstractSneckoCard) card).betaArtPath = img;
         }
         Texture cardTexture;
-        cardTexture = TextureLoader.getTexture("sneckomodResources/images/betacards/" + img);
+        cardTexture = downfall.util.TextureLoader.getTexture("sneckomodResources/images/betacards/" + img);
         cardTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         int tw = cardTexture.getWidth();
         int th = cardTexture.getHeight();
@@ -805,7 +805,7 @@ public class SneckoMod implements
         overBannerBoss = TextureLoader.getTextureAsAtlasRegion("sneckomodResources/images/cardicons/overbannerIcons/boss.png");
         overBannerColorless = TextureLoader.getTextureAsAtlasRegion("sneckomodResources/images/cardicons/overbannerIcons/colorless.png");
 
-        BaseMod.addEvent(new AddEventParams.Builder(D8.ID, D8.class) //Event ID//
+        BaseMod.addEvent(new AddEventParams.Builder(D8.ID, sneckomod.events.D8.class) //Event ID//
                 //Event Character//
                 .playerClass(TheSnecko.Enums.THE_SNECKO)
                 .eventType(EventUtils.EventType.ONE_TIME)

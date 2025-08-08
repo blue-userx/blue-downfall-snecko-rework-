@@ -12,7 +12,7 @@ public class FlameDevourer extends AbstractHexaCard{
     //Devour Flame
     public final static String ID = makeID("FlameDevourer");
     public FlameDevourer() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
         baseBlock = 9;
         tags.add(HexaMod.GHOSTWHEELCARD);
         this.tags.add(SneckoMod.BANNEDFORSNECKO);

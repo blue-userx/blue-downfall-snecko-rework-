@@ -24,7 +24,7 @@ public class EnTurbo extends AbstractBossCard {
     private static final CardStrings cardStrings;
 
     public EnTurbo() {
-        super(ID, cardStrings.NAME, "blue/skill/turbo", 0, cardStrings.DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.COMMON, CardTarget.SELF, AbstractMonster.Intent.BUFF);
+        super(ID, cardStrings.NAME, "blue/skill/turbo", 0, cardStrings.DESCRIPTION, AbstractCard.CardType.SKILL, com.megacrit.cardcrawl.cards.AbstractCard.CardColor.BLUE, com.megacrit.cardcrawl.cards.AbstractCard.CardRarity.COMMON, com.megacrit.cardcrawl.cards.AbstractCard.CardTarget.SELF, AbstractMonster.Intent.BUFF);
 
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;

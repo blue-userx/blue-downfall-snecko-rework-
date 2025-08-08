@@ -28,7 +28,7 @@ public class CrispyPower_new extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = AbstractDungeon.player;
         this.amount = amount;
-        this.type = PowerType.BUFF;
+        this.type = AbstractPower.PowerType.BUFF;
         this.isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);

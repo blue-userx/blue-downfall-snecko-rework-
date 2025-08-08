@@ -1,4 +1,4 @@
-package champ.patches;//package champ.patches;
+//package champ.patches;
 //
 //import basemod.ReflectionHacks;
 //import champ.powers.CounterPower;

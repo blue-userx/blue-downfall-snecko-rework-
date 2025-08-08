@@ -172,7 +172,7 @@ public class SealChamber extends AbstractImageEvent {
             return null;
         }
 
-        Collections.shuffle(list, new java.util.Random(AbstractDungeon.miscRng.randomLong()));
+        java.util.Collections.shuffle(list, new java.util.Random(AbstractDungeon.miscRng.randomLong()));
         return list.get(0);
     }
 
@@ -188,7 +188,7 @@ public class SealChamber extends AbstractImageEvent {
             return null;
         }
 
-        Collections.shuffle(list, new java.util.Random(AbstractDungeon.miscRng.randomLong()));
+        java.util.Collections.shuffle(list, new java.util.Random(AbstractDungeon.miscRng.randomLong()));
         return list.get(0);
     }
 

@@ -1,4 +1,4 @@
-package downfall.powers;/*
+/*
 package downfall.powers;
 
 import com.badlogic.gdx.graphics.Texture;

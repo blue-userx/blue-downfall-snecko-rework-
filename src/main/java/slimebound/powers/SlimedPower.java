@@ -40,7 +40,7 @@ public class SlimedPower extends AbstractPower {
         this.amount = amount;
         this.owner = owner;
         this.source = source;
-        this.img = new com.badlogic.gdx.graphics.Texture(SlimeboundMod.getResourcePath(IMG));
+        this.img = new com.badlogic.gdx.graphics.Texture(slimebound.SlimeboundMod.getResourcePath(IMG));
         this.type = POWER_TYPE;
         DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(this.ID).DESCRIPTIONS;
         this.name = CardCrawlGame.languagePack.getPowerStrings(this.ID).NAME;

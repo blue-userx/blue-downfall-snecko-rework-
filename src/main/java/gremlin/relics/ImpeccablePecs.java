@@ -14,9 +14,9 @@ import gremlin.powers.WizPower;
 public class ImpeccablePecs extends AbstractGremlinRelic {
     public static final String ID = getID("ImpeccablePecs");
     private static final RelicStrings strings = CardCrawlGame.languagePack.getRelicStrings(ID);
-    private static final RelicTier TIER = RelicTier.UNCOMMON;
+    private static final AbstractRelic.RelicTier TIER = RelicTier.UNCOMMON;
     private static final String IMG = "relics/impeccable_pecs.png";
-    private static final LandingSound SOUND = LandingSound.SOLID;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.SOLID;
 
     public ImpeccablePecs() {
         super(ID, IMG, TIER, SOUND);

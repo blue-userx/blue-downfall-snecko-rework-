@@ -1,4 +1,4 @@
-package theHexaghost.patches;/*
+/*
 package theHexaghost.patches;
 
 import basemod.ReflectionHacks;

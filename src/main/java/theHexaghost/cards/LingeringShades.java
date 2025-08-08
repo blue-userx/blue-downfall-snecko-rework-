@@ -13,7 +13,7 @@ public class LingeringShades extends AbstractHexaCard{
     public final static String ID = makeID("LingeringShades");
 
     public LingeringShades() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 1, AbstractCard.CardType.SKILL, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         baseBurn = burn = 11;
         HexaMod.loadJokeCardImage(this, "LingeringShades.png");
         tags.add(HexaMod.GHOSTWHEELCARD);

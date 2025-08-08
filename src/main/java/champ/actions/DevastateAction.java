@@ -16,7 +16,7 @@ public class DevastateAction extends com.megacrit.cardcrawl.actions.AbstractGame
         this.info = info;
         setValues(target, info);
         this.increaseAmount = incAmount;
-        this.actionType = ActionType.DAMAGE;
+        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.DAMAGE;
         this.duration = 0.1F;
         this.uuid = targetUUID;
     }

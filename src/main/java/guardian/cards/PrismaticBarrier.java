@@ -51,7 +51,7 @@ public class PrismaticBarrier extends AbstractGuardianCard {
         updateDescription();
         loadGemMisc();
 
-        tags.add(CardTags.HEALING);
+        tags.add(AbstractCard.CardTags.HEALING);
         this.tags.add(SneckoMod.BANNEDFORSNECKO);
         GuardianMod.loadJokeCardImage(this, makeBetaCardPath("PrismaticBarrier.png"));
     }

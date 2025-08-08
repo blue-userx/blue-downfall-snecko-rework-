@@ -49,11 +49,11 @@ public class WomanInBlue_Evil extends AbstractImageEvent {
         DIALOG_1 = DESCRIPTIONS[0];
     }
 
-    private CurScreen screen;
+    private WomanInBlue_Evil.CurScreen screen;
 
     public WomanInBlue_Evil() {
         super(NAME, DIALOG_1, "images/events/ladyInBlue.jpg");
-        this.screen = CurScreen.INTRO;
+        this.screen = WomanInBlue_Evil.CurScreen.INTRO;
         this.imageEventText.setDialogOption(OPTIONS[3]);
         if (AbstractDungeon.ascensionLevel >= 15) {
             this.imageEventText.setDialogOption(OPTIONS[1] + MathUtils.ceil((float) AbstractDungeon.player.maxHealth * 0.05F) + OPTIONS[2]);
@@ -69,7 +69,7 @@ public class WomanInBlue_Evil extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0:
                         logMetric(ID, "Punch");
-                        this.screen = CurScreen.FIGHT;
+                        this.screen = WomanInBlue_Evil.CurScreen.FIGHT;
                         AbstractDungeon.getCurrRoom().monsters =  MonsterHelper.getEncounter(LadyInBlue.ID);
                         AbstractDungeon.getCurrRoom().rewards.clear();
 
@@ -127,7 +127,7 @@ public class WomanInBlue_Evil extends AbstractImageEvent {
                     case 1:
                         this.imageEventText.clearAllDialogs();
                         this.imageEventText.setDialogOption(OPTIONS[0]);
-                        this.screen = CurScreen.RESULT;
+                        this.screen = WomanInBlue_Evil.CurScreen.RESULT;
                         if (AbstractDungeon.ascensionLevel >= 15) {
                             this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                             CardCrawlGame.screenShake.shake(ShakeIntensity.MED, ShakeDur.MED, false);

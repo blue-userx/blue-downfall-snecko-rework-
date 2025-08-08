@@ -124,7 +124,7 @@ public class CouncilOfGhosts_Hexa extends AbstractImageEvent {
             }
         }
         for (AbstractCard c : strikes){
-            AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect(c, Settings.WIDTH * (AbstractDungeon.cardRng.random(0.25F,0.75F)), Settings.HEIGHT * (AbstractDungeon.cardRng.random(0.25F,0.75F))));
+            AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect(c, com.megacrit.cardcrawl.core.Settings.WIDTH * (AbstractDungeon.cardRng.random(0.25F,0.75F)), com.megacrit.cardcrawl.core.Settings.HEIGHT * (AbstractDungeon.cardRng.random(0.25F,0.75F))));
             AbstractDungeon.player.masterDeck.removeCard(c);
             cardsRemoved.add(c.cardID);
         }
@@ -139,7 +139,7 @@ public class CouncilOfGhosts_Hexa extends AbstractImageEvent {
             }
         }
         for (AbstractCard c : defends){
-            AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect(c, Settings.WIDTH * (AbstractDungeon.cardRng.random(0.25F,0.75F)), Settings.HEIGHT * (AbstractDungeon.cardRng.random(0.25F,0.75F))));
+            AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect(c, com.megacrit.cardcrawl.core.Settings.WIDTH * (AbstractDungeon.cardRng.random(0.25F,0.75F)), com.megacrit.cardcrawl.core.Settings.HEIGHT * (AbstractDungeon.cardRng.random(0.25F,0.75F))));
             AbstractDungeon.player.masterDeck.removeCard(c);
             cardsRemoved.add(c.cardID);
 

@@ -530,7 +530,7 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
         Gson gson = new Gson();
         String json = Gdx.files.internal(assetPath("localization/" + lang + "/KeywordStrings.json", otherPath)).readString(String.valueOf(StandardCharsets.UTF_8));
 
-        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+        com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {
             for (Keyword keyword : keywords) {

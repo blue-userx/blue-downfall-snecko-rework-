@@ -27,7 +27,7 @@ public class InertBlade extends AbstractSneckoCard {
     private int energypayout;
 
     public InertBlade() {
-        super(ID, COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, COST, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
         energypayout = ENERGY_GAIN;

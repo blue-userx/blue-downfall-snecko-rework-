@@ -21,7 +21,7 @@ public class Whack extends AbstractSneckoCard {
     private static final int COST = 1;
 
     public Whack() {
-        super(ID, COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, COST, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         baseDamage = DAMAGE;
         this.exhaust = true;
         this.cardsToPreview = new Wallop();

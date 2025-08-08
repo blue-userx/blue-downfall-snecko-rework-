@@ -181,10 +181,10 @@ public class GemMine extends AbstractImageEvent {
     public void reopen() {
         if (this.screenNum != 1) {
             AbstractDungeon.resetPlayer();
-            AbstractDungeon.player.drawX = (Settings.WIDTH * 0.25F);
+            AbstractDungeon.player.drawX = (com.megacrit.cardcrawl.core.Settings.WIDTH * 0.25F);
             AbstractDungeon.player.preBattlePrep();
             if (!AbstractDungeon.player.hasRelic(PickAxe.ID)) {
-                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new PickAxe());
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new guardian.relics.PickAxe());
                 AbstractDungeon.commonRelicPool.remove(PickAxe.ID);
                 relicsAdded.add(PickAxe.ID);
             }
