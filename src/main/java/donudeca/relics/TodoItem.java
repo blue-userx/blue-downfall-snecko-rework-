@@ -1,13 +1,14 @@
-package yourmod.relics;
+package donudeca.relics;
 
-import yourmod.CharacterFile;
+import donudeca.DonuDecaChar;
 
-import static yourmod.ModFile.makeID;
+import static donudeca.DonuDecaMod.makeID;
 
-public class TodoItem extends AbstractEasyRelic {
+
+public class TodoItem extends yourmod.relics.AbstractEasyRelic {
     public static final String ID = makeID("TodoItem");
 
     public TodoItem() {
-        super(ID, RelicTier.STARTER, LandingSound.FLAT, CharacterFile.Enums.TODO_COLOR);
+        super(ID, RelicTier.STARTER, LandingSound.FLAT, DonuDecaChar.Enums.CONSTRUCTS_GORANGE);
     }
 }

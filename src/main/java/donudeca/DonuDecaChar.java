@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import donudeca.cards.Defend;
 import donudeca.cards.Strike;
-import yourmod.relics.TodoItem;
+import donudeca.relics.TodoItem;
 
 import java.util.ArrayList;
 

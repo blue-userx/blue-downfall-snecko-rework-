@@ -23,8 +23,10 @@
     "PROPER_NAME": "Construct",
     "NAMES": [
       "Construct",
-      "construct"
+      "construct",
+      "Constructed",
+      "constructed"
     ],
-    "DESCRIPTION": "Place a #yShape, a special type of Orb with no start of turn effects, into one of your Shape slots."
+    "DESCRIPTION": "Place a #yShape, a special type of Orb with no start of turn effects, into one of your Shape slots. If there is no room, your first Shape is automatically #yEvoked to make room."
   }
 ]

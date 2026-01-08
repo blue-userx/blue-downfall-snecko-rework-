@@ -1,12 +1,12 @@
-package yourmod.relics;
+package donudeca.relics;
 
+import awakenedOne.util.TexLoader;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import yourmod.util.TexLoader;
 
-import static yourmod.ModFile.makeRelicPath;
-import static yourmod.ModFile.modID;
+import static donudeca.DonuDecaMod.makeRelicPath;
+import static donudeca.DonuDecaMod.modID;
 
 public abstract class AbstractEasyRelic extends CustomRelic {
     public AbstractCard.CardColor color;
