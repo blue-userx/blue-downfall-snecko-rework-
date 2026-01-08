@@ -1,0 +1,30 @@
+[
+  {
+    "PROPER_NAME": "Searing",
+    "NAMES": [
+      "Searing",
+      "searing"
+    ],
+    "DESCRIPTION": "Can be #yUpgraded any number of times."
+  },
+  {
+    "PROPER_NAME": "Flip",
+    "NAMES": [
+      "Flip",
+      "flip",
+      "Flips",
+      "flips",
+      "flipped",
+      "Flipped"
+    ],
+    "DESCRIPTION": "Changes into an alternative form whenever you play an adjacent card."
+  },
+  {
+    "PROPER_NAME": "Construct",
+    "NAMES": [
+      "Construct",
+      "construct"
+    ],
+    "DESCRIPTION": "Place a #yShape, a special type of Orb with no start of turn effects, into one of your Shape slots."
+  }
+]
