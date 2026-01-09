@@ -14,12 +14,12 @@ import sneckomod.patches.BottledD8Patch;
 
 
 //m10 robot code
-public class SwapCardsAction extends AbstractGameAction {
+public class FlipAction extends AbstractGameAction {
     private AbstractCard toReplace;
 
     private AbstractCard newCard;
 
-    public SwapCardsAction(AbstractCard toReplace, AbstractCard newCard) {
+    public FlipAction(AbstractCard toReplace, AbstractCard newCard) {
         this.actionType = AbstractGameAction.ActionType.SPECIAL;
         this.duration = Settings.ACTION_DUR_MED;
         this.toReplace = toReplace;

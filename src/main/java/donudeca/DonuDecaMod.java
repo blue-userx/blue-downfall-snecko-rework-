@@ -1,17 +1,23 @@
 package donudeca;
 
+import awakenedOne.util.TexLoader;
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
@@ -93,6 +99,29 @@ public class DonuDecaMod implements
     public static String makePath(String resourcePath) {
         return modID + "Resources/" + resourcePath;
     }
+
+    public static String makeBetaCardPath(String resourcePath) {
+        String textureString = "donudecaResources/images/cards/joke/" + resourcePath;
+        FileHandle h = Gdx.files.internal(textureString);
+        if (!h.exists()) {
+            textureString = "donudecaResources/images/cards/programmerart/" + resourcePath;
+        }
+        return textureString;
+    }
+
+    public static void loadJokeCardImage(AbstractCard card, String img) {
+        if (card instanceof AbstractDonuDecaCard) {
+            ((AbstractDonuDecaCard) card).betaArtPath = img;
+        }
+        Texture cardTexture;
+        cardTexture = TexLoader.getTexture(img);
+        cardTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        int tw = cardTexture.getWidth();
+        int th = cardTexture.getHeight();
+        TextureAtlas.AtlasRegion cardImg = new TextureAtlas.AtlasRegion(cardTexture, 0, 0, tw, th);
+        ReflectionHacks.setPrivate(card, AbstractCard.class, "jokePortrait", cardImg);
+    }
+
 
     public static String makeImagePath(String resourcePath) {
         return modID + "Resources/images/" + resourcePath;

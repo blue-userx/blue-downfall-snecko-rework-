@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -19,7 +20,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import donudeca.DonuDecaChar;
+import hermit.util.TextureLoader;
 import hermit.util.Wiz;
 
 import static awakenedOne.util.Wiz.atb;
@@ -29,6 +32,7 @@ import static donudeca.DonuDecaMod.*;
 public abstract class AbstractDonuDecaCard extends CustomCard {
 
     protected final CardStrings cardStrings;
+    public String betaArtPath;
 
     public int secondMagic;
     public int baseSecondMagic;
@@ -62,34 +66,40 @@ public abstract class AbstractDonuDecaCard extends CustomCard {
         }
     }
 
-    @Override
-    protected Texture getPortraitImage() {
-        if (textureImg.contains("ui/missing.png")) {
-            return CardArtRoller.getPortraitTexture(this);
-        } else {
-            return super.getPortraitImage();
-        }
-    }
-
-    public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
-        String textureString;
-
-        switch (cardType) {
-            case ATTACK:
-            case POWER:
-            case SKILL:
-                textureString = makeImagePath("cards/" + cardName + ".png");
-                break;
-            default:
-                textureString = makeImagePath("ui/missing.png");
-                break;
-        }
-
+    public static String getCardTextureString(final String cardName, final CardType cardType) {
+        String textureString = "donudecaResources/images/cards/" + cardName + ".png";
         FileHandle h = Gdx.files.internal(textureString);
         if (!h.exists()) {
-            textureString = makeImagePath("ui/missing.png");
+            textureString = "donudecaResources/images/cards/joke/" + cardName + ".png";
+            h = Gdx.files.internal(textureString);
+        }
+        if (!h.exists()) {
+            textureString = "donudecaResources/images/cards/programmerart/" + cardName + ".png";
+            h = Gdx.files.internal(textureString);
+        }
+        if (!h.exists()) {
+            textureString = "donudecaResources/images/ui/missing.png";
         }
         return textureString;
+    }
+
+    @Override
+    protected Texture getPortraitImage() {
+        if (Settings.PLAYTESTER_ART_MODE || UnlockTracker.betaCardPref.getBoolean(this.cardID, false)) {
+            if (this.textureImg == null) {
+                return null;
+            } else {
+                if (betaArtPath != null) {
+                    int endingIndex = betaArtPath.lastIndexOf(".");
+                    String newPath = betaArtPath.substring(0, endingIndex) + "_p" + betaArtPath.substring(endingIndex);
+                    System.out.println("Finding texture: " + newPath);
+                    Texture portraitTexture;
+                    portraitTexture = TextureLoader.getTexture(newPath);
+                    return portraitTexture;
+                }
+            }
+        }
+        return super.getPortraitImage();
     }
 
     //packmaster code
