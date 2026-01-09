@@ -6,5 +6,17 @@
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:Tinker": {
+    "NAME": "Tinker",
+    "DESCRIPTION": "Gain !B! Block. NL Upgrade the !M! cards adjacent to this."
+  },
+  "${ModID}:CurvedLaser": {
+    "NAME": "Curved Laser",
+    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL donudeca:Construct a Repulsor."
+  },
+  "${ModID}:JaggedLaser": {
+    "NAME": "Jagged Laser",
+    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL donudeca:Construct a Spiker."
   }
 }

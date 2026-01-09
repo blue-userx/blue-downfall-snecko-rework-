@@ -24,7 +24,8 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import donudeca.cards.AbstractDonuDecaCard;
 import donudeca.cards.cardvars.AbstractEasyDynamicVariable;
-import yourmod.relics.AbstractEasyRelic;
+import donudeca.relics.AbstractEasyRelic;
+
 import java.nio.charset.StandardCharsets;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -62,6 +63,9 @@ public class DonuDecaMod implements
 
     @SpireEnum
     public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags SEARING;
+
+    @SpireEnum
+    public static com.megacrit.cardcrawl.cards.AbstractCard.CardTags FLIP;
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,

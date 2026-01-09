@@ -15,13 +15,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 import donudeca.DonuDecaChar;
-import yourmod.util.CardArtRoller;
+import hermit.util.Wiz;
 
+import static awakenedOne.util.Wiz.atb;
+import static awakenedOne.util.Wiz.att;
 import static donudeca.DonuDecaMod.*;
-import static yourmod.util.Wiz.*;
 
 public abstract class AbstractDonuDecaCard extends CustomCard {
 
@@ -88,6 +91,29 @@ public abstract class AbstractDonuDecaCard extends CustomCard {
         }
         return textureString;
     }
+
+    //packmaster code
+    public ArrayList<AbstractCard> getNeighbors() {
+        ArrayList<AbstractCard> neighbors = new ArrayList<>();
+        if (Wiz.hand().contains((AbstractCard)this)) {
+            int index = (Wiz.hand()).group.indexOf(this);
+            if (index > 0)
+                neighbors.add((Wiz.hand()).group.get(index - 1));
+            if (index < Wiz.hand().size() - 1)
+                neighbors.add((Wiz.hand()).group.get(index + 1));
+        }
+        return neighbors;
+    }
+
+    //m10 robot code
+    public boolean canSwap() {
+        return this.hasTag(FLIP);
+    }
+
+    public void onSwapOut() {}
+
+    public void onSwapIn() {}
+
 
     @Override
     public void applyPowers() {
