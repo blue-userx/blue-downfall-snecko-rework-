@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
 
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import donudeca.DonuDecaChar;
@@ -44,8 +43,6 @@ public abstract class AbstractDonuDecaCard extends CustomCard {
     public boolean upgradedSecondDamage;
     public boolean isSecondDamageModified;
 
-    private boolean needsArtRefresh = false;
-
     public AbstractDonuDecaCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, DonuDecaChar.Enums.CONSTRUCTS_GORANGE);
     }
@@ -58,12 +55,6 @@ public abstract class AbstractDonuDecaCard extends CustomCard {
         name = originalName = cardStrings.NAME;
         initializeTitle();
         initializeDescription();
-
-        if (textureImg.contains("ui/missing.png")) {
-            if (CardLibrary.cards != null && !CardLibrary.cards.isEmpty()) {
-            } else
-                needsArtRefresh = true;
-        }
     }
 
     public static String getCardTextureString(final String cardName, final CardType cardType) {
