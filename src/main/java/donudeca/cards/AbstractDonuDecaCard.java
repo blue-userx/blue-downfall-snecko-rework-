@@ -260,36 +260,6 @@ public abstract class AbstractDonuDecaCard extends CustomCard {
         att(new DamageAction(m, new DamageInfo(AbstractDungeon.player, secondDamage, damageTypeForTurn), fx));
     }
 
-    private AbstractGameAction dmgRandomAction(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, Consumer<AbstractMonster> effectBefore) {
-        return actionify(() -> {
-            AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-            if (target != null) {
-                calculateCardDamage(target);
-                if (extraEffectToTarget != null)
-                    extraEffectToTarget.accept(target);
-                att(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
-                if (effectBefore != null)
-                    effectBefore.accept(target);
-            }
-        });
-    }
-
-    protected void dmgRandom(AbstractGameAction.AttackEffect fx) {
-        dmgRandom(fx, null, null);
-    }
-
-    protected void dmgRandom(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, Consumer<AbstractMonster> effectBefore) {
-        atb(dmgRandomAction(fx, extraEffectToTarget, effectBefore));
-    }
-
-    protected void dmgRandomTop(AbstractGameAction.AttackEffect fx) {
-        dmgRandomTop(fx, null, null);
-    }
-
-    protected void dmgRandomTop(AbstractGameAction.AttackEffect fx, Consumer<AbstractMonster> extraEffectToTarget, Consumer<AbstractMonster> effectBefore) {
-        att(dmgRandomAction(fx, extraEffectToTarget, effectBefore));
-    }
-
     protected void blck() {
         atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
     }
@@ -302,7 +272,4 @@ public abstract class AbstractDonuDecaCard extends CustomCard {
         return null;
     }
 
-    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return null;
-    }
 }
