@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import donudeca.DonuDecaChar;
+import donudeca.actions.FlipAction;
 import hermit.util.TextureLoader;
 import hermit.util.Wiz;
 
@@ -42,6 +43,7 @@ public abstract class AbstractDonuDecaCard extends CustomCard {
     public int baseSecondDamage;
     public boolean upgradedSecondDamage;
     public boolean isSecondDamageModified;
+    private AbstractGameAction action;
 
     public AbstractDonuDecaCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, DonuDecaChar.Enums.CONSTRUCTS_GORANGE);
@@ -93,28 +95,22 @@ public abstract class AbstractDonuDecaCard extends CustomCard {
         return super.getPortraitImage();
     }
 
-    //packmaster code
-    public ArrayList<AbstractCard> getNeighbors() {
-        ArrayList<AbstractCard> neighbors = new ArrayList<>();
-        if (Wiz.hand().contains((AbstractCard)this)) {
-            int index = (Wiz.hand()).group.indexOf(this);
-            if (index > 0)
-                neighbors.add((Wiz.hand()).group.get(index - 1));
-            if (index < Wiz.hand().size() - 1)
-                neighbors.add((Wiz.hand()).group.get(index + 1));
-        }
-        return neighbors;
-    }
-
     //m10 robot code
     public boolean canSwap() {
         return this.hasTag(FLIP);
     }
 
-    public void onSwapOut() {}
+    public void onSwapOut() {
+    }
 
     public void onSwapIn() {}
 
+    public void flip() {
+        if (canSwap() && this.cardsToPreview != null) {
+            CardCrawlGame.sound.play("CARD_SELECT", 0.1F);
+            addToTop(new FlipAction((AbstractCard)this, this.cardsToPreview));
+        }
+    }
 
     @Override
     public void applyPowers() {

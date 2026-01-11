@@ -1,0 +1,28 @@
+{
+  "donudeca:SpikerOrb": {
+    "NAME": "Spiker",
+    "DESCRIPTION": [
+      "While channeled, grants #b3",
+      " #yJagged #yThorns [REMOVE_SPACE].",
+      "NL #yEvoke [REMOVE_SPACE]: Deal #b",
+      " damage to the frontmost enemy and gain #b"
+    ]
+  },
+  "donudeca:ExploderOrb": {
+    "NAME": "Exploder",
+    "DESCRIPTION": [
+      "Gains #b",
+      " damage whenever you spend [E].",
+      "NL #yEvoke [REMOVE_SPACE]: Deal #b",
+      " damage to ALL enemies."
+    ]
+  },
+  "donudeca:RepulsorOrb": {
+    "NAME": "Repulsor",
+    "DESCRIPTION": [
+      "Deals #b",
+      " damage to enemies whenever they gain #yWeak [REMOVE_SPACE].",
+      " NL yEvoke [REMOVE_SPACE]: Apply #bWeak to ALL enemies."
+    ]
+  }
+}

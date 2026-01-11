@@ -30,9 +30,14 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import donudeca.cards.AbstractDonuDecaCard;
 import donudeca.cards.cardvars.AbstractEasyDynamicVariable;
-import donudeca.relics.AbstractEasyRelic;
+import donudeca.relics.AbstractDonuDecaRelic;
+import hermit.util.Wiz;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+
+import static awakenedOne.util.Wiz.atb;
+
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -41,6 +46,7 @@ public class DonuDecaMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
+        OnCardUseSubscriber,
         EditCharactersSubscriber{
 
     public static final String modID = "donudeca";
@@ -159,8 +165,8 @@ public class DonuDecaMod implements
     @Override
     public void receiveEditRelics() {
         new AutoAdd(modID)
-                .packageFilter(AbstractEasyRelic.class)
-                .any(AbstractEasyRelic.class, (info, relic) -> {
+                .packageFilter(AbstractDonuDecaRelic.class)
+                .any(AbstractDonuDecaRelic.class, (info, relic) -> {
                     if (relic.color == null) {
                         BaseMod.addRelic(relic, RelicType.SHARED);
                     } else {
@@ -194,6 +200,24 @@ public class DonuDecaMod implements
         BaseMod.loadCustomStringsFile(OrbStrings.class, modID + "Resources/localization/" + getLangString() + "/Orbstrings.json");
         BaseMod.loadCustomStringsFile(StanceStrings.class, modID + "Resources/localization/" + getLangString() + "/Stancestrings.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/" + getLangString() + "/Potionstrings.json");
+    }
+
+    //packmaster code
+    @Override
+    public void receiveCardUsed(AbstractCard c) {
+        ArrayList<AbstractCard> neighbors = new ArrayList<>();
+        if (Wiz.hand().contains((c))) {
+            int index = (Wiz.hand()).group.indexOf(c);
+            if (index > 0)
+                neighbors.add((Wiz.hand()).group.get(index - 1));
+            if (index < Wiz.hand().size() - 1)
+                neighbors.add((Wiz.hand()).group.get(index + 1));
+        }
+        for (AbstractCard card : neighbors) {
+            if (card instanceof AbstractDonuDecaCard && card.hasTag(FLIP)) {
+                ((AbstractDonuDecaCard) card).flip();
+            }
+        }
     }
 
     @Override

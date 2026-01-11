@@ -4,8 +4,7 @@ import donudeca.DonuDecaChar;
 
 import static donudeca.DonuDecaMod.makeID;
 
-
-public class TodoItem extends yourmod.relics.AbstractEasyRelic {
+public class TodoItem extends donudeca.relics.AbstractDonuDecaRelic {
     public static final String ID = makeID("TodoItem");
 
     public TodoItem() {
