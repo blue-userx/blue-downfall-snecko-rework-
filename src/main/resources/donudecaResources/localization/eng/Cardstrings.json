@@ -32,5 +32,10 @@
     "NAME": "Future Proofing",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Upgrade !M! random card in your draw pile.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Upgrade !M! random cards in your draw pile."
+  },
+  "${ModID}:Punish": {
+    "NAME": "Punish",
+    "DESCRIPTION": "Deal !D! damage. NL Target enemy gains !M! Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Target enemy gains !M! Block."
   }
 }
