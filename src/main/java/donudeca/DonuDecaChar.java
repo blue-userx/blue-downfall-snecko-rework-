@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import donudeca.cards.Defend;
 import donudeca.cards.Strike;
+import donudeca.cards.Tinker;
 import donudeca.relics.TodoItem;
 
 import java.util.ArrayList;
@@ -64,6 +65,7 @@ public class DonuDecaChar extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
+        retVal.add(Tinker.ID);
         return retVal;
     }
 

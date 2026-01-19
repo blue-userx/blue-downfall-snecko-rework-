@@ -28,5 +28,29 @@
       "constructed"
     ],
     "DESCRIPTION": "Place a #yShape, a special type of Orb with no start of turn effects, into one of your Shape slots. If there is no room, your first Shape is automatically #yEvoked to make room."
+  },
+  {
+    "PROPER_NAME": "Spiker",
+    "NAMES": [
+      "Spiker",
+      "spiker"
+    ],
+    "DESCRIPTION": "Orb. NL While #yChanneled, you have #b3 #yJagged #yThorns, a special type a #yThorns boosted by #yLock-On. NL #yEvoke: Deal #b6 damage to the frontmost enemy and gain #b1 #yJagged #yThorns."
+  },
+  {
+    "PROPER_NAME": "Repulsor",
+    "NAMES": [
+      "Repulsor",
+      "repulsor"
+    ],
+    "DESCRIPTION": "Orb. NL While #yChanneled, deals #b3 damage to enemies whenever they gain #yWeak. NL #yEvoke: Apply #b1 #yWeak to ALL enemies."
+  },
+  {
+    "PROPER_NAME": "Exploder",
+    "NAMES": [
+      "Repulsor",
+      "repulsor"
+    ],
+    "DESCRIPTION": "Orb. NL While #yChanneled, stores #b2 damage whenever you spend [E] playing a card. NL #yEvoke: Deals damage equal to stored damage to ALL enemies."
   }
 ]

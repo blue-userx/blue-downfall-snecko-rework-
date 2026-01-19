@@ -13,10 +13,10 @@
   },
   "${ModID}:CurvedLaser": {
     "NAME": "Curved Laser",
-    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL donudeca:Construct a Repulsor."
+    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL donudeca:Construct a donudeca:Repulsor."
   },
   "${ModID}:JaggedLaser": {
     "NAME": "Jagged Laser",
-    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL donudeca:Construct a Spiker."
+    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL donudeca:Construct a donudeca:Spiker."
   }
 }
