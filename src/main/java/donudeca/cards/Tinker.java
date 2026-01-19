@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import static donudeca.DonuDecaMod.makeID;
 
 public class Tinker extends AbstractDonuDecaCard {
-    public final static String ID = makeID("Defend");
+    public final static String ID = makeID("Tinker");
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public Tinker() {
