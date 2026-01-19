@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import slimebound.orbs.SpawnedSlime;
 
 public abstract class RepulsorOrb
-        extends SpawnedSlime {
+        extends ShapeOrb {
 
 
 

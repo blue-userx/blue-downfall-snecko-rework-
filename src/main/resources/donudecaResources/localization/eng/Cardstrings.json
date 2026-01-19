@@ -18,5 +18,9 @@
   "${ModID}:JaggedLaser": {
     "NAME": "Jagged Laser",
     "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL donudeca:Construct a donudeca:Spiker."
-  }
+  },
+  "${ModID}:AcariteSlam": {
+  "NAME": "Acarite Slam",
+  "DESCRIPTION": "donudeca:Searing. NL Deal !D! damage."
+}
 }
