@@ -27,5 +27,10 @@
     "NAME": "Execution",
     "DESCRIPTION": "Deal !D! damage. NL Apply X Lock-On.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Apply X+1 Lock-On."
+  },
+  "${ModID}:FutureProofing": {
+    "NAME": "Future Proofing",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Upgrade !M! random card in your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Upgrade !M! random cards in your draw pile."
   }
 }
