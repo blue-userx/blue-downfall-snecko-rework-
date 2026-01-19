@@ -19,7 +19,7 @@ import static awakenedOne.AwakenedOneMod.makeRelicPath;
 public class ShardOfNowak extends CustomRelic implements OnLoseTempHpRelic {
 
     public static final String ID = AwakenedOneMod.makeID("ShardOfNowak");
-    private static final Texture IMG = TexLoader.getTexture(makeRelicPath("ShardOfNowak.png")); //TODO: Images
+    private static final Texture IMG = TexLoader.getTexture(makeRelicPath("ShardOfNowak.png"));
     private static final Texture OUTLINE = TexLoader.getTexture(makeRelicOutlinePath("ShardOfNowak.png"));
 
     //Gilded Bone Shard
@@ -46,19 +46,20 @@ public class ShardOfNowak extends CustomRelic implements OnLoseTempHpRelic {
 
     @Override
     public void onLoseHp(int damageAmount) {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            if (!this.grayscale) {
-                this.grayscale = true;
-                AbstractPlayer p = AbstractDungeon.player;
-                this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                this.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, -FOCUS), -FOCUS));
+        if (damageAmount > 0) {
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                if (!this.grayscale) {
+                    this.grayscale = true;
+                    AbstractPlayer p = AbstractDungeon.player;
+                    this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                    this.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, -FOCUS), -FOCUS));
+                }
             }
+            this.stopPulse();
+            isActive = false;
+            AbstractDungeon.player.hand.applyPowers();
         }
-        this.stopPulse();
-        isActive = false;
-        AbstractDungeon.player.hand.applyPowers();
     }
-
 
 //    public void onMonsterDeath(AbstractMonster m) {
 //        if (m.currentHealth == 0 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
