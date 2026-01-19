@@ -1,4 +1,13 @@
 package donudeca.orbs;
 
-public class RepulsorOrb {
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import slimebound.orbs.SpawnedSlime;
+
+public abstract class RepulsorOrb
+        extends SpawnedSlime {
+
+
+
+
+
 }

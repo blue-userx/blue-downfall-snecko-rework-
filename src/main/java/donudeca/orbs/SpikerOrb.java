@@ -1,4 +1,10 @@
 package donudeca.orbs;
 
-public class SpikerOrb {
+import slimebound.orbs.SpawnedSlime;
+
+public abstract class SpikerOrb
+        extends SpawnedSlime {
+
+
+
 }
