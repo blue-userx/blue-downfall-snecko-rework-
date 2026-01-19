@@ -37,5 +37,13 @@
     "NAME": "Punish",
     "DESCRIPTION": "Deal !D! damage. NL Target enemy gains !M! Block.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Target enemy gains !M! Block."
+  },
+  "${ModID}:Identify": {
+    "NAME": "Identify",
+    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL Apply !M! Vulnerable."
+  },
+  "${ModID}:Weigh": {
+    "NAME": "Weigh",
+    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL Apply !M! Weak."
   }
 }

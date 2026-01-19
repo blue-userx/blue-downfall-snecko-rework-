@@ -22,7 +22,8 @@
     "DESCRIPTION": [
       "Deals #b",
       " damage to enemies whenever they gain #yWeak [REMOVE_SPACE].",
-      " NL yEvoke [REMOVE_SPACE]: Apply #bWeak to ALL enemies."
+      " NL yEvoke [REMOVE_SPACE]: Apply #b",
+      " #yWeak to ALL enemies."
     ]
   }
 }
