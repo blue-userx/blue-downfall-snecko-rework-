@@ -22,5 +22,10 @@
   "${ModID}:AcariteSlam": {
   "NAME": "Acarite Slam",
   "DESCRIPTION": "donudeca:Searing. NL Deal !D! damage."
-}
+},
+  "${ModID}:Execution": {
+    "NAME": "Execution",
+    "DESCRIPTION": "Deal !D! damage. NL Apply X Lock-On.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Apply X+1 Lock-On."
+  }
 }
