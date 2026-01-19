@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static donudeca.DonuDecaMod.makeID;
+import static donudeca.DonuDecaMod.*;
 
 public class Strike extends AbstractDonuDecaCard {
     public final static String ID = makeID("Strike");
@@ -15,6 +15,7 @@ public class Strike extends AbstractDonuDecaCard {
         baseDamage = 6;
         tags.add(CardTags.STRIKE);
         tags.add(CardTags.STARTER_STRIKE);
+        loadJokeCardImage(this, makeBetaCardPath(Strike.class.getSimpleName() + ".png"));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

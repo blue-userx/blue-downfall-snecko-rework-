@@ -1,6 +1,7 @@
 package donudeca.cards;
 
 import automaton.vfx.FineTuningEffect;
+import awakenedOne.cards.Caw;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,7 +12,7 @@ import hermit.util.Wiz;
 
 import java.util.ArrayList;
 
-import static donudeca.DonuDecaMod.makeID;
+import static donudeca.DonuDecaMod.*;
 
 public class Tinker extends AbstractDonuDecaCard {
     public final static String ID = makeID("Tinker");
@@ -20,6 +21,7 @@ public class Tinker extends AbstractDonuDecaCard {
     public Tinker() {
         super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         baseBlock = 2;
+        loadJokeCardImage(this, makeBetaCardPath(Tinker.class.getSimpleName() + ".png"));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
