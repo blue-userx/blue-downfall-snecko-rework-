@@ -45,5 +45,9 @@
   "${ModID}:Weigh": {
     "NAME": "Weigh",
     "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage. NL Apply !M! Weak."
+  },
+  "${ModID}:BarrageDonu": {
+    "NAME": "Barrage",
+    "DESCRIPTION": "Deal !D! damage for each Channeled Orb."
   }
 }
