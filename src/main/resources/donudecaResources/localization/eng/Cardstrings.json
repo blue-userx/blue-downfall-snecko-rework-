@@ -49,5 +49,18 @@
   "${ModID}:BarrageDonu": {
     "NAME": "Barrage",
     "DESCRIPTION": "Deal !D! damage for each Channeled Orb."
+  },
+  "${ModID}:Ceasefire": {
+    "NAME": "Ceasefire",
+    "DESCRIPTION": "EVERYONE gains !B! Block. NL Draw !M! additional card at the start of your next turn.",
+    "UPGRADE_DESCRIPTION": "EVERYONE gains !B! Block. NL Draw !M! additional cards at the start of your next turn."
+  },
+  "${ModID}:IronDouble": {
+    "NAME": "Iron Double",
+    "DESCRIPTION": "donudeca:Flip. NL Gain !B! Block. NL Deal !D! damage."
+  },
+  "${ModID}:TwiceSlice": {
+    "NAME": "Twice Slice",
+    "DESCRIPTION": "donudeca:Flip. NL Deal !D! damage twice."
   }
 }
