@@ -116,6 +116,8 @@ public class EvilModeCharacterSelect {
                                 }
                                 villainOptions[6] = o;
 
+                                //todo time eater character select
+
                             } else if (o.c.chosenClass == GremlinEnum.GREMLIN) {
                                 if (UnlockTracker.isCharacterLocked("Gremlin")) {
                                     o.locked = true;
