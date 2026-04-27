@@ -48,6 +48,7 @@ public class StudyTheSpire extends AbstractExpansionCard {
                     if(q.hasTag(expansionContentMod.STUDY_COLLECTOR)){continue;}
                 } else if (AbstractDungeon.player instanceof AwakenedOneChar) {
                     if(q.hasTag(expansionContentMod.STUDY_AWAKENEDONE)){continue;}
+                    //todo time eater boss card stuff
                 }
 
                 AbstractCard r = q.makeCopy();

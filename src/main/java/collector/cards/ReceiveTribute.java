@@ -58,6 +58,7 @@ public class ReceiveTribute extends AbstractCollectorCard {
                     } else if (AbstractDungeon.player instanceof AwakenedOneChar) {
                         if(q.hasTag(expansionContentMod.STUDY_AWAKENEDONE)){continue;}
                     }
+                    //todo time eater boss card stuff
 
                     AbstractCard r = q.makeCopy();
                     possibilities.add(r);

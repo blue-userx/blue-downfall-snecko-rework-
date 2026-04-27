@@ -96,7 +96,7 @@ public class RandomCardWithTagAction extends AbstractGameAction {
                     && (AbstractDungeon.player.chosenClass == CollectorChar.Enums.THE_COLLECTOR || collectorLocked())))
                     && (!(c.getValue().hasTag(expansionContentMod.STUDY_AWAKENEDONE)
                     && (AbstractDungeon.player.chosenClass == AwakenedOneChar.Enums.AWAKENED_ONE || awakenedLocked())))
-
+                    //todo time eater boss card stuff
             ) {
                 tmp.add(c.getKey());
             }

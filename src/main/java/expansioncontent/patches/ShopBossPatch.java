@@ -123,6 +123,8 @@ public class ShopBossPatch {
             return !q.hasTag(expansionContentMod.STUDY_AWAKENEDONE);
         }
 
+        //todo time eater boss card stuff
+
         return true;
     }
 }

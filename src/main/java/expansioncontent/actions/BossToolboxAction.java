@@ -91,6 +91,7 @@ public class BossToolboxAction extends AbstractGameAction {
                         continue;
                     }
                 }
+                //todo time eater boss card stuff
                 AbstractCard r = q.makeCopy();
                 cardsList.add(r);
             }

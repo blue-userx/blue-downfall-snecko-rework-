@@ -90,6 +90,8 @@ public class DeathScreenUnlockPatch {
                         AbstractDungeon.unlockScreen.open((AbstractUnlock) AbstractDungeon.unlocks.remove(0));
                         return SpireReturn.Return(null);
 
+                        //todo time eater unlock order hell
+
                     } else if ((UnlockTracker.isCharacterLocked("Gremlin") && (AbstractDungeon.player.chosenClass == AwakenedOneChar.Enums.AWAKENED_ONE))) {
                         AbstractDungeon.unlocks.add(new GremlinUnlock());
                         AbstractDungeon.unlockScreen.open((AbstractUnlock) AbstractDungeon.unlocks.remove(0));

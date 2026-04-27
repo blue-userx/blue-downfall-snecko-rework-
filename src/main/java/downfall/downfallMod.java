@@ -184,6 +184,7 @@ import theHexaghost.potions.EctoCoolerPotion;
 import theHexaghost.potions.InfernoChargePotion;
 import theHexaghost.potions.SoulburnPotion;
 import theHexaghost.util.SealSealReward;
+import timeEater.TimeEaterMod;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -274,6 +275,7 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
             true, // Gremlins 9
             true, // Snecko 10
             true, // Awakened 11
+            //todo time eater tutorial
             true, // act 3 boss 2 12
             true  // act 3 boss 3 13
     };
@@ -398,6 +400,8 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
                 return "collectorResources/" + path;
             case PACKAGE_AWAKENED:
                 return "awakenedResources/" + path;
+            case PACKAGE_TIME_EATER:
+                return "timeResources/" + path;
         }
         return "downfallResources/" + path;
     }
@@ -500,6 +504,8 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
 
             BaseMod.loadCustomStringsFile(stringType, makeLocalizationPath(language, stringType.getSimpleName(), otherPackagePaths.PACKAGE_AWAKENED));
 
+            BaseMod.loadCustomStringsFile(stringType, makeLocalizationPath(language, stringType.getSimpleName(), otherPackagePaths.PACKAGE_TIME_EATER));
+
         } else {
 
             //SlimeboundMod.logger.info("loading loc:" + language + " PACKAGE_HERMIT" + stringType);
@@ -541,6 +547,7 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
         BaseMod.addCard(new Scatterbrained());
        // BaseMod.addCard(new Sapped());
         BaseMod.addCard(new CurseOfBlood());
+        //todo time eater curse
 /*
         BaseMod.addCard(new Slug());
         BaseMod.addCard(new Defend_Crowbot());
@@ -608,6 +615,7 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
         loadModKeywords(HermitMod.getModID(), otherPackagePaths.PACKAGE_HERMIT);
         loadModKeywords(CollectorMod.getModID(), otherPackagePaths.PACKAGE_COLLECTOR);
         loadModKeywords(AwakenedOneMod.getModID(), otherPackagePaths.PACKAGE_AWAKENED);
+        loadModKeywords(TimeEaterMod.getModID(), otherPackagePaths.PACKAGE_TIME_EATER);
         loadModKeywords(modID, otherPackagePaths.PACKAGE_DOWNFALL);
     }
 
@@ -1405,6 +1413,8 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
                 //AWAKENED
                 BaseMod.addPotion(CultistsDelight.class, Color.BLUE, Color.NAVY, Color.YELLOW, CultistsDelight.POTION_ID);
 
+                //todo time eater shared potion
+
                 if (Loader.isModLoaded("widepotions")) {
                    // WidePotionsMod.whitelistSimplePotion(TempHPPotion.POTION_ID);
                     WidePotionsMod.whitelistSimplePotion(CounterstrikePotion.POTION_ID);
@@ -1523,6 +1533,8 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
             WidePotionsMod.whitelistSimplePotion(DoubleChargePotion.POTION_ID);
             WidePotionsMod.whitelistSimplePotion(InfernoChargePotion.POTION_ID);
         }
+
+        //todo time eater exclusive potions
 
     }
 
@@ -1675,6 +1687,7 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
 
 
     public static boolean isDownfallCharacter(AbstractPlayer p) {
+        //todo time eater stuff
         if (p instanceof SlimeboundCharacter ||
                 p instanceof TheHexaghost ||
                 p instanceof GuardianCharacter ||
@@ -1898,7 +1911,7 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
 
 
     public enum otherPackagePaths {
-        PACKAGE_SLIME, PACKAGE_GUARDIAN, PACKAGE_HEXAGHOST, PACKAGE_SNECKO, PACKAGE_EXPANSION, PACKAGE_CHAMP, PACKAGE_AUTOMATON, PACKAGE_GREMLIN, PACKAGE_HERMIT, PACKAGE_COLLECTOR, PACKAGE_DOWNFALL, PACKAGE_AWAKENED;;
+        PACKAGE_SLIME, PACKAGE_GUARDIAN, PACKAGE_HEXAGHOST, PACKAGE_SNECKO, PACKAGE_EXPANSION, PACKAGE_CHAMP, PACKAGE_AUTOMATON, PACKAGE_GREMLIN, PACKAGE_HERMIT, PACKAGE_COLLECTOR, PACKAGE_DOWNFALL, PACKAGE_AWAKENED, PACKAGE_TIME_EATER;;;
 
         otherPackagePaths() {
         }
@@ -2004,6 +2017,8 @@ public class downfallMod implements OnPlayerDamagedSubscriber, OnStartBattleSubs
                 AbstractDungeon.actionManager.addToTop(new MessageCaller(11));
             }
         }
+
+        //todo tutorial 12
     }
 
 

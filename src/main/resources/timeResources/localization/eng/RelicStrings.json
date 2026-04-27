@@ -1,0 +1,9 @@
+{
+  "time:OldWatch": {
+    "NAME": "Old Watch",
+    "FLAVOR": "Tick. Tock.",
+    "DESCRIPTIONS": [
+      "At 12:00, gain #b1 #yStrength."
+    ]
+  }
+}

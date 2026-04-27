@@ -1,0 +1,51 @@
+{
+  "time:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "time:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "time:ReapTime": {
+    "NAME": "Reap Time",
+    "DESCRIPTION": "Deal !D! damage, increased by the Clock.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Deal !D! damage, increased by the Clock."
+  },
+  "time:MidnightStrike": {
+    "NAME": "Midnight Strike",
+    "DESCRIPTION": "Can only be played at 11:00. NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "It is not time."
+    ]
+  },
+  "time:TimedGuard": {
+    "NAME": "Timed Guard",
+    "DESCRIPTION": "Draw !M! card. NL Gain Block equal to the Clock.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain Block equal to the Clock.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gain !B! Block.)"
+    ]
+  },
+  "time:LunchBreak": {
+    "NAME": "Lunch Break",
+    "DESCRIPTION": "At 6:00, gain !M! Block."
+  },
+  "time:SandsOfTime": {
+    "NAME": "Sands of Time",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When Retained, lower its cost by 1 this combat."
+  },
+  "time:GoodEvening": {
+    "NAME": "Good Evening",
+    "DESCRIPTION": "Cards deal double damage and grant double Block at 11:00."
+  },
+  "time:LimitMake": {
+    "NAME": "Limit Make",
+    "DESCRIPTION": "Double your Strength this turn.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Double your Strength this turn."
+  },
+  "time:Defer": {
+    "NAME": "Defer",
+    "DESCRIPTION": "Ethereal. NL Exhaust a card in your hand. NL Obtain a Potion that plays that card. NL Exhaust."
+  }
+}
