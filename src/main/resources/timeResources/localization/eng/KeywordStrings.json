@@ -1,3 +1,36 @@
 [
-
+  {
+    "PROPER_NAME": "Chrono-Boost",
+    "NAMES": [
+      "Chrono-Boost",
+      "Warp",
+      "warp",
+      "warped"
+    ],
+    "DESCRIPTION": "Upon reaching #b12 #yChrono-Boost, start your next turn with #b3 additional [E], draw #b3 additional cards, and #b2 additional #yStrength. You can only #yWarp once per turn."
+  },
+  {
+    "PROPER_NAME": "Haste",
+    "NAMES": [
+      "Haste",
+      "haste"
+    ],
+    "DESCRIPTION": "Draw an additional card and gain an additional [E] at the start of your next turn."
+  },
+  {
+    "PROPER_NAME": "Mill",
+    "NAMES": [
+      "Mill",
+      "mill"
+    ],
+    "DESCRIPTION": "Discard the top X cards of your draw pile."
+  },
+  {
+    "PROPER_NAME": "Bounce",
+    "NAMES": [
+      "Bounce",
+      "bounce"
+    ],
+    "DESCRIPTION": "Jumps to your hand when discarded from anywhere during your turn."
+  }
 ]

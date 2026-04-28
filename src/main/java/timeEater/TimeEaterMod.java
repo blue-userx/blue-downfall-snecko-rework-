@@ -1,18 +1,9 @@
 package timeEater;
 
-import automaton.AutomatonChar;
-import automaton.events.*;
-import automaton.potions.BuildAFunctionPotion;
-import automaton.potions.BurnAndBuffPotion;
-import automaton.potions.CleanCodePotion;
-import automaton.potions.FreeFunctionsPotion;
-import awakenedOne.cards.AbstractAwakenedCard;
 import awakenedOne.util.TexLoader;
 import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomUnlockBundle;
-import basemod.eventUtil.AddEventParams;
-import basemod.eventUtil.EventUtils;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -23,10 +14,6 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.Exordium;
-import com.megacrit.cardcrawl.dungeons.TheCity;
-import com.megacrit.cardcrawl.events.city.BackToBasics;
-import com.megacrit.cardcrawl.events.shrines.AccursedBlacksmith;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import downfall.util.CardIgnore;
 import javassist.CtClass;
@@ -143,7 +130,7 @@ public class TimeEaterMod implements
     }
 
     public static void initialize() {
-        TimeEaterMod automatonMod = new TimeEaterMod();
+        TimeEaterMod timeEaterMod = new TimeEaterMod();
     }
 
     public static String makeID(String idText) {

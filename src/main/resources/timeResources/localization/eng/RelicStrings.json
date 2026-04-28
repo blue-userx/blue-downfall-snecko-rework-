@@ -1,9 +1,11 @@
 {
   "time:OldWatch": {
-    "NAME": "Old Watch",
+    "NAME": "Gleaming Pocketwatch",
     "FLAVOR": "Tick. Tock.",
     "DESCRIPTIONS": [
-      "At 12:00, gain #b1 #yStrength."
+      "At the start of the first #b",
+      " turns of combat, gain #b",
+      " #ytime:Chrono-Boost."
     ]
   }
 }
