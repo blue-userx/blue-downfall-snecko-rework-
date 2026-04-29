@@ -1,11 +1,19 @@
 {
-  "time:OldWatch": {
-    "NAME": "Gleaming Pocketwatch",
-    "FLAVOR": "Tick. Tock.",
+  "time:OldPocketwatch": {
+    "NAME": "Old Pocketwatch",
+    "FLAVOR": "You've been waiting forever...",
     "DESCRIPTIONS": [
-      "At the start of the first #b",
-      " turns of combat, gain #b",
+      "The first #b",
+      " times you play a card each combat, gain #b",
       " #ytime:Chrono-Boost."
+    ]
+  },
+  "time:GleamingWatch": {
+    "NAME": "Gleaming Pocketwatch",
+    "FLAVOR": "...but you can make ever wait for you.",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " more #ytime:Haste from #ytime:Warping."
     ]
   }
 }
