@@ -29,7 +29,7 @@ public abstract class AbstractTimeCard extends CustomCard {
     protected String UPGRADE_DESCRIPTION;
     protected String[] EXTENDED_DESCRIPTION;
     public String betaArtPath;
-
+    public boolean postMillAction;
     public String frameString;
 
     public int secondMagic;
@@ -69,6 +69,7 @@ public abstract class AbstractTimeCard extends CustomCard {
         rawDescription = DESCRIPTION = cardStrings.DESCRIPTION;
         UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
         EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+        this.postMillAction = false;
         initializeTitle();
         initializeDescription();
     }
@@ -160,6 +161,8 @@ public abstract class AbstractTimeCard extends CustomCard {
     public void applyToSelfTop(AbstractPower po) {
         att(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
     }
+
+    public void PostMillAction() {}
 
     WeakPower autoWeak(AbstractMonster m, int i) {
         return new WeakPower(m, i, false);
