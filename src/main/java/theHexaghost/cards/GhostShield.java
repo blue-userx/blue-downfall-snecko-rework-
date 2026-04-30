@@ -16,12 +16,12 @@ public class GhostShield extends AbstractHexaCard implements HexaPurpleTextInter
 
     public final static String ID = makeID("GhostShield");
 
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 7;
     private static final int MAGIC = 1;
     private static final int UPG_BLOCK = 3;
 
     public GhostShield() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
         isEthereal = true;
