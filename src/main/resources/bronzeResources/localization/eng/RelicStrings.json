@@ -3,7 +3,7 @@
     "NAME": "Bronze Core",
     "FLAVOR": "Replace once every 50,000 years.",
     "DESCRIPTIONS": [
-      "The first time you create a Function each combat, gain [E] ."
+      "Start each combat with an #yEncoded #yStrike and #yDefend."
     ]
   },
   "bronze:ProtectiveGoggles": {

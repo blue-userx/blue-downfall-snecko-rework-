@@ -1,16 +1,21 @@
 package automaton.relics;
 
 import automaton.AutomatonMod;
+import automaton.actions.AddToFuncAction;
+import automaton.cards.Defend;
+import automaton.cards.Strike;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import downfall.util.TextureLoader;
 
 import static automaton.AutomatonMod.makeRelicOutlinePath;
 import static automaton.AutomatonMod.makeRelicPath;
+import static awakenedOne.util.Wiz.atb;
 
-public class BronzeCore extends CustomRelic implements OnCompileRelic {
+public class BronzeCore extends CustomRelic {
 
     public static final String ID = AutomatonMod.makeID("BronzeCore");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BronzeCore.png"));
@@ -23,27 +28,13 @@ public class BronzeCore extends CustomRelic implements OnCompileRelic {
     boolean activated = false;
 
     @Override
-    public void atBattleStart() {
-        activated = false;
-        grayscale = false;
+    public void atBattleStartPreDraw() {
+        super.atBattleStartPreDraw();
+        AbstractCard c = new Strike();
+        atb(new AddToFuncAction(c, null));
+        c = new Defend();
+        atb(new AddToFuncAction(c, null));
     }
-
-    @Override
-    public void receiveCompile(AbstractCard function, boolean forGameplay) {
-        if (!activated && forGameplay) {
-            flash();
-            activated = true;
-            grayscale = true;
-            addToBot(new GainEnergyAction(1));
-        }
-    }
-
-    @Override
-    public void onVictory() {
-        activated = false;
-        grayscale = false;
-    }
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

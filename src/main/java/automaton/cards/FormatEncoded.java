@@ -20,9 +20,9 @@ public class FormatEncoded extends AbstractBronzeCard {
     public final static String ID = makeID("FormatEncoded");
 
     public FormatEncoded() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseBlock = 4;
-        baseDamage = 4;
+        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        baseBlock = 3;
+        baseDamage = 3;
         thisEncodes();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("FormatEncoded.png"));
     }

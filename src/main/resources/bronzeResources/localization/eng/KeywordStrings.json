@@ -28,7 +28,13 @@
       "insert"
     ],
     "DESCRIPTION": "Shuffle a card into your draw pile."
-  },
+  },  {
+  "PROPER_NAME": "Bronze Orb",
+  "NAMES": [
+    "stash"
+  ],
+  "DESCRIPTION": "Stash cards away inside of your Bronze Orb for later. You draw #b1 card from it naturally at the start of your turn."
+},
   {
     "PROPER_NAME": "Cycle",
     "NAMES": [

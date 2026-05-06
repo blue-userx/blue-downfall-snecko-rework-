@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,7 +26,7 @@ public class BugBarrage extends AbstractBronzeCard {
     private static final int UPG_DAMAGE = 2;
 
     public BugBarrage() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = DAMAGE;
         // exhaust = true;
         magicNumber = baseMagicNumber = 2;
@@ -35,7 +36,7 @@ public class BugBarrage extends AbstractBronzeCard {
     private int dummyPlaceholderOf;
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInHandAction(new Wound(), magicNumber));
+        addToBot(new MakeTempCardInHandAction(new Slimed(), magicNumber));
 
         atb(new AbstractGameAction() {
             @Override

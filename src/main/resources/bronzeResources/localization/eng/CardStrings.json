@@ -38,8 +38,7 @@
   },
   "bronze:BitShift": {
     "NAME": "Bit Shift",
-    "DESCRIPTION": "Choose an Encoded card to return to your hand. NL It gains Retain. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Choose an Encoded card to return to your hand. NL It gains Retain. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Draw a card from your bronze:Stash."
   },
   "bronze:Boost": {
     "NAME": "Boost",
@@ -90,7 +89,7 @@
   },
   "bronze:BuggyMess": {
     "NAME": "Buggy Mess",
-    "DESCRIPTION": "bronze:Insert a *Dazed. NL Gain !M! [E] .",
+    "DESCRIPTION": "Add an *Error to your draw pile. NL Gain !M! [E] .",
     "EXTENDED_DESCRIPTION": [
       "buggy",
       "Mess"
@@ -150,7 +149,7 @@
   },
   "bronze:CutThrough": {
     "NAME": "Cut Through",
-    "DESCRIPTION": "Deal !D! damage. NL Scry !M!. NL bronze:Compile - Draw !bauto! card.",
+    "DESCRIPTION": "Deal !D! damage. NL Scry !M!. NL bronze:Stash the top card of your draw pile.",
     "EXTENDED_DESCRIPTION": [
       "cutting",
       "Cut"
@@ -173,12 +172,8 @@
     ]
   },
   "bronze:DelayedGuard": {
-    "NAME": "Delayed Guard",
-    "DESCRIPTION": "Next turn, gain !B! Block.",
-    "EXTENDED_DESCRIPTION": [
-      "delayed",
-      "Guard"
-    ]
+    "NAME": "Postpone",
+    "DESCRIPTION": "Gain !B! Block. NL bronze:Stash a card in your hand."
   },
   "bronze:DelayedSlice": {
     "NAME": "Robo-Chop",
@@ -215,8 +210,8 @@
   },
   "bronze:FineTuning": {
     "NAME": "Fine Tuning",
-    "DESCRIPTION": "Increase all numbers on Encoded cards by !M! except cost. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Increase all numbers on Encoded cards by !M! except cost. NL Exhaust."
+    "DESCRIPTION": "Choose a card in your hand. bronze:Stash it, Upgrade it, and give it Retain.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Choose a card in your hand. bronze:Stash it, Upgrade it, and give it Retain."
   },
   "bronze:Flail": {
     "NAME": "Flail",
@@ -528,8 +523,8 @@
     ]
   },
   "bronze:WildBeam": {
-    "NAME": "Cleanse",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust a random Status card in your draw pile.",
+    "NAME": "Clean Up",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust a card. NL If it's a Status or Curse card, deal !D! damage again.",
     "EXTENDED_DESCRIPTION": [
       "wild",
       "Beam"

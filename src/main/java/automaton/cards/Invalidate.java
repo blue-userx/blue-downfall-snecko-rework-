@@ -16,7 +16,7 @@ public class Invalidate extends AbstractBronzeCard {
     private static final int UPG_MAGIC = 1;
 
     public Invalidate() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = MAGIC;
         thisEncodes();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Invalidate.png"));
@@ -27,6 +27,7 @@ public class Invalidate extends AbstractBronzeCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UPG_MAGIC);
+        //upgradeMagicNumber(UPG_MAGIC);
+        upgradeBaseCost(0);
     }
 }

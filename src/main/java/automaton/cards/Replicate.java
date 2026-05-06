@@ -16,7 +16,7 @@ public class Replicate extends AbstractBronzeCard {
     private static final int UPG_DAMAGE = 2;
 
     public Replicate() {
-        super(ID, 0, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = DAMAGE;
         thisEncodes();
         AutomatonMod.loadJokeCardImage(this, AutomatonMod.makeBetaCardPath("Replicate.png"));

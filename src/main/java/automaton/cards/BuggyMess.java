@@ -3,6 +3,7 @@ package automaton.cards;
 import automaton.AutomatonMod;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -22,7 +23,7 @@ public class BuggyMess extends AbstractBronzeCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        shuffleIn(new Dazed());
+        shuffleIn(new Slimed());
         atb(new GainEnergyAction(magicNumber));
     }
 

@@ -1,18 +1,9 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
-import automaton.FunctionHelper;
-import basemod.BaseMod;
-import basemod.helpers.CardModifierManager;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import automaton.actions.DrawCardFromStashAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import expansioncontent.cardmods.PropertiesMod;
-import sneckomod.SneckoMod;
-
-import java.util.ArrayList;
 
 import static automaton.AutomatonMod.makeBetaCardPath;
 
@@ -21,65 +12,21 @@ public class BitShift extends AbstractBronzeCard {
 
     public BitShift() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        exhaust = true;
+        //exhaust = true;
+        baseBlock = 1;
         baseMagicNumber = magicNumber = 1;
-        this.tags.add(SneckoMod.BANNEDFORSNECKO);
+        //this.tags.add(SneckoMod.BANNEDFORSNECKO);
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("BitShift.png"));
     }
 
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (FunctionHelper.isSequenceEmpty()) {
-            cantUseMessage = masterUI.TEXT[3];
-            return false;
-        }
-        return super.canUse(p, m);
-    }
+
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> c = new ArrayList<>();
-        for (AbstractCard r : FunctionHelper.held.group) {
-            c.add(r.makeStatEquivalentCopy());
-        }
-        atb(new SelectCardsAction(c, 1, masterUI.TEXT[0], (cards) -> {
-            att(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    isDone = true;
-                    FunctionHelper.genPreview();
-                }
-            });
-            AbstractCard q = cards.get(0);
-            att(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    isDone = true;
-                    q.superFlash();
-                    CardModifierManager.addModifier(q, new PropertiesMod(PropertiesMod.supportedProperties.RETAIN, false));
-                }
-            });
-            att(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    isDone = true;
-                    FunctionHelper.held.removeCard(q.cardID);
-                    for (int i = 0; i < FunctionHelper.held.size(); i++) {
-                        FunctionHelper.held.group.get(i).target_x = FunctionHelper.cardPositions[i].x;
-                        FunctionHelper.held.group.get(i).target_y = FunctionHelper.cardPositions[i].y;
-                    }
-                    if (p.hand.size() <= BaseMod.MAX_HAND_SIZE) {
-                        p.hand.addToTop(q);
-                    } else {
-                        p.discardPile.addToTop(q);
-                    }
-                }
-            });
-        }));
+        blck();
+        atb(new DrawCardFromStashAction());
     }
 
     public void upp() {
-        selfRetain = true;
-        rawDescription = UPGRADE_DESCRIPTION;
-        initializeDescription();
+        upgradeBlock(3);
     }
 }

@@ -30,6 +30,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.status.*;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
@@ -335,10 +336,10 @@ public class AutomatonMod implements
         );
     }
 
-
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         FunctionHelper.init();
+        BronzeOrbStash.atBattleStart();
     }
 
     @Override
@@ -348,12 +349,16 @@ public class AutomatonMod implements
         if (FunctionHelper.held != null) {
             FunctionHelper.held.clear();
         }
+        BronzeOrbStash.atBattleEnd();
     }
 
     public static CompileDisplayPanel compileDisplayPanel;
 
     @Override
     public void receiveStartGame() {
+        if (!CardCrawlGame.loadingSave) {
+            BronzeOrbStash.init();
+        }
         EasyInfoDisplayPanel.specialDisplays.clear();
         compileDisplayPanel = new CompileDisplayPanel();
         EasyInfoDisplayPanel.specialDisplays.add(compileDisplayPanel);

@@ -1,9 +1,6 @@
 package automaton;
 
-import automaton.cards.Goto;
-import automaton.cards.Replicate;
-import automaton.cards.Defend;
-import automaton.cards.Strike;
+import automaton.cards.*;
 import automaton.relics.BronzeCore;
 import automaton.vfx.CompileVictoryEffect;
 import basemod.abstracts.CustomPlayer;
@@ -107,8 +104,8 @@ public class AutomatonChar extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
-        retVal.add(Replicate.ID);
-        retVal.add(Goto.ID);
+        retVal.add(FormatEncoded.ID);
+        retVal.add(DelayedGuard.ID);
         return retVal;
     }
 
@@ -168,7 +165,7 @@ public class AutomatonChar extends CustomPlayer {
     @Override
     public AbstractCard getStartCardForEvent() {
         //todo new auto card here
-        return new Goto();
+        return new FormatEncoded();
     }
 
     @Override

@@ -1,9 +1,18 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.BronzeOrbStash;
+import automaton.actions.StashFromHandAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
+import guardian.actions.PlaceCardsInHandIntoStasisAction;
+import utilityClasses.Later.LaterAction;
 
 import static automaton.AutomatonMod.makeBetaCardPath;
 
@@ -13,18 +22,19 @@ public class DelayedGuard extends AbstractBronzeCard {
 
     //stupid intellij stuff skill, self, common
 
-    private static final int BLOCK = 7;
+    private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 
     public DelayedGuard() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         baseBlock = BLOCK;
-        thisEncodes();
+        //thisEncodes();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("DelayedGuard.png"));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new NextTurnBlockPower(p, block));
+        blck();
+        this.addToBot(new StashFromHandAction(p, 1, false));
     }
 
     public void upp() {
