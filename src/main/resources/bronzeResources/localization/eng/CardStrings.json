@@ -177,8 +177,8 @@
   },
   "bronze:DelayedSlice": {
     "NAME": "Robo-Chop",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, draw !M! additional card.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Next turn, draw !M! additional cards.",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card. NL bronze:Stash a card in your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL bronze:Stash a card in your hand.",
     "EXTENDED_DESCRIPTION": [
       "delayed",
       "Slice"
@@ -516,7 +516,8 @@
   },
   "bronze:WhirlingStrike": {
     "NAME": "Piercing Shot",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies.",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Upgrade !M! random card in your bronze:Stash.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Upgrade !M! random cards in your bronze:Stash.",
     "EXTENDED_DESCRIPTION": [
       "piercing",
       "Shot"
