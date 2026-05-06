@@ -99,6 +99,7 @@ public class AutomatonChar extends CustomPlayer {
 
     @Override
     public ArrayList<String> getStartingDeck() {
+        //todo new starter deck
         ArrayList<String> retVal = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             retVal.add(Strike.ID);
@@ -166,6 +167,7 @@ public class AutomatonChar extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
+        //todo new auto card here
         return new Goto();
     }
 

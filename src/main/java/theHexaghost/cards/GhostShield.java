@@ -16,12 +16,12 @@ public class GhostShield extends AbstractHexaCard implements HexaPurpleTextInter
 
     public final static String ID = makeID("GhostShield");
 
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 7;
     private static final int MAGIC = 1;
     private static final int UPG_BLOCK = 3;
 
     public GhostShield() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
         isEthereal = true;
@@ -57,5 +57,5 @@ public class GhostShield extends AbstractHexaCard implements HexaPurpleTextInter
         String afterlife_name = downfallMod.keywords_and_proper_names.get("afterlife");
         this.keywords.add(afterlife_name);
         this.keywords.add(GameDictionary.BLOCK.NAMES[0].toLowerCase());
-            }
-        }
+    }
+}
