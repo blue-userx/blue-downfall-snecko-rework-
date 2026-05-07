@@ -278,8 +278,8 @@
   },
   "bronze:Goto": {
     "NAME": "Goto",
-    "DESCRIPTION": "Draw !M! card. NL bronze:Compile - Next turn, draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL bronze:Compile - Next turn, draw !M! cards.",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card. NL Costs 0 until played when you create a Status card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Costs 0 until played when you create a Status card.",
     "EXTENDED_DESCRIPTION": [
       "running",
       "Sprint"

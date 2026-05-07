@@ -1,6 +1,7 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.BronzeOrbStash;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,10 +19,36 @@ public class Goto extends AbstractBronzeCard {
 
     public Goto() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        baseBlock = 7;
         baseMagicNumber = magicNumber = 1;
-        thisEncodes();
+        //thisEncodes();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Goto.png"));
     }
+
+    //todo MAKE CARDS THAT DO THINGS EVERYWHERE (APOTHEOSIS ETC) HIT THE STASH!!!
+    public static void becomeFree() {
+        for (AbstractCard q : AbstractDungeon.player.drawPile.group) {
+            if (q instanceof Goto) {
+                q.freeToPlayOnce = true;
+            }
+        }
+        for (AbstractCard q : AbstractDungeon.player.hand.group) {
+            if (q instanceof Goto) {
+                q.freeToPlayOnce = true;
+            }
+        }
+        for (AbstractCard q : AbstractDungeon.player.discardPile.group) {
+            if (q instanceof Goto) {
+                q.freeToPlayOnce = true;
+            }
+        }
+        for (AbstractCard q : BronzeOrbStash.combatstashpile.group) {
+            if (q instanceof Goto) {
+                q.freeToPlayOnce = true;
+            }
+        }
+    }
+
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new DrawCardAction(magicNumber));
@@ -35,6 +62,7 @@ public class Goto extends AbstractBronzeCard {
     }
 
     public void upp() {
+        upgradeBlock(1);
         upgradeMagicNumber(1);
         rawDescription = UPGRADE_DESCRIPTION;
         initializeDescription();

@@ -1,6 +1,7 @@
 package awakenedOne.patches;
 
 import automaton.cards.ForceShield;
+import automaton.cards.Goto;
 import automaton.cards.goodstatus.IntoTheVoid;
 import automaton.powers.FeaturePower;
 import automaton.powers.RepulsorNewPower;
@@ -79,6 +80,7 @@ public class OnCreateCardSubscriber {
         }
 
         if (c.type == AbstractCard.CardType.STATUS) {
+            Goto.becomeFree();
             if (AbstractDungeon.player.hasPower(RepulsorNewPower.POWER_ID)) {
                 AbstractDungeon.player.getPower(RepulsorNewPower.POWER_ID).onSpecificTrigger();
             }
@@ -92,6 +94,7 @@ public class OnCreateCardSubscriber {
             AwakenedTextHelper.colorCombos((AbstractAwakenedCard) c, false);
             c.initializeDescription();
         }
+
         ForceShield.decrementShields();
     }
 }
