@@ -26,7 +26,7 @@ public class BurnOut extends AbstractBronzeCard {
 
     public BurnOut() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        baseDamage = DAMAGE;
+        baseMagicNumber = magicNumber = 9;
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("BurnOut.png"));
         //exhaust = true;
     }
