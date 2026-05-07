@@ -16,15 +16,14 @@ public class Backtrace extends AbstractBronzeCard {
 
     //stupid intellij stuff attack, enemy, uncommon
 
-    private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 4;
+    private static final int DAMAGE = 7;
+    private static final int UPG_DAMAGE = 2;
 
     public Backtrace() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = DAMAGE;
         isInnate = true;
         thisEncodes();
-        tags.add(AutomatonMod.BAD_COMPILE);
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Backtrace.png"));
     }
 
@@ -32,10 +31,6 @@ public class Backtrace extends AbstractBronzeCard {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
     }
 
-    @Override
-    public void onCompile(AbstractCard function, boolean forGameplay) {
-        CardModifierManager.addModifier(function, new ExhaustMod());
-    }
 
     public void upp() {
         upgradeDamage(UPG_DAMAGE);

@@ -1,6 +1,7 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.actions.DrawCardFromStashAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,26 +20,18 @@ public class Shell extends AbstractBronzeCard {
     private static final int UPG_BLOCK = 5;
 
     public Shell() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        thisEncodes();
-        baseMagicNumber = magicNumber = 1;
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 2;
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Shell.png"));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new BlurPower(p, magicNumber));
-    }
-
-   @Override
-   public void onCompile(AbstractCard function, boolean forGameplay) {
-       if (forGameplay && upgraded) {
-                    applyToSelf(new BlurPower(AbstractDungeon.player, magicNumber));
-               }
+        for (int i = 0; i < magicNumber; i++) {
+            atb(new DrawCardFromStashAction());
+        }
     }
 
     public void upp() {
-       // upgradeBaseCost(1);
-        rawDescription = UPGRADE_DESCRIPTION;
-       initializeDescription();
+        upgradeMagicNumber(1);
     }
 }

@@ -1,10 +1,13 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.actions.PlaceActualCardIntoStashAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static automaton.AutomatonMod.makeBetaCardPath;
@@ -24,7 +27,9 @@ public class Turbo extends AbstractBronzeCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new GainEnergyAction(magicNumber));
-        atb(new MakeTempCardInDiscardAction(new VoidCard(), 1));
+        shuffleIn(new Slimed());
+        atb(new MakeTempCardInDiscardAction(new Slimed(), 1));
+        atb(new PlaceActualCardIntoStashAction(new Slimed(), null, true));
     }
 
     public void upp() {

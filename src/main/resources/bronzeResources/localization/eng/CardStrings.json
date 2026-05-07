@@ -1,7 +1,7 @@
 {
   "bronze:Allocate": {
     "NAME": "Allocate",
-    "DESCRIPTION": "Gain [E] for each Status in your draw pile.",
+    "DESCRIPTION": "Gain [E] for each Status in your draw pile and bronze:Stash.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain ",
       " [E] .)"
@@ -22,7 +22,7 @@
   },
   "bronze:Backtrace": {
     "NAME": "Backtrace",
-    "DESCRIPTION": "Innate. NL \u00A0 Deal !D! damage. NL bronze:Compile *Error - Function Exhausts.",
+    "DESCRIPTION": "Innate. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "sneaky",
       "Trace"
@@ -354,7 +354,7 @@
   },
   "bronze:OilSpill": {
     "NAME": "Oil Spill",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Poison. NL bronze:Compile *Error - bronze:Insert a *Slimed.",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Poison. NL bronze:Stash an *Error.",
     "EXTENDED_DESCRIPTION": [
       "oily",
       "Spill"
@@ -438,8 +438,7 @@
   },
   "bronze:Shell": {
     "NAME": "Blockchain",
-    "DESCRIPTION": "Gain !M! bronze:Blur.",
-    "UPGRADE_DESCRIPTION": "Gain !M! bronze:Blur. NL bronze:Compile - Gain !M! bronze:Blur.",
+    "DESCRIPTION": "Draw !M! cards from your bronze:Stash.",
     "EXTENDED_DESCRIPTION": [
       "block",
       "Chain"
@@ -497,8 +496,8 @@
   },
   "bronze:Turbo": {
     "NAME": "Turbo",
-    "DESCRIPTION": "Gain [E] [E] . NL Add a *Void into your discard pile.",
-    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL Add a *Void into your discard pile."
+    "DESCRIPTION": "Gain [E] [E] . NL Add an *Error to your draw pile, discard pile, and bronze:Stash.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL Add an *Error to your draw pile, discard pile, and bronze:Stash."
   },
   "bronze:Undervolt": {
     "NAME": "Undervolt",
@@ -532,8 +531,8 @@
     ]
   },
   "bronze:WildStrike": {
-    "NAME": "Wild Strike",
-    "DESCRIPTION": "Deal !D! damage. NL bronze:Insert a *Wound."
+    "NAME": "Erroneous Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle an *Error into your draw pile."
   },
 
 

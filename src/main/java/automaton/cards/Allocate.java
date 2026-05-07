@@ -1,6 +1,7 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.BronzeOrbStash;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -29,6 +30,11 @@ public class Allocate extends AbstractBronzeCard {
                 statusCount++;
             }
         }
+        for (AbstractCard c : BronzeOrbStash.combatstashpile.group) {
+            if (c.type == CardType.STATUS) {
+                statusCount++;
+            }
+        }
 
         atb(new GainEnergyAction(statusCount));
     }
@@ -47,6 +53,11 @@ public class Allocate extends AbstractBronzeCard {
                 }
             }
 
+            for (AbstractCard c : BronzeOrbStash.combatstashpile.group) {
+                if (c.type == CardType.STATUS) {
+                    statusCount++;
+                }
+            }
             this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[0] + statusCount;
             this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[1];
 
