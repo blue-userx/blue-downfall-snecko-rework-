@@ -222,7 +222,7 @@ public class FunctionHelper {
 
 
     public static void output() {
-        ForceShield.decrementShields(); // Decrease cost of Force Shields
+        //ForceShield.decrementShields(); // Decrease cost of Force Shields
         boolean regularOutput = true;
         for (AbstractPower p : AbstractDungeon.player.powers) {
             if (p instanceof OnOutputFunctionPower) {

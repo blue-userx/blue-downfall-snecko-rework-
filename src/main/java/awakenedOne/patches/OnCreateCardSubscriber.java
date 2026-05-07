@@ -1,5 +1,6 @@
 package awakenedOne.patches;
 
+import automaton.cards.ForceShield;
 import automaton.cards.goodstatus.IntoTheVoid;
 import automaton.powers.FeaturePower;
 import automaton.powers.RepulsorNewPower;
@@ -91,5 +92,6 @@ public class OnCreateCardSubscriber {
             AwakenedTextHelper.colorCombos((AbstractAwakenedCard) c, false);
             c.initializeDescription();
         }
+        ForceShield.decrementShields();
     }
 }

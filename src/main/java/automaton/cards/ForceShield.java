@@ -16,7 +16,7 @@ public class ForceShield extends AbstractBronzeCard {
 
     //stupid intellij stuff skill, self, uncommon
 
-    private static final int BLOCK = 12;
+    private static final int BLOCK = 11;
     private static final int UPG_BLOCK = 4;
 
     public ForceShield() {

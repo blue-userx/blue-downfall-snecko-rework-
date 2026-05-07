@@ -227,7 +227,7 @@
   },
   "bronze:ForceShield": {
     "NAME": "Force Shield",
-    "DESCRIPTION": "Costs 1 less [E] for each Function created this combat. NL Gain !B! Block."
+    "DESCRIPTION": "Costs 1 less [E] for each card created this combat. NL Gain !B! Block."
   },
   "bronze:ForLoop": {
     "NAME": "For Loop",
