@@ -1,6 +1,7 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.actions.MopUpAction;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -40,7 +41,7 @@ public class WildBeam extends AbstractBronzeCard {
         atb(new SFXAction("ATTACK_FAST", 0.2F));
         atb(new VFXAction(new AnimatedSlashEffect(m.hb.cX, m.hb.cY - 30.0F * Settings.scale, 500.0F, 200.0F, 290.0F, 3.0F, Color.FOREST, Color.GREEN)));
         dmg(m, AbstractGameAction.AttackEffect.NONE);
-        atb(new theFishing.actions.MopUpAction(m, damage, damageTypeForTurn));
+        atb(new MopUpAction(m, damage, damageTypeForTurn));
     }
 
     public void upp() {
