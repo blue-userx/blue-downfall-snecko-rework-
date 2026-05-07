@@ -30,6 +30,8 @@ public class Optimize extends AbstractBronzeCard {
 
     public void upp() {
         this.isInnate = true;
+        rawDescription = UPGRADE_DESCRIPTION;
+        initializeDescription();
         //upgradeMagicNumber(UPG_MAGIC);
     }
 }
