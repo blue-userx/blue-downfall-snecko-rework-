@@ -1,13 +1,8 @@
 package automaton.powers;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.LoseDexterityPower;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+
+import static champ.ChampMod.vigor;
 
 public class FeaturePower extends AbstractAutomatonPower {
     public static final String NAME = "Feature";
@@ -20,28 +15,9 @@ public class FeaturePower extends AbstractAutomatonPower {
     }
 
     @Override
-    public void onCardDraw(AbstractCard card) {
-        if (card.type == AbstractCard.CardType.STATUS) {
-            flash();
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amount));
-            //Imagine how much time could be saved with some kind of function that could be used to make any power temporary.
-            //IE: applyTempPower(new StrengthPower(owner, amount)):
-            //Function applies the power, then uses some abstract Java trickery to make another power, called Lose [powername]
-            //which automatically activates at turn end and removes the associated power.
-            //You could do stuff like "Gain 1 Temporary Echo-Form after losing 10 HP in a turn."
-            //Ideally, the same thing could be done for "Next-Turn Powers".
-            //Like Phantasmal Blade, etc.
-            //Combine the two and you could do..
-            //Next turn, gain 1 Temporary Strength.
-            //But in two lines, with no new powers!
-        }
-    }
-
-    public void onExhaust(AbstractCard card){
-        if (card.type == AbstractCard.CardType.STATUS) {
-            flash();
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amount));
-        }
+    public void onSpecificTrigger() {
+        flash();
+        vigor(amount);
     }
 
     @Override

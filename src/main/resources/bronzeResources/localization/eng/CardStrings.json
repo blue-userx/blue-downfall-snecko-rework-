@@ -412,9 +412,8 @@
     ]
   },
   "bronze:Repulsor": {
-    "NAME": "Repulsor",
-    "DESCRIPTION": "When you draw the first Status or Curse card each turn, Exhaust it and draw a card.",
-    "UPGRADE_DESCRIPTION": "Innate. NL When you draw the first Status or Curse card each turn, Exhaust it and draw a card."
+    "NAME": "Repulse",
+    "DESCRIPTION": "Whenever you create a Status card, gain !M! Block."
   },
   "bronze:Return": {
     "NAME": "Return",

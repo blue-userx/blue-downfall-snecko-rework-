@@ -1,6 +1,8 @@
 package awakenedOne.patches;
 
 import automaton.cards.goodstatus.IntoTheVoid;
+import automaton.powers.FeaturePower;
+import automaton.powers.RepulsorNewPower;
 import awakenedOne.AwakenedTextHelper;
 import awakenedOne.cards.AbstractAwakenedCard;
 import awakenedOne.powers.SongOfSorrowPower;
@@ -74,6 +76,17 @@ public class OnCreateCardSubscriber {
                 }
             }
         }
+
+        if (c.type == AbstractCard.CardType.STATUS) {
+            if (AbstractDungeon.player.hasPower(RepulsorNewPower.POWER_ID)) {
+                AbstractDungeon.player.getPower(RepulsorNewPower.POWER_ID).onSpecificTrigger();
+            }
+        }
+
+        if (AbstractDungeon.player.hasPower(FeaturePower.POWER_ID)) {
+            AbstractDungeon.player.getPower(FeaturePower.POWER_ID).onSpecificTrigger();
+        }
+
         if (c.hasTag(ACTIVECHANT)) {
             AwakenedTextHelper.colorCombos((AbstractAwakenedCard) c, false);
             c.initializeDescription();
