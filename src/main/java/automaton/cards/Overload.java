@@ -24,7 +24,7 @@ public class Overload extends AbstractBronzeCard {
     public Overload() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         exhaust = true;
-        this.tags.add(SneckoMod.BANNEDFORSNECKO);
+        //this.tags.add(SneckoMod.BANNEDFORSNECKO);
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Overload.png"));
     }
 
