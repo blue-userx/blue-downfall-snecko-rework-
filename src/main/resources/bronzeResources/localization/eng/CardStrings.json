@@ -236,8 +236,8 @@
   },
   "bronze:Format": {
     "NAME": "Format",
-    "DESCRIPTION": "bronze:Encode X copies of *Fragment. NL Gain [E] . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "bronze:Encode X+1 copies of *Fragment. NL Gain [E] . NL Exhaust."
+    "DESCRIPTION": "bronze:Encode X copies of *Fragment+. NL Gain [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "bronze:Encode X+1 copies of *Fragment+. NL Gain [E] . NL Exhaust."
   },
   "bronze:FormatEncoded": {
     "NAME": "Fragment",
