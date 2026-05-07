@@ -22,7 +22,7 @@ public class ReturnPower extends AbstractAutomatonPower {
         super(NAME, TYPE, TURN_BASED, AbstractDungeon.player, null, amount);
     }
 
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
             if (card.type != AbstractCard.CardType.POWER) {
                 this.flash();
             }

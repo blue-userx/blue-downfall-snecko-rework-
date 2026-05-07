@@ -20,7 +20,6 @@ public class DrawFromStash {
         public static void Prefix(AbstractPlayer __instance) {
             if (AbstractDungeon.player.chosenClass.equals(AutomatonChar.Enums.THE_AUTOMATON) || !BronzeOrbStash.stashpile.isEmpty()) {
                 atb(new DrawCardFromStashAction());
-                //TODO increased stash draw power
                if (AbstractDungeon.player.hasPower(OptimizePower.POWER_ID)) {
                     for (int i = 0; i < AbstractDungeon.player.getPower(OptimizePower.POWER_ID).amount; i++) {
                         atb(new DrawCardFromStashAction());
