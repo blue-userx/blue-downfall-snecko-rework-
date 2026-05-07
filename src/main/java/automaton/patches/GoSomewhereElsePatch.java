@@ -1,7 +1,9 @@
 package automaton.patches;
 
 import automaton.FunctionHelper;
+import automaton.actions.PlaceActualCardIntoStashAction;
 import automaton.cardmods.EncodeMod;
+import automaton.cards.ShipIt;
 import awakenedOne.cards.StormRuler;
 import awakenedOne.ui.OrbitingSpells;
 import basemod.helpers.CardModifierManager;
@@ -50,6 +52,19 @@ public class GoSomewhereElsePatch {
                     isDone = true;
                     AbstractDungeon.player.limbo.removeCard(card);
                     FunctionHelper.addToSequence(card);
+                }
+            });
+            return false;
+        }
+
+        if (card instanceof ShipIt) {
+            AbstractDungeon.player.limbo.addToTop(card);
+            AbstractDungeon.actionManager.addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    isDone = true;
+                    //AbstractDungeon.player.limbo.removeCard(card);
+                    addToTop(new PlaceActualCardIntoStashAction(card, AbstractDungeon.player.limbo, true));
                 }
             });
             return false;
