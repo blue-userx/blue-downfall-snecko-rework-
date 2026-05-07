@@ -1,10 +1,16 @@
 package automaton.actions;
 
 import automaton.BronzeOrbStash;
+import automaton.powers.BurnOutPower;
+import awakenedOne.powers.SongOfSorrowPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import static awakenedOne.util.Wiz.atb;
 
 
 public class PlaceActualCardIntoStashAction extends AbstractGameAction {
@@ -37,6 +43,12 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
     }
 
     public void update() {
+        if (AbstractDungeon.player.hasPower(BurnOutPower.POWER_ID) && (card.type == AbstractCard.CardType.STATUS)) {
+            AbstractDungeon.player.limbo.addToTop(card);
+            atb(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
+            AbstractDungeon.player.getPower(BurnOutPower.POWER_ID).onSpecificTrigger();
+            this.isDone = true;
+        }
         source.removeCard(card);
         BronzeOrbStash.combatstashpile.addToRandomSpot(card);
         this.isDone = true;

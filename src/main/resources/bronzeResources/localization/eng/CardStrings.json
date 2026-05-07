@@ -97,7 +97,7 @@
   },
   "bronze:BurnOut": {
     "NAME": "Burn Out",
-    "DESCRIPTION": "Deal !D! damage to a random enemy for ALL of your Status cards, then Exhaust them. NL Exhaust.",
+    "DESCRIPTION": "Whenever you bronze:Stash a Status or Curse, Exhaust it and deal !M! damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage to a random enemy for ALL of your Status cards (",
       "), then Exhaust them. NL Exhaust."

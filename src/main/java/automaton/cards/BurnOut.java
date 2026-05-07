@@ -1,6 +1,8 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.powers.BurnOutPower;
+import automaton.powers.DefaultPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -23,111 +25,113 @@ public class BurnOut extends AbstractBronzeCard {
     private static final int UPG_DAMAGE = 3;
 
     public BurnOut() {
-        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseDamage = DAMAGE;
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("BurnOut.png"));
-        exhaust = true;
+        //exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int statusCount = 0;
+        //int statusCount = 0;
+        //
+        //        for (int i = 0; i < p.drawPile.size(); ) {
+        //            AbstractCard c = p.drawPile.group.get(i);
+        //            if (c.type == CardType.STATUS) {
+        //                statusCount++;
+        //                p.drawPile.removeCard(c);
+        //                p.limbo.addToTop(c);
+        //                c.targetDrawScale = 0.5F;
+        //                c.setAngle(0, true);
+        //                c.target_x = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_WIDTH, Settings.WIDTH - AbstractCard.IMG_WIDTH);
+        //                c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
+        //                atb(new ExhaustSpecificCardAction(c, p.limbo));
+        //                atb(new WaitAction(0.1F));
+        //            } else {
+        //                i++;
+        //            }
+        //        }
+        //
+        //        for (int i = 0; i < p.discardPile.size(); ) {
+        //            AbstractCard c = p.discardPile.group.get(i);
+        //            if (c.type == CardType.STATUS) {
+        //                statusCount++;
+        //                p.discardPile.removeCard(c);
+        //                p.limbo.addToTop(c);
+        //                c.targetDrawScale = 0.5F;
+        //                c.setAngle(0, true);
+        //                c.target_x = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_WIDTH, Settings.WIDTH - AbstractCard.IMG_WIDTH);
+        //                c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
+        //                atb(new ExhaustSpecificCardAction(c, p.limbo));
+        //                atb(new WaitAction(0.1F));
+        //            } else {
+        //                i++;
+        //            }
+        //        }
+        //
+        //        for (int i = 0; i < p.hand.size(); ) {
+        //            AbstractCard c = p.hand.group.get(i);
+        //            if (c.type == CardType.STATUS) {
+        //                statusCount++;
+        //                p.hand.removeCard(c);
+        //                p.limbo.addToTop(c);
+        //                c.targetDrawScale = 0.5F;
+        //                c.setAngle(0, true);
+        //                c.target_x = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_WIDTH, Settings.WIDTH - AbstractCard.IMG_WIDTH);
+        //                c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
+        //                atb(new ExhaustSpecificCardAction(c, p.limbo));
+        //                atb(new WaitAction(0.1F));
+        //            } else {
+        //                i++;
+        //            }
+        //        }
+        //
+        //        if (statusCount > 0) {
+        //            for (int i = 0; i < statusCount; i++) {
+        //                atb(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.FIRE));
+        //            }
+        //        }
 
-        for (int i = 0; i < p.drawPile.size(); ) {
-            AbstractCard c = p.drawPile.group.get(i);
-            if (c.type == CardType.STATUS) {
-                statusCount++;
-                p.drawPile.removeCard(c);
-                p.limbo.addToTop(c);
-                c.targetDrawScale = 0.5F;
-                c.setAngle(0, true);
-                c.target_x = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_WIDTH, Settings.WIDTH - AbstractCard.IMG_WIDTH);
-                c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
-                atb(new ExhaustSpecificCardAction(c, p.limbo));
-                atb(new WaitAction(0.1F));
-            } else {
-                i++;
-            }
-        }
-
-        for (int i = 0; i < p.discardPile.size(); ) {
-            AbstractCard c = p.discardPile.group.get(i);
-            if (c.type == CardType.STATUS) {
-                statusCount++;
-                p.discardPile.removeCard(c);
-                p.limbo.addToTop(c);
-                c.targetDrawScale = 0.5F;
-                c.setAngle(0, true);
-                c.target_x = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_WIDTH, Settings.WIDTH - AbstractCard.IMG_WIDTH);
-                c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
-                atb(new ExhaustSpecificCardAction(c, p.limbo));
-                atb(new WaitAction(0.1F));
-            } else {
-                i++;
-            }
-        }
-
-        for (int i = 0; i < p.hand.size(); ) {
-            AbstractCard c = p.hand.group.get(i);
-            if (c.type == CardType.STATUS) {
-                statusCount++;
-                p.hand.removeCard(c);
-                p.limbo.addToTop(c);
-                c.targetDrawScale = 0.5F;
-                c.setAngle(0, true);
-                c.target_x = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_WIDTH, Settings.WIDTH - AbstractCard.IMG_WIDTH);
-                c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
-                atb(new ExhaustSpecificCardAction(c, p.limbo));
-                atb(new WaitAction(0.1F));
-            } else {
-                i++;
-            }
-        }
-
-        if (statusCount > 0) {
-            for (int i = 0; i < statusCount; i++) {
-                atb(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.FIRE));
-            }
-        }
+        applyToSelf(new BurnOutPower(magicNumber));
     }
 
 
-    public void applyPowers() {
-        super.applyPowers();
-
-        if (AbstractDungeon.player != null) {
-            this.rawDescription = cardStrings.DESCRIPTION;
-
-            int statusCount = 0;
-            for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-                if (c.type == CardType.STATUS) {
-                    statusCount++;
-                }
-            }
-
-            for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-                if (c.type == CardType.STATUS) {
-                    statusCount++;
-                }
-            }
-
-            for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.type == CardType.STATUS) {
-                    statusCount++;
-                }
-            }
-
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + statusCount + cardStrings.EXTENDED_DESCRIPTION[1];
-
-            this.initializeDescription();
-        }
-    }
-
-    public void onMoveToDiscard() {
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.initializeDescription();
-    }
+//    public void applyPowers() {
+//        super.applyPowers();
+//
+//        if (AbstractDungeon.player != null) {
+//            this.rawDescription = cardStrings.DESCRIPTION;
+//
+//            int statusCount = 0;
+//            for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+//                if (c.type == CardType.STATUS) {
+//                    statusCount++;
+//                }
+//            }
+//
+//            for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+//                if (c.type == CardType.STATUS) {
+//                    statusCount++;
+//                }
+//            }
+//
+//            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+//                if (c.type == CardType.STATUS) {
+//                    statusCount++;
+//                }
+//            }
+//
+//            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + statusCount + cardStrings.EXTENDED_DESCRIPTION[1];
+//
+//            this.initializeDescription();
+//        }
+//    }
+//
+//    public void onMoveToDiscard() {
+//        this.rawDescription = cardStrings.DESCRIPTION;
+//        this.initializeDescription();
+//    }
 
     public void upp() {
-        upgradeDamage(UPG_DAMAGE);
+        upgradeMagicNumber(3);
     }
 }
