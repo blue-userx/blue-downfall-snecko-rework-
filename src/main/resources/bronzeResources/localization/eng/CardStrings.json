@@ -22,7 +22,7 @@
   },
   "bronze:Backtrace": {
     "NAME": "Backtrace",
-    "DESCRIPTION": "Innate. NL Deal !D! damage.",
+    "DESCRIPTION": "Innate. NL \u00A0 Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "sneaky",
       "Trace"
@@ -194,7 +194,7 @@
   },
   "bronze:DigitalCarnage": {
     "NAME": "Digital Carnage",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage.",
+    "DESCRIPTION": "Ethereal. NL \u00A0 Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "digital",
       "Carnage"
