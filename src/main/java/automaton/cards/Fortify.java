@@ -1,6 +1,8 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.actions.StashFromHandAction;
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,23 +23,21 @@ public class Fortify extends AbstractBronzeCard {
     public Fortify() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = DAMAGE;
+        baseBlock = 8;
         baseMagicNumber = magicNumber = 2;
-        thisEncodes();
+        //thisEncodes();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Fortify.png"));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        blck();
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        this.addToBot(new StashFromHandAction(p, BaseMod.MAX_HAND_SIZE, true));
     }
 
-    @Override
-    public void onCompile(AbstractCard function, boolean forGameplay) {
-        if (forGameplay) {
-            applyToSelf(new DexterityPower(AbstractDungeon.player, magicNumber));
-        }
-    }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeDamage(3);
+        upgradeBlock(3);
     }
 }

@@ -1,9 +1,13 @@
 package automaton.powers;
 
+import automaton.actions.PlaceActualCardIntoStashAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import static awakenedOne.util.Wiz.atb;
 
 public class MaxOutputPower extends AbstractAutomatonPower {
     public static final String NAME = "MaxOutput";
@@ -18,15 +22,8 @@ public class MaxOutputPower extends AbstractAutomatonPower {
     @Override
     public void atStartOfTurn() {
         flash();
-        this.addToBot(new DrawCardAction(amount));
-        addToBot(new MakeTempCardInDrawPileAction(new Dazed(), amount, true, true));
+        atb(new PlaceActualCardIntoStashAction(new Slimed(), null, true));
     }
-
-    @Override
-    public void onRemove() {
-        AbstractDungeon.player.gameHandSize -= amount;
-    }
-
 
     @Override
     public void updateDescription() {

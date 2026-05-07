@@ -337,7 +337,7 @@
   },
   "bronze:MaxOutput": {
     "NAME": "Max Output",
-    "DESCRIPTION": "Draw !M! cards. NL At the start of each turn, draw 1 additional card and bronze:Insert 1 *Dazed."
+    "DESCRIPTION": "Draw !M! cards. NL At the start of your turn, bronze:Stash an *Error."
   },
   "bronze:Mutator": {
     "NAME": "Mutator",

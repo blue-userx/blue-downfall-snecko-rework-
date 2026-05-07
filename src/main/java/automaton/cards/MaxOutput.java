@@ -16,7 +16,7 @@ public class MaxOutput extends AbstractBronzeCard {
     //stupid intellij stuff power, self, uncommon
 
     public MaxOutput() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         cardsToPreview = new Dazed();
         baseMagicNumber = magicNumber = 3;
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("MaxOutput.png"));
@@ -28,6 +28,7 @@ public class MaxOutput extends AbstractBronzeCard {
     }
 
     public void upp() {
-        upgradeBaseCost(0);
+        //upgradeBaseCost(0);
+        upgradeMagicNumber(1);
     }
 }
