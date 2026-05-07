@@ -1,6 +1,7 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.BronzeOrbStash;
 import automaton.FunctionHelper;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -50,6 +51,12 @@ public class ForceShield extends AbstractBronzeCard {
                 q.updateCost(-1);
             }
         }
+        for (AbstractCard q : BronzeOrbStash.combatstashpile.group) {
+            if (q instanceof ForceShield) {
+                q.updateCost(-1);
+            }
+        }
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
