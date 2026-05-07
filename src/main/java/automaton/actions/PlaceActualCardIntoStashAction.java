@@ -49,7 +49,9 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
             AbstractDungeon.player.getPower(BurnOutPower.POWER_ID).onSpecificTrigger();
             this.isDone = true;
         }
-        source.removeCard(card);
+        if (source != null) {
+            source.removeCard(card);
+        }
         BronzeOrbStash.combatstashpile.addToRandomSpot(card);
         this.isDone = true;
     }
