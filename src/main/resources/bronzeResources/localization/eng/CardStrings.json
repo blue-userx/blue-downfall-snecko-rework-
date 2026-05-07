@@ -59,8 +59,8 @@
     ]
   },
   "bronze:Break": {
-    "NAME": "Break",
-    "DESCRIPTION": "Deal !D! damage. NL bronze:Compile *Error - Gain a *Dazed, *Slimed, *Wound, *Burn, *Void.",
+    "NAME": "CTD",
+    "DESCRIPTION": "Deal !D! damage. NL Add an *Error to your draw pile, discard pile, hand, and bronze:Stash.",
     "EXTENDED_DESCRIPTION": [
       "broken",
       "Smash"
@@ -321,7 +321,7 @@
   },
   "bronze:Iterate": {
     "NAME": "Iterate",
-    "DESCRIPTION": "Deal !D! damage !M! times.",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Increase the number of times this hits by 1.",
     "EXTENDED_DESCRIPTION": [
       "parsed",
       "Iterate"
@@ -329,7 +329,7 @@
   },
   "bronze:ItsAFeature": {
     "NAME": "It's a Feature",
-    "DESCRIPTION": "Whenever you draw or Exhaust a Status card, gain !M! Block."
+    "DESCRIPTION": "Whenever you create a card, your next attack deals !M! more damage."
   },
   "bronze:Library": {
     "NAME": "Library",
