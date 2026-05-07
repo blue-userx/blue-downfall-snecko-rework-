@@ -11,6 +11,7 @@ import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.OnObtainCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,7 +33,7 @@ import java.util.ArrayList;
 import static automaton.AutomatonMod.getModID;
 import static automaton.AutomatonMod.makeCardPath;
 
-public abstract class AbstractBronzeCard extends CustomCard {
+public abstract class AbstractBronzeCard extends CustomCard implements OnObtainCard {
     public String betaArtPath;
     private static float functionPreviewCardScale = .9f;
     private static float functionPreviewCardY = Settings.HEIGHT * 0.45F;
@@ -136,6 +137,9 @@ public abstract class AbstractBronzeCard extends CustomCard {
             isAutoModified = true;
         }
 
+    }
+
+    public void onObtainCard() {
     }
 
     void upgradeAuto(int amount) {
