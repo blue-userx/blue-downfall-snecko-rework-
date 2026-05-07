@@ -12,7 +12,7 @@ import static awakenedOne.util.Wiz.atb;
 public class MaxOutputPower extends AbstractAutomatonPower {
     public static final String NAME = "MaxOutput";
     public static final String POWER_ID = makeID(NAME);
-    public static final PowerType TYPE = PowerType.BUFF;
+    public static final PowerType TYPE = PowerType.DEBUFF;
     public static final boolean TURN_BASED = false;
 
     public MaxOutputPower(int amount) {
@@ -20,13 +20,13 @@ public class MaxOutputPower extends AbstractAutomatonPower {
     }
 
     @Override
-    public void atStartOfTurn() {
+    public void atEndOfTurn(boolean isPlayer) {
         flash();
         atb(new PlaceActualCardIntoStashAction(new Slimed(), null, true));
     }
 
     @Override
     public void updateDescription() {
-        description = amount == 1 ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + amount + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
+        description = amount == 1 ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 }
