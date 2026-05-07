@@ -173,7 +173,7 @@
   },
   "bronze:DelayedGuard": {
     "NAME": "Postpone",
-    "DESCRIPTION": "Gain !B! Block. NL bronze:Stash a card in your hand."
+    "DESCRIPTION": "Gain !B! Block. NL bronze:Stash a card in your hand. NL Add an *Error to your hand."
   },
   "bronze:DelayedSlice": {
     "NAME": "Robo-Chop",

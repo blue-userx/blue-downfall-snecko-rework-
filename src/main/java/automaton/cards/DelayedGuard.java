@@ -6,6 +6,7 @@ import automaton.actions.StashFromHandAction;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,6 +16,7 @@ import guardian.actions.PlaceCardsInHandIntoStasisAction;
 import utilityClasses.Later.LaterAction;
 
 import static automaton.AutomatonMod.makeBetaCardPath;
+import static collector.util.Wiz.makeInHandTop;
 
 public class DelayedGuard extends AbstractBronzeCard {
 
@@ -22,7 +24,7 @@ public class DelayedGuard extends AbstractBronzeCard {
 
     //stupid intellij stuff skill, self, common
 
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 7;
     private static final int UPG_BLOCK = 3;
 
     public DelayedGuard() {
@@ -35,6 +37,7 @@ public class DelayedGuard extends AbstractBronzeCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         this.addToBot(new StashFromHandAction(p, 1, false));
+        makeInHandTop(new Slimed());
     }
 
     public void upp() {
