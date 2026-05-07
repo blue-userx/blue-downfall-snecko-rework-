@@ -1,5 +1,6 @@
 package awakenedOne.util;
 
+import automaton.cards.FunctionCard;
 import automaton.cards.goodstatus.IntoTheVoid;
 import awakenedOne.AwakenedOneChar;
 import awakenedOne.actions.SpellApotheosisAction;
@@ -139,6 +140,14 @@ public class Wiz {
             }
         }
         return hasVoid;
+    }
+
+    public static boolean lastfunction() {
+        boolean playedfunction = false;
+        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).cardID.equals(FunctionCard.ID)) {
+            playedfunction = true;
+        }
+        return playedfunction;
     }
 
     public static boolean isAwakened() {

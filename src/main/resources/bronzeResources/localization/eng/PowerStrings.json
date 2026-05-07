@@ -10,9 +10,9 @@
   "bronze:Default": {
     "NAME": "Class Default",
     "DESCRIPTIONS": [
-      "Next time you create a Function, #yEncode a copy of current card in the first slot.",
-      "Next #b",
-      " times you create a Function, #yEncode a copy of current card in the first slot."
+      "Functions deal #b",
+      "more damage and grant #b",
+      "more #yBlock."
     ]
   },
   "bronze:Feature": {
@@ -53,9 +53,9 @@
   "bronze:Return": {
     "NAME": "Returning",
     "DESCRIPTIONS": [
-      "At the start of your next turn, gain [E] and draw #b1 card.",
-      "At the start of your next #b",
-      " turns, gain [E] and draw #b1 card."
+      "#yStash the next card you play this turn.",
+      "#yStash the next #b",
+      " cards you play this turn."
     ]
   },
   "bronze:Library": {

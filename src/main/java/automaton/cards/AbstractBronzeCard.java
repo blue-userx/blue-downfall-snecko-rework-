@@ -166,6 +166,18 @@ public abstract class AbstractBronzeCard extends CustomCard {
         FunctionHelper.genPreview();
     }
 
+    public void fineTunebutnomagic(boolean effects) {
+        //if (effects) AbstractDungeon.effectList.add(new FineTuningEffect(this));
+        this.baseDamage += 1;
+        this.damage += 1;
+        this.baseBlock += 1;
+        this.block += 1;
+        //this.superFlash();
+        //FunctionHelper.genPreview();
+    }
+
+
+
     public void onInput() {
         // Called right after a card enters The Function, before outputs would occur.
         // Pro tip: Don't delete things just because they're unused..

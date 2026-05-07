@@ -42,7 +42,7 @@
   },
   "bronze:Boost": {
     "NAME": "Boost",
-    "DESCRIPTION": "Gain !B! Block. NL bronze:Compile - Gain !M! Strength.",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Strength. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "boosted",
       "Boost"
@@ -68,7 +68,7 @@
   },
   "bronze:BronzeArmor": {
     "NAME": "Bronze Armor",
-    "DESCRIPTION": "Gain !bauto! Artifact. NL bronze:Compile *Error - ALL enemies gain !M! Block.",
+    "DESCRIPTION": "Gain !B! Block. NL bronze:Stash !M! *Errors.",
     "EXTENDED_DESCRIPTION": [
       "bronze",
       "Armor"
@@ -76,7 +76,7 @@
   },
   "bronze:BronzeOrb": {
     "NAME": "Bronze Orb",
-    "DESCRIPTION": "Innate. NL Deal !D! damage. NL bronze:Encode a random card with *Encode in your draw pile. Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL bronze:Stash the next card you play this turn."
   },
   "bronze:BugBarrage": {
     "NAME": "Bug Barrage",
@@ -121,7 +121,7 @@
   },
   "bronze:ClassDefault": {
     "NAME": "Class Default",
-    "DESCRIPTION": "Next !M! times you create a Function, bronze:Encode a copy of current card in the first slot."
+    "DESCRIPTION": "Functions deal !M! more damage and grant !M! more Block."
   },
   "bronze:CleanCode": {
     "NAME": "Clean Code",
@@ -222,8 +222,8 @@
     ]
   },
   "bronze:FollowUp": {
-    "NAME": "Follow Through",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL If the last played card was a Function, play this again."
+    "NAME": "Commit",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL If the last played card was a Function, costs 0."
   },
   "bronze:ForceShield": {
     "NAME": "Force Shield",

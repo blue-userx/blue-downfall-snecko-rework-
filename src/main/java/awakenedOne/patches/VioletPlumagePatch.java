@@ -1,6 +1,7 @@
 package awakenedOne.patches;
 //
 
+import automaton.cards.FollowUp;
 import awakenedOne.cards.Gloomguard;
 import awakenedOne.cards.tokens.spells.AbstractSpellCard;
 import awakenedOne.powers.EnsorcelatePower;
@@ -42,6 +43,10 @@ public class VioletPlumagePatch {
 
             if (isIndeedWithoutADoubtInCombat() && __instance instanceof Gloomguard) {
                 return Wiz.checkVoid();
+            }
+
+            if (isIndeedWithoutADoubtInCombat() && __instance instanceof FollowUp) {
+                return Wiz.lastfunction();
             }
 
             if (isIndeedWithoutADoubtInCombat() && __instance instanceof AbstractSpellCard && (AbstractDungeon.player.hasPower(IntensifyPower.POWER_ID))) {

@@ -1,8 +1,10 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.actions.PlaceActualCardIntoStashAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
@@ -15,32 +17,27 @@ public class BronzeArmor extends AbstractBronzeCard {
 
     //stupid intellij stuff skill, self, uncommon
 
-    private static final int MAGIC = 12;
-    private static final int UPG_MAGIC = -4;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 2;
 
     public BronzeArmor() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
-        baseAuto = auto = 1;
-        thisEncodes();
-        tags.add(AutomatonMod.BAD_COMPILE);
+        baseBlock = 13;
+        //thisEncodes();
+        //tags.add(AutomatonMod.BAD_COMPILE);
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("BronzeArmor.png"));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new ArtifactPower(p, auto));
-    }
-
-    @Override
-    public void onCompile(AbstractCard function, boolean forGameplay) {
-        if (forGameplay) {
-            for (AbstractMonster q : monsterList()) {
-                atb(new GainBlockAction(q, magicNumber));
-            }
+        blck();
+        for (int i = 0; i < magicNumber; i++) {
+            atb(new PlaceActualCardIntoStashAction(new Slimed(), null, true));
         }
     }
 
+
     public void upp() {
-        upgradeMagicNumber(UPG_MAGIC);
+        upgradeBlock(4);
     }
 }

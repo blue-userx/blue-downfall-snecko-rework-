@@ -1,7 +1,11 @@
 package automaton.powers;
 
 import automaton.actions.AddToFuncAction;
+import automaton.cardmods.CardEffectsCardMod;
 import automaton.cards.FunctionCard;
+import automaton.vfx.FineTuningEffect;
+import basemod.abstracts.AbstractCardModifier;
+import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -21,12 +25,16 @@ public class DefaultPower extends AbstractAutomatonPower implements NonStackable
 
     @Override
     public void receiveCompile(AbstractCard function, boolean forGameplay) {
-        if (forGameplay) {
-            onSpecificTrigger();
-            flash();
-            addToBot(new AddToFuncAction(((FunctionCard) function).cards().get(0).makeStatEquivalentCopy(), null));
-            addToBot(new ReducePowerAction(owner, owner, this, 1));
-        }
+            if (function instanceof FunctionCard) {
+                for (int i = 0; i < amount; i++) {
+                    //AbstractDungeon.effectList.add(new FineTuningEffect(function));
+                    for (AbstractCardModifier m : CardModifierManager.getModifiers(function, CardEffectsCardMod.ID)) {
+                        if (m instanceof CardEffectsCardMod) {
+                            ((CardEffectsCardMod) m).stored().fineTunebutnomagic(false);
+                        }
+                    }
+                }
+            }
     }
 
     @Override

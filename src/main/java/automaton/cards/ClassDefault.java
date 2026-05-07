@@ -19,6 +19,6 @@ public class ClassDefault extends AbstractBronzeCard {
     }
 
     public void upp() {
-        upgradeBaseCost(0);
+        upgradeMagicNumber(1);
     }
 }

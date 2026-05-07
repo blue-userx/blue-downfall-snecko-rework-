@@ -15,26 +15,21 @@ public class Boost extends AbstractBronzeCard {
 
     //stupid intellij stuff skill, self, uncommon
 
-    private static final int BLOCK = 6;
-    private static final int MAGIC = 2;
+    private static final int BLOCK = 5;
+    private static final int MAGIC = 1;
 
     public Boost() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
-        thisEncodes();
+        this.exhaust = true;
+        //thisEncodes();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Boost.png"));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-    }
-
-    @Override
-    public void onCompile(AbstractCard function, boolean forGameplay) {
-        if (forGameplay) {
-            applyToSelf(new StrengthPower(AbstractDungeon.player, magicNumber));
-        }
+        applyToSelf(new StrengthPower(AbstractDungeon.player, magicNumber));
     }
 
     public void upp() {

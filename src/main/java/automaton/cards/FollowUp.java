@@ -16,10 +16,10 @@ public class FollowUp extends AbstractBronzeCard {
 
     //stupid intellij stuff attack, enemy, uncommon
 
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 2;
 
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 6;
     private static final int UPG_BLOCK = 2;
 
     public FollowUp() {
@@ -32,16 +32,6 @@ public class FollowUp extends AbstractBronzeCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        AbstractCard q = this;
-        atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                isDone = true;
-                if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 2 && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2).cardID.equals(FunctionCard.ID)) {
-                    att(new RepeatCardAction(m, q));
-                }
-            }
-        });
     }
 
     @Override
