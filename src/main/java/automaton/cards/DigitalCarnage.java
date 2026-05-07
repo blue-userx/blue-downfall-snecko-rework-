@@ -26,7 +26,7 @@ public class DigitalCarnage extends AbstractBronzeCard {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         isEthereal = true;
         baseDamage = DAMAGE;
-        //thisEncodes();
+        thisEncodes();
         //tags.add(AutomatonMod.BAD_COMPILE);
         AutomatonMod.loadJokeCardImage(this, AutomatonMod.makeBetaCardPath("DigitalCarnage.png"));
     }

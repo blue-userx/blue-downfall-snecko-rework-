@@ -27,7 +27,7 @@ public class HyperBeam extends AbstractBronzeCard {
     private static final int UPG_DAMAGE = 10;
 
     public HyperBeam() {
-        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
         baseDamage = DAMAGE;
         isMultiDamage = true;
         //selfRetain = true;

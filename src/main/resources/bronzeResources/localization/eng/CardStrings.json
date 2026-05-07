@@ -194,7 +194,7 @@
   },
   "bronze:DigitalCarnage": {
     "NAME": "Digital Carnage",
-    "DESCRIPTION": "Ethereal. Deal !D! damage.",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "digital",
       "Carnage"
