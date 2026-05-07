@@ -356,9 +356,7 @@ public class AutomatonMod implements
 
     @Override
     public void receiveStartGame() {
-        if (!CardCrawlGame.loadingSave) {
-            BronzeOrbStash.init();
-        }
+        BronzeOrbStash.init();
         EasyInfoDisplayPanel.specialDisplays.clear();
         compileDisplayPanel = new CompileDisplayPanel();
         EasyInfoDisplayPanel.specialDisplays.add(compileDisplayPanel);

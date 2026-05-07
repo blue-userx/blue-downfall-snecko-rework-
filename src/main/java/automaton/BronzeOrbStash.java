@@ -62,10 +62,6 @@ public class BronzeOrbStash {
 
     public static void atBattleStart() {
         combatstashpile.clear();
-        for (AbstractCard q : stashpile.group) {
-            combatstashpile.addToTop(q.makeSameInstanceOf());
-        }
-        combatstashpile.shuffle(AbstractDungeon.shuffleRng);
     }
 
         public static void atBattleEnd () {
