@@ -37,7 +37,7 @@ public class DelayedGuard extends AbstractBronzeCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         this.addToBot(new StashFromHandAction(p, 1, false));
-        makeInHandTop(new Slimed());
+        makeInHand(new Slimed());
     }
 
     public void upp() {
