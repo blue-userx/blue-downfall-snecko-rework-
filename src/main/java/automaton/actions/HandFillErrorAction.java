@@ -27,9 +27,6 @@ public class HandFillErrorAction extends AbstractGameAction
             count = availableSpace;
         }
         AbstractCard c = new Slimed();
-        if (upgraded) {
-            c.upgrade();
-        }
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c, count));
     }
 
