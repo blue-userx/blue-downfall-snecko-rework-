@@ -19,15 +19,15 @@ public class DigitalCarnage extends AbstractBronzeCard {
 
     //stupid intellij stuff attack, enemy, uncommon
 
-    private static final int DAMAGE = 15;
-    private static final int UPG_DAMAGE = 5;
+    private static final int DAMAGE = 20;
+    private static final int UPG_DAMAGE = 8;
 
     public DigitalCarnage() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        // isEthereal = true;
+        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        isEthereal = true;
         baseDamage = DAMAGE;
-        thisEncodes();
-        tags.add(AutomatonMod.BAD_COMPILE);
+        //thisEncodes();
+        //tags.add(AutomatonMod.BAD_COMPILE);
         AutomatonMod.loadJokeCardImage(this, AutomatonMod.makeBetaCardPath("DigitalCarnage.png"));
     }
 
@@ -51,10 +51,10 @@ public class DigitalCarnage extends AbstractBronzeCard {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
     }
 
-    @Override
-    public void onCompile(AbstractCard function, boolean forGameplay) {
-        CardModifierManager.addModifier(function, new EtherealMod());
-    }
+    //    @Override
+    //    public void onCompile(AbstractCard function, boolean forGameplay) {
+    //        CardModifierManager.addModifier(function, new EtherealMod());
+    //    }
 
     /*
     @Override

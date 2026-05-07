@@ -194,7 +194,7 @@
   },
   "bronze:DigitalCarnage": {
     "NAME": "Digital Carnage",
-    "DESCRIPTION": "Deal !D! damage. NL bronze:Compile *Error - Function is Ethereal.",
+    "DESCRIPTION": "Ethereal. Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "digital",
       "Carnage"
@@ -295,7 +295,7 @@
   },
   "bronze:HyperBeam": {
     "NAME": "HYPER BEAM",
-    "DESCRIPTION": "Retain. NL Deal !D! damage to ALL enemies. NL Put !M! *Voids on top of your draw pile."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies. NL Fill your hand with *Errors."
   },
   "bronze:InfiniteBeams": {
     "NAME": "Infinite Beams",
