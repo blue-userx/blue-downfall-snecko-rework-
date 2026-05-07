@@ -291,7 +291,8 @@
   },
   "bronze:HardenedForm": {
     "NAME": "Summon Orb",
-    "DESCRIPTION": "Whenever you create or play a Function, gain !M! Block and deal !M! damage to a random enemy."
+    "DESCRIPTION": "Whenever you bronze:Stash a card, Upgrade it. NL bronze:Stash your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Stash a card, Upgrade it. NL bronze:Stash your hand."
   },
   "bronze:HyperBeam": {
     "NAME": "HYPER BEAM",

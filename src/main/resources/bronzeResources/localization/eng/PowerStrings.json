@@ -90,7 +90,7 @@
   "bronze:HardenedForm": {
     "NAME": "Summon Orb",
     "DESCRIPTIONS": [
-      "Whenever you create or play a Function, gain #b",
+      "Whenever you #yStash a card, #yUpgrade it.",
       " #yBlock and deal #b",
       " damage to a random enemy."
     ]

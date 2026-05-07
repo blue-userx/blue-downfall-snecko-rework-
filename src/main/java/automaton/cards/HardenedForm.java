@@ -1,8 +1,11 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.actions.StashFromHandAction;
 import automaton.powers.HardenedFormPower;
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static automaton.AutomatonMod.makeBetaCardPath;
@@ -17,16 +20,21 @@ public class HardenedForm extends AbstractBronzeCard {
     private static final int UPG_MAGIC = 1;
 
     public HardenedForm() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 0, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("HardenedForm.png"));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new HardenedFormPower(magicNumber));
+        if (!AbstractDungeon.player.hasPower("bronze:HardenedForm")) {
+            applyToSelfTop(new HardenedFormPower(magicNumber));
+        }
+        this.addToBot(new StashFromHandAction(p, BaseMod.MAX_HAND_SIZE, false));
     }
 
     public void upp() {
-        upgradeMagicNumber(UPG_MAGIC);
+        this.isInnate = true;
+        rawDescription = UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 }
