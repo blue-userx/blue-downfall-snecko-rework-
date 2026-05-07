@@ -43,14 +43,14 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
     }
 
     public void update() {
+        if (source != null) {
+            source.removeCard(card);
+        }
         if (AbstractDungeon.player.hasPower(BurnOutPower.POWER_ID) && (card.type == AbstractCard.CardType.STATUS)) {
             AbstractDungeon.player.limbo.addToTop(card);
             atb(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
             AbstractDungeon.player.getPower(BurnOutPower.POWER_ID).onSpecificTrigger();
             this.isDone = true;
-        }
-        if (source != null) {
-            source.removeCard(card);
         }
         BronzeOrbStash.combatstashpile.addToRandomSpot(card);
         this.isDone = true;
