@@ -80,8 +80,8 @@
   },
   "bronze:BugBarrage": {
     "NAME": "Bug Barrage",
-    "DESCRIPTION": "Gain !M! *Wounds. NL bronze:Cycle each Status, dealing !D! damage for each.",
-    "UPGRADE_DESCRIPTION": "Gain !M! *Wounds. NL bronze:Cycle each Status, dealing !D! damage for each.",
+    "DESCRIPTION": "Gain !M! *Errors. NL bronze:Cycle each Status, dealing !D! damage for each.",
+    "UPGRADE_DESCRIPTION": "Gain !M! *Errors. NL bronze:Cycle each Status, dealing !D! damage for each.",
     "EXTENDED_DESCRIPTION": [
       " NL (Hits ",
       " times.)"
