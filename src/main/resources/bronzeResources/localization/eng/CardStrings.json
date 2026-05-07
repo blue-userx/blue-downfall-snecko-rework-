@@ -249,7 +249,7 @@
   },
   "bronze:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Deal !D! damage. NL bronze:Compile - Gain !M! Dexterity.",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL bronze:Stash any number of cards in your hand.",
     "EXTENDED_DESCRIPTION": [
       "solid",
       "Fortress"
