@@ -36,9 +36,9 @@
   "bronze:Optimize": {
     "NAME": "Optimized",
     "DESCRIPTIONS": [
-      "#yUpgrade the next #yUpgradable card you #yEncode.",
-      "#yUpgrade the next #b",
-      " #yUpgradable cards you #yEncode."
+      "Draw an additional card from your #yStash at the start of your turn.",
+      "Draw an additional #b",
+      " cards from your #yStash at the start of your turn."
     ]
   },
   "bronze:MaxOutput": {

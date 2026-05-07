@@ -14,13 +14,13 @@ public class Optimize extends AbstractBronzeCard {
 
     //stupid intellij stuff power, self, uncommon
 
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 2;
 
     public Optimize() {
-        super(ID, 0, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
-        this.tags.add(SneckoMod.BANNEDFORSNECKO);
+        //this.tags.add(SneckoMod.BANNEDFORSNECKO);
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Optimize.png"));
     }
 
@@ -29,6 +29,7 @@ public class Optimize extends AbstractBronzeCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UPG_MAGIC);
+        this.isInnate = true;
+        //upgradeMagicNumber(UPG_MAGIC);
     }
 }

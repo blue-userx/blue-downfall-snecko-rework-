@@ -362,7 +362,8 @@
   },
   "bronze:Optimize": {
     "NAME": "Optimize",
-    "DESCRIPTION": "Upgrade the next !M! cards you bronze:Encode that can be upgraded."
+    "DESCRIPTION": "At the start of your turn, draw an additional card from your bronze:Stash.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw an additional card from your bronze:Stash."
   },
   "bronze:Overheat": {
     "NAME": "Overheat",
