@@ -27,10 +27,6 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
         this.actionType = ActionType.DAMAGE;
         skipWait = false;
         hadRetain = card.retain;
-        if (source != null && source.type == CardGroup.CardGroupType.HAND)
-        {
-            card.retain = true;
-        }
     }
 
     public PlaceActualCardIntoStashAction(AbstractCard card) {

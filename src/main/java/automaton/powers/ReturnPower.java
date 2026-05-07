@@ -26,8 +26,8 @@ public class ReturnPower extends AbstractAutomatonPower {
             if (card.type != AbstractCard.CardType.POWER) {
                 this.flash();
             }
-            if (AbstractDungeon.player.discardPile.group.contains(card)) {
-            atb(new PlaceActualCardIntoStashAction(card, AbstractDungeon.player.discardPile, true));
+            if (AbstractDungeon.player.limbo.group.contains(card)) {
+            atb(new PlaceActualCardIntoStashAction(card, AbstractDungeon.player.limbo, true));
             }
             this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
         }
