@@ -3,12 +3,14 @@ package automaton.cards;
 import automaton.AutomatonMod;
 import automaton.FunctionHelper;
 import automaton.actions.RepeatCardAction;
+import awakenedOne.powers.SchemePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
+import hermit.util.Wiz;
 import sneckomod.SneckoMod;
 
 import static automaton.AutomatonMod.makeBetaCardPath;
@@ -27,16 +29,18 @@ public class Overload extends AbstractBronzeCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractCard q : FunctionHelper.held.group) {
-            atb(new SFXAction("ORB_LIGHTNING_EVOKE"));
-            addToBot(new VFXAction(new LightningEffect(q.hb.cX, q.hb.cY)));
-            addToBot(new RepeatCardAction(q));
-        }
+//        for (AbstractCard q : FunctionHelper.held.group) {
+//            atb(new SFXAction("ORB_LIGHTNING_EVOKE"));
+//            addToBot(new VFXAction(new LightningEffect(q.hb.cX, q.hb.cY)));
+//            addToBot(new RepeatCardAction(q));
+//        }
+        Wiz.applyToSelf(new SchemePower(1));
     }
 
     public void upp() {
-        exhaust = false;
-        rawDescription = UPGRADE_DESCRIPTION;
-        initializeDescription();
+        upgradeBaseCost(0);
+        //exhaust = false;
+        //rawDescription = UPGRADE_DESCRIPTION;
+        //initializeDescription();
     }
 }

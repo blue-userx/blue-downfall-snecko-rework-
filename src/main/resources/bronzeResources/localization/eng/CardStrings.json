@@ -371,8 +371,7 @@
   },
   "bronze:Overload": {
     "NAME": "Copy Paste",
-    "DESCRIPTION": "Play a copy of each Encoded card. They do not Encode. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Play a copy of each Encoded card. They do not Encode."
+    "DESCRIPTION": "The next 1 or 0 cost card you play this turn is played twice. NL Exhaust."
   },
   "bronze:Philosophize": {
     "NAME": "Philosophize",
