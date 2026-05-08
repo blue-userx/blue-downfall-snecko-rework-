@@ -55,7 +55,7 @@ public class ShipIt extends AbstractBronzeCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        atb(new DrawCardAction(auto));
+        atb(new DrawCardAction(magicNumber));
     }
 
     @Override
