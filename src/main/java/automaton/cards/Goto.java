@@ -51,6 +51,7 @@ public class Goto extends AbstractBronzeCard {
 
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        blck();
         atb(new DrawCardAction(magicNumber));
     }
 
