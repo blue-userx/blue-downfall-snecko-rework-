@@ -25,7 +25,6 @@ public class Goto extends AbstractBronzeCard {
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Goto.png"));
     }
 
-    //todo MAKE CARDS THAT DO THINGS EVERYWHERE (APOTHEOSIS ETC) HIT THE STASH!!!
     public static void becomeFree() {
         for (AbstractCard q : AbstractDungeon.player.drawPile.group) {
             if (q instanceof Goto) {
