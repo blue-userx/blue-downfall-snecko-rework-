@@ -24,7 +24,7 @@ public class CleanCodePower extends AbstractAutomatonPower {
 
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer && !AbstractDungeon.player.hand.isEmpty()) {
-            this.addToBot(new StashFromHandAction(this.owner, this.amount, true));}
+            this.addToBot(new StashFromHandAction(this.owner, this.amount, true, true));}
 
     }
 }
