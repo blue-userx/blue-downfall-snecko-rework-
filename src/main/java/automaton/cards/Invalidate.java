@@ -27,7 +27,7 @@ public class Invalidate extends AbstractBronzeCard {
     }
 
     public void upp() {
-        //upgradeMagicNumber(UPG_MAGIC);
-        upgradeBaseCost(0);
+        upgradeMagicNumber(UPG_MAGIC);
+        //upgradeBaseCost(0);
     }
 }
