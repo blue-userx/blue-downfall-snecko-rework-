@@ -1,6 +1,7 @@
 package automaton.cards;
 
 import automaton.AutomatonMod;
+import automaton.powers.CleanCodePower;
 import automaton.powers.RemoveNextErrorPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,7 +23,7 @@ public class CleanCode extends AbstractBronzeCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new RemoveNextErrorPower(magicNumber));
+        applyToSelf(new CleanCodePower(magicNumber));
     }
 
     public void upp() {
