@@ -26,6 +26,11 @@ public class DrawCardFromStashAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        if (AbstractDungeon.player.hasPower("No Draw")) {
+            AbstractDungeon.player.getPower("No Draw").flash();
+            this.isDone = true;
+            return;
+        }
         if (!BronzeOrbStash.combatstashpile.isEmpty()) {
             AbstractCard tar = BronzeOrbStash.combatstashpile.getRandomCard(AbstractDungeon.cardRandomRng);
             if(AbstractDungeon.player.hasRelic(FrozenEye.ID)) {
