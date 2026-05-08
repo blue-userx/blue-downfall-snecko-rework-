@@ -2,11 +2,14 @@ package automaton.cards;
 
 import automaton.AutomatonMod;
 import automaton.actions.HandFillErrorAction;
+import automaton.actions.PlaceActualCardIntoStashAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,7 +35,8 @@ public class HyperBeam extends AbstractBronzeCard {
         isMultiDamage = true;
         //selfRetain = true;
       //  exhaust = true;
-        baseMagicNumber = magicNumber = 1;
+        baseAuto = auto = 3;
+        baseMagicNumber = magicNumber = 2;
         cardsToPreview = new VoidCard();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("HyperBeam.png"));
     }
@@ -53,7 +57,11 @@ public class HyperBeam extends AbstractBronzeCard {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new VulnerablePower(monster, this.magicNumber, false), this.magicNumber));
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new HandFillErrorAction(true));
+        //AbstractDungeon.actionManager.addToBottom(new HandFillErrorAction(true));
+        //atb(new MakeTempCardInDiscardAction(new Slimed(), auto));
+        for (int i = 0; i < magicNumber; i++) {
+            atb(new PlaceActualCardIntoStashAction(new VoidCard(), null, true));
+        }
     }
 
     public void upp() {
