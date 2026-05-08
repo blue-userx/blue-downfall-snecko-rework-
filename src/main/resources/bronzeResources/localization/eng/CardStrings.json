@@ -368,7 +368,7 @@
   },
   "bronze:Overheat": {
     "NAME": "Overheat",
-    "DESCRIPTION": "Deal !D! damage. NL Remove the next *Compile *Error you would *Encode."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
   },
   "bronze:Overload": {
     "NAME": "Copy Paste",
