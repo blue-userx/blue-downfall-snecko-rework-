@@ -11,7 +11,7 @@ public class CleanCode extends AbstractBronzeCard {
 
     //stupid intellij stuff power, self, rare
 
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
     public CleanCode() {
@@ -26,8 +26,8 @@ public class CleanCode extends AbstractBronzeCard {
     }
 
     public void upp() {
-
-        isInnate = true;
+        upgradeMagicNumber(1);
+        //isInnate = true;
         rawDescription = UPGRADE_DESCRIPTION;
         initializeDescription();
 

@@ -2,14 +2,17 @@ package automaton.powers;
 
 import automaton.AutomatonMod;
 import automaton.FunctionHelper;
+import automaton.actions.StashFromHandAction;
 import automaton.cards.AbstractBronzeCard;
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import guardian.actions.PlaceCardsInHandIntoStasisAction;
 
 import static automaton.FunctionHelper.WITH_DELIMITER;
 
-public class CleanCodePower extends AbstractAutomatonPower implements PreCardCompileEffectsPower {
+public class CleanCodePower extends AbstractAutomatonPower {
     public static final String NAME = "CleanCode";
     public static final String POWER_ID = makeID(NAME);
     public static final PowerType TYPE = PowerType.BUFF;
@@ -19,16 +22,9 @@ public class CleanCodePower extends AbstractAutomatonPower implements PreCardCom
         super(NAME, TYPE, TURN_BASED, AbstractDungeon.player, null, amount);
     }
 
-    @Override
-    public void receivePreCardCompileEffects(boolean forGameplay) {
-        if (forGameplay) {
-            flash();
-            addToBot(new ReducePowerAction(owner, owner, this, 1));
-        }
-        for (AbstractCard q : FunctionHelper.held.group) {
-            if (q.hasTag(AutomatonMod.BAD_COMPILE) && q instanceof AbstractBronzeCard) {
-                ((AbstractBronzeCard) q).turnOffCompileStuff();
-            }
-        }
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer && !AbstractDungeon.player.hand.isEmpty() && AbstractDungeon.player.hasEmptyOrb()) {
+            this.addToBot(new StashFromHandAction(this.owner, this.amount, true));}
+
     }
 }

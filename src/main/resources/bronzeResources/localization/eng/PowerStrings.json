@@ -122,9 +122,9 @@
   "bronze:CleanCode": {
     "NAME": "Clean Code",
     "DESCRIPTIONS": [
-      "Remove all #yCompile #yError effects from Encoded cards. Lasts for #b1 more Function.",
-      "Remove all #yCompile #yError effects from Encoded cards. Lasts for #b",
-      " Functions."
+      "At the end of your turn, you may #yStash #b1 card.",
+      "At the end of your turn, you may #yStash up to #b",
+      " cards."
     ]
   },
   "bronze:CopyPaste": {

@@ -32,12 +32,13 @@ public class Fortify extends AbstractBronzeCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        this.addToBot(new StashFromHandAction(p, BaseMod.MAX_HAND_SIZE, true));
+        this.addToBot(new StashFromHandAction(p, magicNumber, false));
     }
 
 
     public void upp() {
         upgradeDamage(3);
         upgradeBlock(3);
+        upgradeMagicNumber(1);
     }
 }

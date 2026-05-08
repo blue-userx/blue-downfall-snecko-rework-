@@ -125,8 +125,8 @@
   },
   "bronze:CleanCode": {
     "NAME": "Clean Code",
-    "DESCRIPTION": "Remove the next !M! *Compile *Errors you would *Encode.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Remove the next !M! *Compile *Errors you would *Encode."
+    "DESCRIPTION": "At the end of your turn, choose up to !M! card to bronze:Stash.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, choose up to !M! cards to bronze:Stash."
   },
   "bronze:CloningBeam": {
     "NAME": "Merge Conflict",
@@ -249,7 +249,7 @@
   },
   "bronze:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL bronze:Stash any number of cards in your hand.",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL bronze:Stash !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "solid",
       "Fortress"
