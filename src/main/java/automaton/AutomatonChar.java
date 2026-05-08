@@ -164,7 +164,6 @@ public class AutomatonChar extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        //todo new auto card here
         return new Branch();
     }
 

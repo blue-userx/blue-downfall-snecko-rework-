@@ -1,6 +1,8 @@
 package downfall.patches;
 
+import automaton.BronzeOrbStash;
 import automaton.FunctionHelper;
+import automaton.cards.Goto;
 import awakenedOne.ui.OrbitingSpells;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -38,7 +40,11 @@ public class ApotheosisStasisFunctionPatch {
                     }
                     FunctionHelper.genPreview();
                 }
+
+                for (AbstractCard q : BronzeOrbStash.combatstashpile.group) {
+                        q.upgrade();
+                    }
+                }
             }
-        }
     }
 }
