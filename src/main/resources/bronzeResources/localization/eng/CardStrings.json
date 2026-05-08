@@ -446,7 +446,7 @@
   },
   "bronze:Shield": {
     "NAME": "Sticky Shield",
-    "DESCRIPTION": "Retain. NL Gain !B! Block. NL bronze:Insert 1 *Slimed.",
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Shuffle an *Error into your draw pile.",
     "EXTENDED_DESCRIPTION": [
       "sticky",
       "Shield"
@@ -495,7 +495,7 @@
     "UPGRADE_DESCRIPTION": "Retain. NL Gain *Debug, *Batch, *Decompile, or *Byte *Shift."
   },
   "bronze:Turbo": {
-    "NAME": "Turbo",
+    "NAME": "NITRO",
     "DESCRIPTION": "Gain [E] [E] . NL Add an *Error to your draw pile, discard pile, and bronze:Stash.",
     "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL Add an *Error to your draw pile, discard pile, and bronze:Stash."
   },
