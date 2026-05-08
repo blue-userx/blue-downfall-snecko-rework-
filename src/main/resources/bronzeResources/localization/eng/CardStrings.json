@@ -236,8 +236,8 @@
   },
   "bronze:Format": {
     "NAME": "Format",
-    "DESCRIPTION": "bronze:Encode X copies of *Fragment+. NL Gain [E] . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "bronze:Encode X+1 copies of *Fragment+. NL Gain [E] . NL Exhaust."
+    "DESCRIPTION": "bronze:Encode X copies of *Fragment. NL Gain [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "bronze:Encode X+1 copies of *Fragment. NL Gain [E] . NL Exhaust."
   },
   "bronze:FormatEncoded": {
     "NAME": "Fragment",
@@ -330,7 +330,7 @@
   },
   "bronze:ItsAFeature": {
     "NAME": "It's a Feature",
-    "DESCRIPTION": "Whenever you create a card, your next attack deals !M! more damage."
+    "DESCRIPTION": "Whenever you create a card, gain !M! Vigor."
   },
   "bronze:Library": {
     "NAME": "Library",
@@ -505,8 +505,8 @@
   },
   "bronze:Verify": {
     "NAME": "Sentient Form",
-    "DESCRIPTION": "Ethereal. NL Whenever you draw a Function, increase all numbers on it by 1 except for cost.",
-    "UPGRADE_DESCRIPTION": "Whenever you draw a Function, increase all numbers on it by 1 except for cost."
+    "DESCRIPTION": "Ethereal. NL Whenever you create a card, gain !M! Strength.",
+    "UPGRADE_DESCRIPTION": "Whenever you create a card, gain !M! Strength."
   },
   "bronze:Virus": {
     "NAME": "Virus",

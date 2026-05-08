@@ -22,11 +22,11 @@ public class Format extends AbstractBronzeCard {
 
 
     public Format() {
-        super(ID, -1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        super(ID, -1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
         cardsToPreview = new FormatEncoded();
-        cardsToPreview.upgrade();
+        //cardsToPreview.upgrade();
         exhaust = true;
         baseMagicNumber = magicNumber = 0;
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Format.png"));

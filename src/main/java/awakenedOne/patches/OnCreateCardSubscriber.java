@@ -5,6 +5,7 @@ import automaton.cards.Goto;
 import automaton.cards.goodstatus.IntoTheVoid;
 import automaton.powers.FeaturePower;
 import automaton.powers.RepulsorNewPower;
+import automaton.powers.VerifyPower;
 import awakenedOne.AwakenedTextHelper;
 import awakenedOne.cards.AbstractAwakenedCard;
 import awakenedOne.powers.SongOfSorrowPower;
@@ -89,6 +90,11 @@ public class OnCreateCardSubscriber {
         if (AbstractDungeon.player.hasPower(FeaturePower.POWER_ID)) {
             AbstractDungeon.player.getPower(FeaturePower.POWER_ID).onSpecificTrigger();
         }
+
+        if (AbstractDungeon.player.hasPower(VerifyPower.POWER_ID)) {
+            AbstractDungeon.player.getPower(VerifyPower.POWER_ID).onSpecificTrigger();
+        }
+
 
         if (c.hasTag(ACTIVECHANT)) {
             AwakenedTextHelper.colorCombos((AbstractAwakenedCard) c, false);

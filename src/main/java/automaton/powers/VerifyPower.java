@@ -5,8 +5,11 @@ import automaton.cards.FunctionCard;
 import automaton.vfx.FineTuningEffect;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class VerifyPower extends AbstractAutomatonPower {
     public static final String NAME = "Verify";
@@ -18,18 +21,24 @@ public class VerifyPower extends AbstractAutomatonPower {
         super(NAME, TYPE, TURN_BASED, AbstractDungeon.player, null, amount);
     }
 
+   // @Override
+    //    public void onCardDraw(AbstractCard card) {
+    //        if (card instanceof FunctionCard) {
+    //            for (int i = 0; i < amount; i++) {
+    //                AbstractDungeon.effectList.add(new FineTuningEffect(card));
+    //                for (AbstractCardModifier m : CardModifierManager.getModifiers(card, CardEffectsCardMod.ID)) {
+    //                    if (m instanceof CardEffectsCardMod) {
+    //                        ((CardEffectsCardMod) m).stored().fineTune(false);
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+
     @Override
-    public void onCardDraw(AbstractCard card) {
-        if (card instanceof FunctionCard) {
-            for (int i = 0; i < amount; i++) {
-                AbstractDungeon.effectList.add(new FineTuningEffect(card));
-                for (AbstractCardModifier m : CardModifierManager.getModifiers(card, CardEffectsCardMod.ID)) {
-                    if (m instanceof CardEffectsCardMod) {
-                        ((CardEffectsCardMod) m).stored().fineTune(false);
-                    }
-                }
-            }
-        }
+    public void onSpecificTrigger() {
+        this.flash();
+        this.addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
     }
 
     @Override
