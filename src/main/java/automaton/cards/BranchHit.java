@@ -11,7 +11,7 @@ public class BranchHit extends AbstractBronzeCard {
 
     //stupid intellij stuff attack, self_and_enemy, common
 
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
 
     public BranchHit() {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
@@ -25,6 +25,6 @@ public class BranchHit extends AbstractBronzeCard {
     }
 
     public void upp() {
-        upgradeDamage(2);
+        upgradeDamage(3);
     }
 }

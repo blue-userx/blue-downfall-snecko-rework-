@@ -104,7 +104,7 @@ public class AutomatonChar extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
-        retVal.add(FormatEncoded.ID);
+        retVal.add(Branch.ID);
         retVal.add(DelayedGuard.ID);
         return retVal;
     }
@@ -165,7 +165,7 @@ public class AutomatonChar extends CustomPlayer {
     @Override
     public AbstractCard getStartCardForEvent() {
         //todo new auto card here
-        return new FormatEncoded();
+        return new Branch();
     }
 
     @Override

@@ -33,11 +33,11 @@ public class Branch extends AbstractBronzeCard implements OctopusCard {
 
     public final static String ID = makeID("Branch");
 
-    private static final int DAMAGE = 7;
-    private static final int BLOCK = 6;
+    private static final int DAMAGE = 6;
+    private static final int BLOCK = 5;
 
     public Branch() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
         exhaust = true;
@@ -98,7 +98,7 @@ public class Branch extends AbstractBronzeCard implements OctopusCard {
     }
 
     public void upp() {
-        upgradeDamage(2);
-        upgradeBlock(2);
+        upgradeDamage(3);
+        upgradeBlock(3);
     }
 }
