@@ -39,7 +39,7 @@ public class Format extends AbstractBronzeCard {
         atb(new EasyXCostAction(this, (effect, params) -> {
             for (int i = 0; i < effect + params[0]; i++) {
                 AbstractCard c = new FormatEncoded();
-                c.upgrade();
+                //c.upgrade();
                 addToTop(new AddToFuncAction(c, null));
             }
             return true;
