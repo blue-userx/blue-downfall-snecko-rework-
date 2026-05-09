@@ -338,7 +338,7 @@
   },
   "bronze:MaxOutput": {
     "NAME": "Max Output",
-    "DESCRIPTION": "Draw !M! cards. NL At the start of your turn, bronze:Stash an *Error."
+    "DESCRIPTION": "Draw !M! cards. NL At the end of your turn, bronze:Stash an *Error."
   },
   "bronze:Mutator": {
     "NAME": "Mutator",
@@ -372,7 +372,8 @@
   },
   "bronze:Overload": {
     "NAME": "Copy Paste",
-    "DESCRIPTION": "The next 1 or 0 cost card you play this turn is played twice. NL Exhaust."
+    "DESCRIPTION": "The next 1 or 0 cost card you play this turn is played twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "The next 1 or 0 cost card you play this turn is played twice."
   },
   "bronze:Philosophize": {
     "NAME": "Philosophize",

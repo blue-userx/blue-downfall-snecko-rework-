@@ -3,6 +3,7 @@ package automaton.cards;
 import automaton.AutomatonMod;
 import automaton.FunctionHelper;
 import automaton.actions.RepeatCardAction;
+import automaton.powers.CopyPastePower;
 import awakenedOne.powers.SchemePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -34,13 +35,13 @@ public class Overload extends AbstractBronzeCard {
 //            addToBot(new VFXAction(new LightningEffect(q.hb.cX, q.hb.cY)));
 //            addToBot(new RepeatCardAction(q));
 //        }
-        Wiz.applyToSelf(new SchemePower(1));
+        Wiz.applyToSelf(new CopyPastePower(1));
     }
 
     public void upp() {
-        upgradeBaseCost(0);
-        //exhaust = false;
-        //rawDescription = UPGRADE_DESCRIPTION;
-        //initializeDescription();
+        //upgradeBaseCost(0);
+        exhaust = false;
+        rawDescription = UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 }

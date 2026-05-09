@@ -138,9 +138,9 @@
   "bronze:CopyPaste": {
     "NAME": "Copy Paste",
     "DESCRIPTIONS": [
-      "Your next Function is played twice this turn.",
-      "Your next #b",
-      " Functions are played twice this turn."
+      "The next #b1 or #b0 cost card you play this turn is played twice.",
+      "The next #b",
+      " #b1 or #b0 cost cards you play this turn are played twice."
     ]
   },
   "bronze:FullRelease": {
