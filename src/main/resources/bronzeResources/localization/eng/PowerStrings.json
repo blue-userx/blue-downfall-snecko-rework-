@@ -135,7 +135,7 @@
       " cards."
     ]
   },
-  "bronze:CopyPaste": {
+  "bronze:CopyPastePower": {
     "NAME": "Copy Paste",
     "DESCRIPTIONS": [
       "The next #b1 or #b0 cost card you play this turn is played twice.",
