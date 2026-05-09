@@ -31,7 +31,20 @@ public class OnCreateCardSubscriber {
         CardsCreatedThisCombat++;
         CardsCreatedThisTurn++;
         if (!AbstractDungeon.actionManager.turnHasEnded) {
+            if (c.type == AbstractCard.CardType.STATUS) {
+                Goto.becomeFree();
+                if (AbstractDungeon.player.hasPower(RepulsorNewPower.POWER_ID)) {
+                    AbstractDungeon.player.getPower(RepulsorNewPower.POWER_ID).onSpecificTrigger();
+                }
+            }
 
+            if (AbstractDungeon.player.hasPower(FeaturePower.POWER_ID)) {
+                AbstractDungeon.player.getPower(FeaturePower.POWER_ID).onSpecificTrigger();
+            }
+
+            if (AbstractDungeon.player.hasPower(VerifyPower.POWER_ID)) {
+                AbstractDungeon.player.getPower(VerifyPower.POWER_ID).onSpecificTrigger();
+            }
             if (c instanceof VoidCard || c instanceof IntoTheVoid) {
                 if (!VoidCreatedThisTurn) {
                     //             VoidCreatedThisTurn = true;
@@ -78,21 +91,6 @@ public class OnCreateCardSubscriber {
                     }
                 }
             }
-        }
-
-        if (c.type == AbstractCard.CardType.STATUS) {
-            Goto.becomeFree();
-            if (AbstractDungeon.player.hasPower(RepulsorNewPower.POWER_ID)) {
-                AbstractDungeon.player.getPower(RepulsorNewPower.POWER_ID).onSpecificTrigger();
-            }
-        }
-
-        if (AbstractDungeon.player.hasPower(FeaturePower.POWER_ID)) {
-            AbstractDungeon.player.getPower(FeaturePower.POWER_ID).onSpecificTrigger();
-        }
-
-        if (AbstractDungeon.player.hasPower(VerifyPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(VerifyPower.POWER_ID).onSpecificTrigger();
         }
 
 

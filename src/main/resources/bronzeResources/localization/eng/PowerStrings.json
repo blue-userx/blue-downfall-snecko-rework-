@@ -29,6 +29,13 @@
       " #yBlock."
     ]
   },
+  "bronze:BurnOutPower": {
+    "NAME": "Burn Out",
+    "DESCRIPTIONS": [
+      "Whenever you #yStash a #yStatus card, #yExhaust it and deal #b",
+      " damage to ALL enemies."
+    ]
+  },
   "bronze:InfiniteBeams": {
     "NAME": "Infinite Beams",
     "DESCRIPTIONS": [

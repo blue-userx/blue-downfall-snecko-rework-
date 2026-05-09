@@ -18,6 +18,7 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
     private final AbstractCard card;
     private final CardGroup source;
     private boolean skipWait;
+    private boolean dontstash;
     private final boolean hadRetain;
 
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("Guardian:UIOptions").TEXT;
@@ -27,6 +28,7 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
         this.source = source;
         this.actionType = ActionType.DAMAGE;
         skipWait = false;
+        dontstash = false;
         hadRetain = card.retain;
     }
 
@@ -37,9 +39,11 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
     public PlaceActualCardIntoStashAction(AbstractCard card, CardGroup source, boolean skipWait) {
         this(card, source);
         this.skipWait = skipWait;
+        dontstash = false;
     }
 
     public void update() {
+        dontstash = false;
         if (source != null) {
             source.removeCard(card);
         }
@@ -50,9 +54,11 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
             AbstractDungeon.player.limbo.addToTop(card);
             atb(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
             AbstractDungeon.player.getPower(BurnOutPower.POWER_ID).onSpecificTrigger();
-            this.isDone = true;
+            dontstash = true;
         }
-        BronzeOrbStash.combatstashpile.addToRandomSpot(card);
+        if (!dontstash) {
+            BronzeOrbStash.combatstashpile.addToRandomSpot(card);
+        }
         this.isDone = true;
     }
 }
