@@ -59,7 +59,7 @@
     ]
   },
   "bronze:Break": {
-    "NAME": "CTD",
+    "NAME": "Crash",
     "DESCRIPTION": "Deal !D! damage. NL Add an *Error to your draw pile, discard pile, hand, and bronze:Stash.",
     "EXTENDED_DESCRIPTION": [
       "broken",
