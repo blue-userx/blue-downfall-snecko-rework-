@@ -32,6 +32,7 @@
   "bronze:BurnOutPower": {
     "NAME": "Burn Out",
     "DESCRIPTIONS": [
+      "Whenever you #yStash a #yStatus card, #yExhaust it and deal #b1 damage to ALL enemies.",
       "Whenever you #yStash a #yStatus card, #yExhaust it and deal #b",
       " damage to ALL enemies."
     ]
