@@ -59,7 +59,7 @@ public class HyperBeam extends AbstractBronzeCard {
         }
         //AbstractDungeon.actionManager.addToBottom(new HandFillErrorAction(true));
         //atb(new MakeTempCardInDiscardAction(new Slimed(), auto));
-        for (int i = 0; i < magicNumber; i++) {
+        for (int i = 0; i < auto; i++) {
             atb(new PlaceActualCardIntoStashAction(new VoidCard(), null, true));
         }
     }
