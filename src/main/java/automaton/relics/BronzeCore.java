@@ -30,9 +30,9 @@ public class BronzeCore extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         super.atBattleStartPreDraw();
-        AbstractCard c = new Strike();
+        AbstractCard c = new Defend();
         atb(new AddToFuncAction(c, null));
-        c = new Defend();
+        c = new Strike();
         atb(new AddToFuncAction(c, null));
     }
     @Override
