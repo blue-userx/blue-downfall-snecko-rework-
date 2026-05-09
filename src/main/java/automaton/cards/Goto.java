@@ -18,8 +18,8 @@ public class Goto extends AbstractBronzeCard {
     //stupid intellij stuff skill, self, basic
 
     public Goto() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseBlock = 7;
+        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseBlock = 8;
         baseMagicNumber = magicNumber = 1;
         //thisEncodes();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("Goto.png"));
@@ -62,7 +62,7 @@ public class Goto extends AbstractBronzeCard {
     }
 
     public void upp() {
-        upgradeBlock(1);
+        upgradeBlock(2);
         upgradeMagicNumber(1);
         rawDescription = UPGRADE_DESCRIPTION;
         initializeDescription();
