@@ -2,6 +2,7 @@ package automaton.cards;
 
 import automaton.AutomatonMod;
 import automaton.actions.StashFromHandAction;
+import automaton.actions.StashHandAction;
 import automaton.powers.HardenedFormPower;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -27,9 +28,9 @@ public class HardenedForm extends AbstractBronzeCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!AbstractDungeon.player.hasPower("bronze:HardenedForm")) {
-            applyToSelfTop(new HardenedFormPower(magicNumber));
+            applyToSelf(new HardenedFormPower(1));
         }
-        this.addToBot(new StashFromHandAction(p, BaseMod.MAX_HAND_SIZE, false));
+        this.addToBot(new StashHandAction());
     }
 
     public void upp() {

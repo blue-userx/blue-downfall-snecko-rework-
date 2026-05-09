@@ -204,9 +204,8 @@ public class NeowBoss extends AbstractMonster {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true), 1));
                     if (AbstractDungeon.ascensionLevel >= 18) {
                         addToBot(new MakeTempCardInDrawPileAction((new ImpendingDoom()), 1, false, true));
-                    } else {
-                        this.addToBot(new MakeTempCardInDiscardAction(new ImpendingDoom(), 1));
                     }
+                    this.addToBot(new MakeTempCardInDiscardAction(new ImpendingDoom(), 1));
                 } else {
                     escape();
                 }

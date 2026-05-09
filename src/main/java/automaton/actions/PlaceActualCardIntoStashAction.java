@@ -3,7 +3,6 @@ package automaton.actions;
 import automaton.BronzeOrbStash;
 import automaton.powers.BurnOutPower;
 import awakenedOne.patches.OnCreateCardSubscriber;
-import awakenedOne.powers.SongOfSorrowPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -50,7 +49,7 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
         if (source == null) {
             OnCreateCardSubscriber.onCreateCard(card);
         }
-        if (AbstractDungeon.player.hasPower(BurnOutPower.POWER_ID) && (card.type == AbstractCard.CardType.STATUS)) {
+        if (AbstractDungeon.player.hasPower(BurnOutPower.POWER_ID) && (card.type == AbstractCard.CardType.STATUS || card.type == AbstractCard.CardType.CURSE)) {
             AbstractDungeon.player.limbo.addToTop(card);
             atb(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
             AbstractDungeon.player.getPower(BurnOutPower.POWER_ID).onSpecificTrigger();
