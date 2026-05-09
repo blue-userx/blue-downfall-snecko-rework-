@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 import static awakenedOne.util.Wiz.atb;
 
@@ -49,15 +50,25 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
         if (source == null) {
             OnCreateCardSubscriber.onCreateCard(card);
         }
-        if (AbstractDungeon.player.hasPower(BurnOutPower.POWER_ID) && (card.type == AbstractCard.CardType.STATUS || card.type == AbstractCard.CardType.CURSE)) {
-            AbstractDungeon.player.limbo.addToTop(card);
-            atb(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
-            AbstractDungeon.player.getPower(BurnOutPower.POWER_ID).onSpecificTrigger();
-            dontstash = true;
+        if (BronzeOrbStash.combatstashpile.size() < 6) {
+            if (AbstractDungeon.player.hasPower(BurnOutPower.POWER_ID) && (card.type == AbstractCard.CardType.STATUS || card.type == AbstractCard.CardType.CURSE)) {
+                AbstractDungeon.player.limbo.addToTop(card);
+                atb(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
+                AbstractDungeon.player.getPower(BurnOutPower.POWER_ID).onSpecificTrigger();
+                dontstash = true;
+            }
         }
-        if (!dontstash) {
+        if (!dontstash && (BronzeOrbStash.combatstashpile.size() < 6)) {
             BronzeOrbStash.combatstashpile.addToRandomSpot(card);
         }
+
+        if (!dontstash && (BronzeOrbStash.combatstashpile.size() > 5)) {
+            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, CardCrawlGame.languagePack.getUIString("bronze:FullStash").TEXT[0], true));
+            if (source == null) {
+                AbstractDungeon.player.discardPile.addToTop(card);
+            }
+        }
+
         this.isDone = true;
     }
 }

@@ -37,6 +37,11 @@
       "Stash."
     ]
   },
+  "bronze:FullStash": {
+    "TEXT": [
+      "ERR: BRONZE_ORB_FULL"
+    ]
+  },
   "bronze:AutoTextHelper": {
     "TEXT": [
       " NL bronze:Compile",

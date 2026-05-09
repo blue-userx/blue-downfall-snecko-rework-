@@ -33,7 +33,7 @@
   "NAMES": [
     "stash"
   ],
-  "DESCRIPTION": "Stash cards away inside of your Bronze Orb for later. You draw #b1 card from it naturally at the start of your turn."
+  "DESCRIPTION": "Stash cards away inside of your Bronze Orb for later, up to a maximum of #b5. You draw #b1 card from it naturally at the start of your turn."
 },
   {
     "PROPER_NAME": "Cycle",
