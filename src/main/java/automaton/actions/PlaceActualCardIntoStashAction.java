@@ -58,15 +58,16 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
                 dontstash = true;
             }
         }
-        if (!dontstash && (BronzeOrbStash.combatstashpile.size() < 5)) {
-            BronzeOrbStash.combatstashpile.addToRandomSpot(card);
-        }
 
-        if (!dontstash && (BronzeOrbStash.combatstashpile.size() > 5)) {
+        if (!dontstash && (BronzeOrbStash.combatstashpile.size() >= 5)) {
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, CardCrawlGame.languagePack.getUIString("bronze:FullStash").TEXT[0], true));
             if (source == null) {
                 AbstractDungeon.player.discardPile.addToTop(card);
             }
+        }
+
+        if (!dontstash && (BronzeOrbStash.combatstashpile.size() < 5)) {
+            BronzeOrbStash.combatstashpile.addToRandomSpot(card);
         }
 
         this.isDone = true;
