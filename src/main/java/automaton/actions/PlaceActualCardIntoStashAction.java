@@ -44,7 +44,7 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
 
     public void update() {
         dontstash = false;
-        if (source != null) {
+        if (source != null && (BronzeOrbStash.combatstashpile.size() < 5)) {
             source.removeCard(card);
         }
         if (source == null) {
