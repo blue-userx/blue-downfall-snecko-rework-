@@ -47,10 +47,10 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
         if (source != null) {
             source.removeCard(card);
         }
-        if (source == null) {
+        if (source == null && (BronzeOrbStash.combatstashpile.size() < 5)) {
             OnCreateCardSubscriber.onCreateCard(card);
         }
-        if (BronzeOrbStash.combatstashpile.size() < 6) {
+        if (BronzeOrbStash.combatstashpile.size() < 5) {
             if (AbstractDungeon.player.hasPower(BurnOutPower.POWER_ID) && (card.type == AbstractCard.CardType.STATUS || card.type == AbstractCard.CardType.CURSE)) {
                 AbstractDungeon.player.limbo.addToTop(card);
                 atb(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
@@ -58,7 +58,7 @@ public class PlaceActualCardIntoStashAction extends AbstractGameAction {
                 dontstash = true;
             }
         }
-        if (!dontstash && (BronzeOrbStash.combatstashpile.size() < 6)) {
+        if (!dontstash && (BronzeOrbStash.combatstashpile.size() < 5)) {
             BronzeOrbStash.combatstashpile.addToRandomSpot(card);
         }
 
