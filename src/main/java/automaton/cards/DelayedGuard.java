@@ -28,7 +28,7 @@ public class DelayedGuard extends AbstractBronzeCard {
     private static final int UPG_BLOCK = 4;
 
     public DelayedGuard() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 2, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         baseBlock = BLOCK;
         //thisEncodes();
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("DelayedGuard.png"));
