@@ -64,11 +64,6 @@ public class NullPointer extends AbstractBronzeCard {
     }
 
 
-    @Override
-    public void onObtainCard() {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Slimed(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-    }
-
     public void upp() {
         upgradeDamage(UPG_DAMAGE);
         upgradeBlock(UPG_BLOCK);
