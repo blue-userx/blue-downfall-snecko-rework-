@@ -28,10 +28,10 @@ public class NullPointer extends AbstractBronzeCard {
 
     //stupid intellij stuff attack, enemy, uncommon
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 12;
     private static final int UPG_DAMAGE = 3;
 
-    private static final int BLOCK = 9;
+    private static final int BLOCK = 12;
     private static final int UPG_BLOCK = 3;
 
     public NullPointer() {
