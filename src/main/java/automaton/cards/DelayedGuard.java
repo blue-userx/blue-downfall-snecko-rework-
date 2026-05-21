@@ -24,8 +24,8 @@ public class DelayedGuard extends AbstractBronzeCard {
 
     //stupid intellij stuff skill, self, common
 
-    private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 3;
+    private static final int BLOCK = 10;
+    private static final int UPG_BLOCK = 4;
 
     public DelayedGuard() {
         super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
@@ -37,7 +37,7 @@ public class DelayedGuard extends AbstractBronzeCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         this.addToBot(new StashFromHandAction(p, 1, false));
-        makeInHand(new Slimed());
+        //makeInHand(new Slimed());
     }
 
     public void upp() {
