@@ -38,8 +38,8 @@ public class NullPointer extends AbstractBronzeCard {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
-        //thisEncodes();
-        //tags.add(AutomatonMod.BAD_COMPILE);
+        thisEncodes();
+        tags.add(AutomatonMod.BAD_COMPILE);
         AutomatonMod.loadJokeCardImage(this, makeBetaCardPath("NullPointer.png"));
     }
 
@@ -50,18 +50,18 @@ public class NullPointer extends AbstractBronzeCard {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
     }
 
-//    @Override
-//    public void onCompile(AbstractCard function, boolean forGameplay) {
-//        UnplayableMod cardMod = new UnplayableMod();
-//        cardMod.updateMessage(CardCrawlGame.languagePack.getUIString("bronze:UnplayableMod").TEXT[1]);
-//        CardModifierManager.addModifier(function, cardMod);
-//    }
-//
-//    @Override
-//    public void onCompileLast(AbstractCard function, boolean forGameplay) {
-//        function.cost = -2;
-//        function.costForTurn = -2;
-//    }
+    @Override
+    public void onCompile(AbstractCard function, boolean forGameplay) {
+        UnplayableMod cardMod = new UnplayableMod();
+        cardMod.updateMessage(CardCrawlGame.languagePack.getUIString("bronze:UnplayableMod").TEXT[1]);
+        CardModifierManager.addModifier(function, cardMod);
+    }
+
+    @Override
+   public void onCompileLast(AbstractCard function, boolean forGameplay) {
+        function.cost = -2;
+        function.costForTurn = -2;
+    }
 
 
     @Override

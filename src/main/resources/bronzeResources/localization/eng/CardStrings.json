@@ -347,7 +347,7 @@
   },
   "bronze:NullPointer": {
     "NAME": "Null Pointer",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL When you add this card to your deck, also add an *Error to your deck.",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL bronze:Compile *Error - Function is Unplayable.",
     "EXTENDED_DESCRIPTION": [
       "null",
       "Pointer"
